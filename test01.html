@@ -1,0 +1,184 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홈페이지 테스트</title>
+
+    <style>
+      .divc {
+        width: 100px;
+        height: 20px;
+      }
+
+      #div1 {
+        width: 100px;
+        height: 20px;
+      }
+
+      div {
+        color: red;
+      }
+      /* margin */
+    </style>
+  </head>
+  //엘리먼트
+
+  <body>
+    <div id="div1" class="divc">1</div>
+    <div id="div2" class="divc">2</div>
+    <div style="width: 100px">3</div>
+  </body>
+</html>
+
+<!--
+  name : 어떤 설정이냐 , viewport라는 이름을 갖고 있다. <<화면에 대한 내용
+  viewport : 카메라, 어느정도의 너비를 갖는지 , 줌이 어떻게 되는지
+  width= drive-width << 웹페이지
+
+
+  ---
+<div>
+  <p></p>
+  p 는 너비를 넘으면 알아서 바꿔준다
+자식이 없을때 -> meta, 
+<br>
+<span> p랑 거의 유사함
+  인라인 속성을 가지고 있다. << 인라인 속성을 갖고 있다.
+
+<pre>
+  p나 span이나 같다.
+
+  <h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+
+<img src="" alt ="">
+src = 소스 이미지주소 파일명
+alt = 이미지를 정상적으로 받지 못했을때 뜨는 경고
+./  = 현재 위치
+-->
+
+<div>
+  <img src="" alt="" />
+</div>
+
+<div>
+  <p>
+    <strong> 굵은 글씨 강조, 긴급한 내용, 알람</strong>
+    </p>
+    <p>
+    <b>그냥 굵은 글씨, 나중에 css에서 알수 있다 </b>
+    </p>
+    <p>
+    <del> 삭제한 내용, 게시판에서 글을 삭제한걸 관리자는 알아야 하니까</del>
+    </p>
+    <p>
+    <ins> insert 입력한 내용, 늘어난 내용 신규작성한것에서 수정</ins>
+    </p>
+    <p>
+    <sub></sub> 아래 첨자 <sup></sup> 윗 첨자
+    </p>
+    <p>
+    <i> 기울었어, 이름이나 제목같은거, 가져온 말들 , 인용</i>
+    <em> 둘다 기울었어</em>
+    </p>
+  </p>
+</div>
+<!--
+<div>
+  <style>
+    style: 속성, 그 태그의 크기, 외곽선, 위치,
+      배경 등을 설정한다. 기초적인 방법 웹 페이지 처음은 html 파일로 주고
+        받았어. html 파일이 너무 커져서 보기가 어렵다. css 파일,
+      Cascading style sheets로 html 파일 외부로 뻄. 요 방식은 나중에
+
+      px = 그냥 픽셀, 한칸 한칸
+      %  = 부모를 기준으로한 %, 100% = 부모의 너비
+      em = 글씨 크기를 기준으로 한다.  부모의 글씨 크기
+      rem = 글씨 크기를 기준으로 한다  html의 글씨 크기, 많이 사용한다. 어디서? 반응형에서 모바일, pc
+      <div style=
+        "width: 100px;" >;
+        <p> vw, vh : viewport, 브라우저의 크기나 스마트폰의 크기를 기준으로 %,
+          100vw = 화면의 너비, 100vh 화면의 높이
+          </p>
+        </div>
+      <div style="width:1000px;">
+        <div style="max-width: 1000px; min-width:100px;">  
+      width : 영역의 너비
+      max-width : 영역의 최대 너비
+      min-width : 영역의 최소 너비
+      height : 높이
+      max-height : 영역의 초대 높이
+      min-height : 영역의 최소 높이
+<div style="height: 100px">
+  height : 높이 max-height : 영역의 최대 높이 min-height : 영역
+  background-color: rgb(200,200,200);
+-------------------
+  padding : 내부 여백, 내부에 얼마나 빈공간을 
+---------------------
+  <div style ="height: 100%; background-color:rgb(255.0.0)"></div>
+  <div style ="width: 100px; height: 100px; background-color: rgb(0,0,0)"></div>
+  -------------
+  margin : 외부 여백
+  ----------------
+  <div style ="height" >
+
+      -->
+  </style>
+  <p>
+    <div style ="height: 100px; 
+    width : 100px; 
+    height: 100px;
+    background-color: rgb(125,205,150);
+    padding: 10px;
+    margin : 15px;" 
+    ></div>
+    
+    <div style ="height: 100px; 
+    width : 100px; 
+    height: 100px;
+    background-color: rgb(200,200,200);
+    padding: 10px;
+    margin : 15px; "
+    ></div>
+  
+  </p>
+    <p></p>
+    <p></p>
+    <div style ="height: 100px; 
+    width : 60px; 
+    height: 60px;
+    background-color: rgb(200,0,200);
+    padding: 10px; 
+    margin : 15px;
+    box-sizing: 100px;
+    "></div>
+    <p></p>
+    <p></p>
+
+    <div style ="height: 100px; 
+    width : 30px; 
+    height: 30px;
+    background-color: rgb(200,200,0);
+    padding: 10px; 
+    margin : 15px;
+    box-sizing: 100px;
+    "
+    >
+    </div>
+    </p>
+    <p>
+      <div style ="height: 1000px; 
+      width : 100px; 
+      height: 100px;
+      background-color: rgb(255,100,200);"
+      padding: 10px; 
+      box-sizing: 100px;
+      >
+      </div>
+      </p>
+</div>
