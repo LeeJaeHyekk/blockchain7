@@ -1,0 +1,121 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test01</title>
+  </head>
+  <body>
+    <form "action="#" method="get">
+      <!-- 사용자가 입력하는 데이터를 서버에 보내는 태그
+        자세하게는 javascript
+        지금 모양과 입력만!
+        post, get..,서버 들어가서 할거고 지금은 아 이런거구나 알면됨
+        table,ol,ul처럼 form 부모로써 쓴다.
+        action 속성은 어디다 보낼지 서버의 주소를 입력한다.
+    #권장사항 주소가 없을때 사용
+    method 속성은 데이터를 어떤 방식으로 보낼건지 설정한다.
+    get은 주소에 입력 데이터가 나온다.
+    -->
+      <fieldset>
+        <!--태그는 form 안에 영역을 구분해 준다.
+            div 써도됨 
+        style 있어서 넣기만 하면 눈에 보인다 -->
+      
+      
+      <legend>필드 셋의 제목</legend>
+
+      <input type="text" id="text" name="ersar" />
+      <div>
+      <label for="test">아무거나</label>
+      </div>
+
+      <!-- input 태그는 이름 그대로 사용자가 데이터를 입력하는 영역
+        type이 너무 많다
+        name 속성은 서버에 보낼때 어떤 이름을 갖고 있는지 , 데이터 대한 이름을 같이 보낸다.
+        id  속성은 label 태그와 연결하기 위해 사용한다. -->
+      <!--
+            label 태그는 입력 값에 대한 제목을 사용자에게 보여준다.
+            예시: 성명, 이름
+            for 속성은 input에 입력할수 있도록 해준다.(focus)
+        --><div>
+      <label for="pw">비밀번호:<input type="password" name="pw" id="pw"/></label>
+      </div>
+      <!--
+            type 속성이 password 값을 가지는 input 태그는 타입 그대로 비밀번호를 입력할 수 있게 해준다.
+            입력된 데이터를 알아서 가려준다.
+        -->
+      <div>
+        <label for="birthday">생일은</label>
+        <input type="date" id="birthday"/>
+      </div>
+      <div>
+        <button type="reset">입력값 초기화</button>
+      </div>
+      
+        <div>
+        <label for="tel"
+          >전화번호 : <input type="tel" name="tel" id="tel"
+        /></label>
+      </div>
+      <!---->
+      <div>
+        <label for="number"
+          >나 이 : <input type="number" name="age" id="tel"
+        /></label>
+      </div>
+
+      <butto><img src="" alt="">
+      <input type="image" src="" alt="">
+
+      <div>
+        <button type="submit"> send
+          <!-- 누르는거 , 이름 그대로 버튼
+            a 는 다른 웹페이지로 이동할때 사용하고
+            button은 다씀
+            기본적으로 작동하는게 없어서 javascript를 넣어야 하지만
+            a처럼 무조건 작동하는게 아니라 편함
+        type은 어떠한 작동을 할것인지 기본 작동을 설정함
+    submit은 form 데이터를 보낼때 사용 -->
+        </button>
+      </div>
+      <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <!-- textarea는 여러줄을 입력 가능한 input text이다.-->
+        </div>
+     <div>
+        <select>
+        <option value="soul">서울</option>
+        <option value="2">경기도</option>
+        <option value="3">인천</option>
+        <option value="4">강원도</option>
+        <!-- select 는 선택하는 입력값 , 다만 한칸에 보여준다
+        option은 선택할 메뉴들, value가 중요
+        value는 보내야될 데이터-->  
+      </select>
+
+      </div>
+
+      <div>
+        <label for="checkbox"> 동의하시겠습니까</label>
+        <input type="checkbox" id="checkbox" />
+      </div>
+      <div>
+        <input type="radio" id="raido1" name="radio" />
+        <label for="raido1">사과</label>
+        <input type="radio" id="raido2" name="radio" />
+        <label for="raido2">오랜지</label>
+        <input type="radio" id="raido3" name="radio" />
+        <label for="raido3">바나나</label>
+      </div>
+      <!-- 하나만 선택하는 여러개의 체크박스 중복을 체크할때 name 사용한다.-->
+
+      <div>
+        <input type="text" placeholder="미입력시 출력되는 텍스트" autofocus/></div>
+
+    </fieldset>
+      </form>
+    <div>
+        <label for="test1">클릭 테스트</label>
+  </body>
+</html>
