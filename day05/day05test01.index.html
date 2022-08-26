@@ -1,0 +1,166 @@
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5일차</title>
+    <style>
+      .grid {
+        display: grid;
+        /* grid 박스를 만든다 부모역할 */
+        grid-template-rows: 200px 200px;
+        /* grid 박스의 세로 높이를 결정한다
+        row의 수만큼 입력한다. */
+        grid-template-columns: 100px 100px 100px;
+        /*grid 박스의 가로 너비를 결정한다.
+        column의 수만큼 입력한다  */
+        row-gap: 10px;
+        /* 세로 간격, 틈? */
+        column-gap: 20px;
+        /* 가로 간격, 틈? */
+        grid-auto-flow: column;
+        /* 아이템의 진행방향을 설정한다 */
+      }
+      .grid1 {
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(5, 200px);
+        /* repeat 함수는 입력을 반복해 준다. repaeat(개수, 크기) */
+        row-gap: 10px;
+        /* 세로 간격, 틈? */
+        column-gap: 20px;
+        /* 가로 간격, 틈? */
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(100px));
+        grid-template-rows: repeat(4, 200px);
+        /* minmax 함수는 이름 그대로 최소 최대 결정, 그 사이에서 알아서 조절*/
+      }
+      .grid3 {
+        display: grid;
+        grid-template-areas:
+          "sidebar header header header header"
+          "sidebar content content content content"
+          "footer footer footer footer footer";
+        /* grid-template-area는 grid 박스 설정한다.
+          하나의 row(colum 설정)는 " "로 설정하고,
+          여러 row 일 경우 줄바꿈으로 처리한다
+          .을 설정할 경우 빈칸이 된다.
+          무.조.건 사각형이야 된다.
+          item의 스타일에 grid-area와 매칭한다.*/
+      }
+      .grid-item {
+        background-color: #ffff12;
+        border: 1px solid black;
+      }
+      .sidebar {
+        grid-area: sidebar;
+        /* grid-area는 부모 grid 박스의
+        grid-template-areas와 매칭한다. */
+        border: 1px solid black;
+        /* display:flex;
+        flex-direction:column: ; 
+        justify-content:space-around;*/
+      }
+      .header {
+        grid-area: header;
+        border: 1px solid red;
+      }
+      .content {
+        grid-area: content;
+        border: 1px solid blue;
+      }
+      .footer {
+        grid-area: footer;
+        border: 1px solid violet;
+      }
+      /*  
+      세로 기준
+        align-items:  stretch
+          align-items:  start
+          align-items:  ceneter
+          align-items:  end
+          ----------------
+          가로 기준
+          justify-items:  stretch
+          justify-items:  start
+          justify-items:  center
+          justify-items:  end
+       */
+      .mosaic {
+        display: grid;
+        grid-template-columns: repeat(2 100px);
+        /* 기본적으로 보여질 형식 설정 */
+        grid-template-rows: repeat(2 100px);
+        /* 100px의 정사각형을 4개를 2줄로 출력 */
+      }
+      .mosaic > div {
+        /* grid 박스의 아이템을 눈에 보여주기 위해서 설정 */
+        background-color: aqua;
+        border: 1px solid black;
+      }
+      .mosaic-item {
+        display: none;
+        /* 기본적으로 보여지면 안될 아이템을 display:none 사용해 보이지 않도록 설정 */
+      }
+      .mosaic:hover {
+        /* 마우스 오버를 감지하기 위해 (마우스가 해당 영역위에 있는지 확인하기 위해) hover 가상 클래스(의사 클래스)를 사용한다.
+         */
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(4, 50px);
+        /* 50px의 정사각형을 16개를 4줄로 출력 */
+      }
+      .mosaic:hover .mosaic-item {
+        /* mosaic 클래스 위에 마우스가 있을떄 자식 중 mosic-item 클래스를 가진 영역에 스타일을 적용한다. */
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid3">
+      <!-- 
+        flex랑 비슷해
+        영역을 어떻게 처리할건가?
+        flex는 자동맞춤, 한쪽 방향으로 진행 하도록 하고, 흐름이 있고, 텍스트랑 비슷하게
+        진행되고(flex-wrap), block으로 진행될 수도 있고
+        grid는 디자인에 조듬더 맞춰져 있다-->
+      <!-- <div class="grid-item">111111111111111111111111111111111111111111</div>
+      <div class="grid-item">222222222222222222222222222</div>
+      <div class="grid-item">33333333333</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">6</div> -->
+      <br />
+      <!-- sidbar header content footer -->
+      <div class="sidebar">side</div>
+      <div class="header">header</div>
+      <div class="content">content</div>
+      <div class="footer">footer</div>
+      <div class="mosaic">
+        <!-- 그리드 박스 이용-->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- class가 없는 div는 보였다 말았다 할 필요가 없어서 않 넣음-->
+        <div class="mosic-item"></div>
+        <div class="mosic-item"></div>
+        <div class="mosic-item"></div>
+        <div class="mosic-item"></div>
+        <div class="mosic-item"></div>
+        <div class="mosic-item"></div>
+        <!-- class가 들어간 이유는 마우스 오버에 대해서 보였다 안보였다 해야 하기 떄문에 조절하기 위해 넣음-->
+      </div>
+    </div>
+  </body>
+</html>

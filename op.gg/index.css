@@ -1,0 +1,70 @@
+.div1 {
+  font-size: 12px;
+  min-width: 100px;
+
+  color: aliceblue;
+  background-color: #5383e8;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div2 {
+  font-size: 12px;
+  min-width: 100px;
+
+  color: aliceblue;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  min-width: 100px;
+  color: aliceblue;
+}
+.div4 {
+}
+.div5 {
+}
+.div6 {
+  background-color: #5383e8;
+}
+.tb {
+  min-width: 100px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #2f436e;
+}
+.tb2 {
+  border: 1px solid yellowgreen;
+  color: aliceblue;
+  background-color: #2f436e;
+}
+.log-bt {
+  background-color: #5383e8;
+}
+.bace {
+  background-color: #5383e8;
+}
+.ftt {
+  background-color: #5383e8;
+}
+.rc {
+}
+.event {
+}
+.serch {
+}
+.ad {
+}
+.hot {
+}
+.tt {
+}
