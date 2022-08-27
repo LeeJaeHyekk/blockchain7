@@ -36,14 +36,17 @@
 }
 .tb {
   min-width: 100px;
+  max-height: 44px;
   display: flex;
   align-items: stretch;
   flex-direction: row;
   justify-content: space-between;
   background-color: #2f436e;
+  overflow: hidden;
 }
 .tb2 {
-  border: 1px solid yellowgreen;
+  max-height: 44px;
+
   color: aliceblue;
   background-color: #2f436e;
 }
@@ -57,11 +60,52 @@
   background-color: #5383e8;
 }
 .rc {
+  min-width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #5383e8;
+  padding-left: 120px;
+  color: aliceblue;
 }
 .event {
+  color: black;
+  background-color: #ffb900;
+  display: block;
+  width: 100%;
 }
-.serch {
+.ma {
+  background-color: #5383e8;
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 350px;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
 }
+.main2 {
+  width: 1080px;
+  margin: auto;
+}
+.st {
+  display: flex;
+  position: relative;
+  border: 0px;
+  background-color: whitesmoke;
+  
+  margin-left: 90px;
+  border-radius: 30px;
+  width:800px ;height:60;
+
+  /* 박스 설정 */
+  box-sizing: border-box;
+  justify-content: center;
+}
+. serch {
+ 
 .ad {
 }
 .hot {
