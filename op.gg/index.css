@@ -27,10 +27,6 @@
   min-width: 100px;
   color: aliceblue;
 }
-.div4 {
-}
-.div5 {
-}
 .div6 {
   background-color: #5383e8;
 }
@@ -57,6 +53,9 @@
   background-color: #5383e8;
 }
 .ftt {
+  width: 100%;
+  justify-content: space-between;
+
   background-color: #5383e8;
 }
 .rc {
@@ -104,11 +103,32 @@
   box-sizing: border-box;
   justify-content: center;
 }
-. serch {
- 
+
+
 .ad {
-}
-.hot {
+  display: block;
+  width: 1080;
+  height: 266px;
+  border: 0px ;
+  
+  margin-top: 24px;
+  background-color: #5383e8;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
 }
 .tt {
+  width: 1080px;
+  height: 418px;
+  margin-top: 36px;
+
+  display: flex;
+  align-items: stretch;
+  border: 1px solid black;
+  
+  margin: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  flex-wrap: wrap;
 }
