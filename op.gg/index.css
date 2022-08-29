@@ -12,6 +12,8 @@
 .div2 {
   font-size: 12px;
   min-width: 100px;
+  width: 900px;
+  max-height: 44px;
 
   color: aliceblue;
   padding: 1px;
@@ -27,13 +29,12 @@
   min-width: 100px;
   color: aliceblue;
 }
-.div6 {
-  background-color: #5383e8;
-}
+
 .tb {
   min-width: 100px;
   max-height: 44px;
   display: flex;
+
   align-items: stretch;
   flex-direction: row;
   justify-content: space-between;
@@ -46,19 +47,39 @@
   color: aliceblue;
   background-color: #2f436e;
 }
+.tb22 {
+  margin-top: 5px;
+  align-items: center;
+  display: flex;
+  background-color: #2f436e;
+}
+.wbt {
+  padding: 0 6px 0 5px;
+  align-items: center;
+  border: 0px;
+  background-color: #2f436e;
+}
 .log-bt {
+  border: 0px;
+  border-radius: 8px;
+  align-items: center;
+  width: 68px;
+  height: 26px;
   background-color: #5383e8;
 }
 .bace {
   background-color: #5383e8;
 }
 .ftt {
-  width: 100%;
+  display: flex;
   justify-content: space-between;
-
   background-color: #5383e8;
+  margin-top: 30px;
 }
 .rc {
+  height: 44px;
+  flex-wrap: wrap;
+  overflow: hidden;
   min-width: 100px;
   height: 40px;
   display: flex;
@@ -70,10 +91,14 @@
   color: aliceblue;
 }
 .event {
+  height: 21px;
+  flex-wrap: wrap;
+  overflow: hidden;
   color: black;
   background-color: #ffb900;
-  display: block;
+  display: flex;
   width: 100%;
+  min-width: 100px;
 }
 .ma {
   background-color: #5383e8;
@@ -92,43 +117,107 @@
 .st {
   display: flex;
   position: relative;
+  align-items: center;
   border: 0px;
   background-color: whitesmoke;
-  
-  margin-left: 90px;
+  text-align: center;
+  margin: 0 auto;
   border-radius: 30px;
-  width:800px ;height:60;
+  width: 800px;
+  height: 60;
+  text-align: left;
 
   /* 박스 설정 */
   box-sizing: border-box;
-  justify-content: center;
+}
+.st1 {
+  display: block;
+  align-items: center;
+  width: 10%;
+  margin: auto;
+}
+.st2 {
+  display: block;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+.st3 {
+  width: 30%;
+  align-items: start;
+  display: block;
+  float: left;
+  margin: auto;
+}
+.opbt {
+  align-items: stretch;
 }
 
-
 .ad {
-  display: block;
+  display: flex;
   width: 1080;
   height: 266px;
-  border: 0px ;
-  
+  border: 0px;
+
   margin-top: 24px;
   background-color: #5383e8;
   justify-content: space-between;
   margin-bottom: 24px;
-
 }
 .tt {
-  width: 1080px;
-  height: 418px;
   margin-top: 36px;
+  display: block;
+  align-items: center;
+  border: 0px solid black;
 
-  display: flex;
-  align-items: stretch;
-  border: 1px solid black;
-  
   margin: auto;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   background-color: whitesmoke;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ttt {
+  display: block;
+  padding: 7px 0px 20px 17px;
+  line-height: 17px;
+  font-size: 20px;
+  color: var(--gray900);
+  text-decoration: none;
+  font-weight: bold;
+}
+.ttb {
+  display: flex;
+  width: 540px;
+  height: 81px;
+  margin: 0px 12px;
+  padding: 12px 0px;
+  box-sizing: border-box;
+
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ttv {
+  display: flex;
+  height: 480px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.text {
+  flex: 1 1 0%;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.endline {
+  display: flex;
+  height: 65px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: white;
+  justify-content: space-between;
+}
+.bt {
+  width: 100%;
+  height: 100%;
 }
