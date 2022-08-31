@@ -84,6 +84,43 @@
         animation: myanimation 1s ease;
         /* animation: keyframes 이름 시간 변화 방법 */
       }
+      .mosaic {
+        display: grid;
+        /* grid 박스 설정 */
+
+        /* 기본적으로 보여질 형식 설정 */
+        border: 1px solid black;
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: repeat(2, 100px);
+        /* 100px의 정사각형을 4개를 2줄로 출력 */
+      }
+      .etc {
+        background-color: black;
+        color: red;
+        width: 1000px;
+        min-height: 100px;
+        font-size: 32px;
+
+        opacity: 0.5;
+        /* 투명도 조절 */
+        z-index: 1;
+        /* 
+       z 축 기준으로 어떤 게 앞에 있는가?
+        */
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .zi {
+        background-color: blue;
+        width: 100px;
+        min-height: 100px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+      }
     </style>
   </head>
   <body>
@@ -117,6 +154,19 @@
     <!--  -->
     <div class="animation img">
       <img width="300px" height="300px" src="zico1.jpg" />
+    </div>
+    <div class="etc">abcd</div>
+    <div class="zi"></div>
+    <div class="mosaic">
+      <div>1번 메뉴</div>
+      <div>2번 메뉴</div>
+      <div>3번 메뉴</div>
+      <div>4번 메뉴</div>
+      <div>5번 메뉴</div>
+      <div>6번 메뉴</div>
+      <div>7번 메뉴</div>
+      <div>8번 메뉴</div>
+      <div>9번 메뉴</div>
     </div>
   </body>
 </html>

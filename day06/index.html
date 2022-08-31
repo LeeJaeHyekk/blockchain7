@@ -1,0 +1,216 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트1일차</title>
+  </head>
+  <body>
+    <div>
+      브라우저가 어떻게 작동하는지, 즉 html 파일을 받아서 어떻게 화면에
+      출력하는지에 대해서 간단하게만 이야기 할꺼고
+    </div>
+    <div>javascript를 html에서 사용하는 방법 , 변수(?)자료형</div>
+    <div>변수</div>
+    <script>
+      // script는 html 에서 javascript를 입력하는 태그
+      // html, css , javascript는 문법이 다 다릅니다. ;
+      // 지금까지 했던 html, css는 구조적으로 많이 봤다.
+      // 프로그래밍 적으로? javascript
+      // 변수란 데이터를 담은 상자
+      // 이사를 한다 -> 상자에다가 뭘 넣었는지 이름을 붙임 -> 그 상자 안에 맞는 물건을 넣음 -> 차에 옴김
+      // 데이터 사용 -> 변수를 선언하고 -> 변수에 데이터를 정의 -> 그걸 렘에 담아 둔다.
+      // 다른 프로그램에서는 위치를 알수 있는데(메모리), javascript에서는 없다.
+
+      var var1 = 1;
+      // var은 변수 선언할 때 사용하는 명령어
+      // var는 편하게 계속 맘대로 쓸수있어
+      var1 = 2;
+      //   var은 변수 선언할떄 사용하는 명령어
+      // 여러사람들이 같이 작업할떄 같은 변수를 사용하면서 다른 의미로 사용하게 될수 있다.
+
+      var var1 = "var1";
+
+      let let1 = 1;
+      const const1 = 1;
+      //   let은 선언후에 재정의가 가능하다.
+      let let2;
+      // let2를 선언했다.
+      let2 = 2;
+      // let2를 정의했다
+      let let3 = 3;
+      // let3을 초기화 했다
+      //   const1=3; 재정의가 불가능 하기 떄문에 개발자 도구의 콘솔창에서 문제가 발생한다.
+      console.log("asdf");
+      console.log(const1);
+      console.log(let2);
+      console.log(let3);
+      //  자료형
+      //  string , number , boolean , underfined , null , odject , array
+      //  string 은 텍스트
+      //  number 는 숫자
+      //  boolean 은 참거짓, bool , 불값썼냐
+      //  undefined , null 둘다 값이 없는거야
+      //  object 는 키와 값으로 이루어진 객체이다. << 아래서 다시
+      //  array 는 배열 , 더 깊이 얘기는 나중에
+      let string1 = "abcd";
+      let string2 = "abcd";
+      let string3 = "abcd";
+      // `는 1 옆에 esc아래에 있는 거다.
+      // 맥에서는 키가 영어일떄 사용.
+      //   "".'' 는 한줄 텍스트
+      //'' 탬플릿 리터널 이라고 부릅니다. 여러줄 가능
+      let number1 = 1;
+      let number2 = 1.1;
+      let number3 = 1 / 3;
+      let number4 = "1";
+      // number는 말 그대로 숫자
+      // 계산식을 정의해도 숫자가 정상적으로 들어간다.
+      // number4는 숫자일까? 아니다 텍스트다.
+
+      let boolean1 = true;
+      let boolean2 = flase;
+      let boolean3 = 1;
+      let boolean4 = "asdf";
+      // boolean은 참거짓을 갖는다.
+      // boolean3은 참인가 거짓인가. 참입니다.
+      // boolean4는 참인가 거짓인가. 참입니다.
+      let boolen5 = 0;
+      let boolen6 = "0";
+      let boolen7 = "\uac00";
+      console.log(boolean7);
+      console.log(!!boolean8);
+
+      let undefined1 = undefined;
+      let null1 = null;
+      //  그럼 요 둘의 차이가 모냐?
+      //undifined는 초기값, 내가 설정하지 않은 없는값, 빈값
+      //javascript만 한 사람은 undefined
+      //null은 내가 설정한 빈값
+      //   다른 언어 했던 사람 null
+      const obj = {
+        // object는 키와 값으로 이루어진 객체, 중괄호로 정의함
+      };
+      obj = { a: 1, b: 2, c: "3" };
+      //   a,b,c 를 키라고 하고 1,2,"3"을 값이라 한다
+      console.log(obj.a);
+      console.log(obj.b);
+      console.log(obj.c);
+
+      let arr1 = [1, 2, "3", { a: 1, b: 2, c: "3" }, true, [obj.a], obj];
+      const arr2 = [];
+      //   배열(array)는 순차적인 데이터다.
+      console.log(arr1);
+
+      arr1.push(123);
+      arr1.push("abc");
+      // push는 뒤에서 추가한다.
+      console.log(arr1);
+      // boolean , undefined , null , object , array
+      let pop1 = arr1.pop();
+      //  pop은 뒤에서 하나뺴
+      console.log(arr1);
+      console.log(pop1);
+      arr1.unshift("unshift");
+      console.log(arr1);
+      let shift1 = arr1.shift();
+      //   shift는 앞에서 뻄
+      console.log(arr1);
+      console.log(shift1);
+
+      console.log(typeof shift1);
+      console.log(typeof string1);
+      console.log(typeof boolean1);
+      console.log(typeof undefined1);
+      console.log(typeof arr1);
+      console.log(typeof arr[1]);
+      //  (변수의)  typeof 는 자료형이 나옵니다.
+      console.log(arr1);
+      console.log(arr1[0]);
+      //   arr1[몇번째 있는지] 넣으면 그 번몇번째의 값을 가져온다.
+      // arr1[0]은 배역의 첫번쨰 값을 가져온다.
+      console.log(arr1[1]);
+      //   arr1[1]은 배열의 두번째 값을 가져온다.
+      console.log(arr1[2]);
+      //   arr1[1]은 배열의 세번째 값을 가져온다.
+      // ------------
+      //   변수명, let/const ***에서 ***이 변수명(식별자)이다.
+      // 변수에 대한 표기법(식별자 표기법)
+      //  kebob Case, 케밥 표기법
+      // let kebob-case << css 에서 ,class 이름
+      //   Camel Case, 카멜표기법 , 낙타 , Javascript에서 변수명, 함수명 등등 이름 선언할 떄 웬만하면 이거 써라
+      let camelCase;
+      // Snake Case, 스네이크표기법, 뱀
+      let Snake_case;
+      //Pascal Case, 파스칼 표기법, 사용처 : React
+      let PascalCase;
+      //   Hungarian notation, 헝가리안 표기법, 요즘안씀
+      let strHungarianNotation;
+      //   str은 string 약자로 헝가리안 표기법에서는 변수명 제일 앞에 자료형을 적어준다.
+
+      //   형변환: 자료형을 바꿔준다, ex) string ->number
+      //  연산자
+      // 이름 그대로 연산 하는것
+      //  +,-,*,/,%,**,++, --,-,!,&&,||,=,+=,
+      // 글자는 붙인다
+      let plus1 = "자료";
+      let plus2 = "구조";
+      console.log(plus1 + plus2);
+      // 숫자랑 글자를 더하면 글자로 취급해서 붙인다.
+      //   %는 숫자에서 나머지를 나타냄
+      //**는 숫자에서 사용합니다. 제곱입니다.
+      //   ++,-- 둘다 카운터용으로 사용합니다. 숫자 하나 늘리거나 줄이거나 할때 사용
+      //
+      //
+    </script>
+    <script>
+      let count = 0;
+
+      console.log(++count);
+      // 1번   ++은 +1을 한다. 앞에 붙으면 +1을 하고서 그 줄을 실행한다.
+      console.log(--count);
+      // 2번  --은 -1을 한다. 앞에 붙으면 -1을 하고서 그 줄을 실행한다.
+      console.log(count++);
+      // 3번  ++은  +1을 한다. 뒤에 붙으면 그 줄을 실행하고서 +1을 한다.
+      console.log(count--);
+      // 4번  --는 -1을 한다. 뒤에 붙으면 그 줄을 실행하고서 -1을 한다.
+      console.log(count);
+      //     java script 는 arry가 없다 찾아보자
+      //   boolean , underfind, null , object , array
+
+      //   -,! 현재 상태의 부정
+      // 변수가 true -> false
+      // !! -> 부정의 부정 -> 현재가 boolean 값이 아니다., boolean값으로 변환할때 !!사용
+      let exculamation = 1;
+      console.log(typeof exculamation);
+      console.log(typeof !!exculamation);
+      console.log(!!exculamation);
+      console.log(!exculamation);
+
+      //   =대입연산자, 좌측에다가 우측의 값을 정의한다.
+      let test = 1;
+      // +=,-=,*=,/=,%=,**=
+      test += 2;
+      // test = test+2
+      test -= 2;
+      // test = test-2
+      test *= 2;
+      // test = test*2
+      const test2 = 1;
+      const test3 = 1;
+      const test4 = 1;
+      const test5 = "1";
+
+      console.log(test2 == test3);
+      console.log(test2 == test4);
+      console.log(test2 == test5);
+      //   === 은 자료형(까지) 확인을 한다.
+      console.log(test2 != test3);
+      console.log(test2 != test4);
+      console.log(test2 != test5);
+      //   != 은 같지 않은가를 확인한다. !==은  자료형까지 확인한다.
+      console.log(test2 != test3);
+      console.log(!(test2 == test3));
+    </script>
+  </body>
+</html>
