@@ -1,0 +1,39 @@
+.btn {
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+.btn:first-child {
+  background-color: #ff4040;
+}
+title {
+  padding: 20px;
+  font-size: 2rem;
+}
+.result {
+  border-collapse: collapse;
+}
+.result td,
+.result th {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+.result tr:nth-child(1) {
+  background-color: lightblue;
+}
+.result tr:nth-child(2) {
+  background-color: lightgray;
+}
+.result tr:nth-child(3) {
+  background-color: lightgreen;
+}
+.result tr:nth-child(4) {
+  background-color: lightseagreen;
+}
+.result tr:nth-child(5) {
+  background-color: lightyellow;
+}

@@ -1,0 +1,46 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- 함수를 호출하면서 () 안에 변수,상수 등을 넣으면 해당 함수의 매개 변수에 정의한다.
+    현재 numSel의 num아라는 매개변수에 7을 정의했다 -->
+    <table class="tb">
+      <tr>
+        <td><button onClick="calculate('+')">+</button></td>
+        <td><button onClick="calculate('-')">-</button></td>
+        <td><button onClick="calculate('*')">*</button></td>
+        <td><button onClick="calCulate('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button onClick="numSel(1)">1</button></td>
+        <td><button onClick="numSel(2)">2</button></td>
+        <td><button onClick="numSel(3)">3</button></td>
+        <td><button>♤</button></td>
+      </tr>
+      <tr>
+        <td><button onClick="numSel(4)">4</button></td>
+        <td><button onClick="numSel(5)">5</button></td>
+        <td><button onClick="numSel(6)">6</button></td>
+        <td><button>♤</button></td>
+      </tr>
+      <tr>
+        <td><button onClick="numSel(7)">7</button></td>
+        <td><button onClick="numSel(8)">8</button></td>
+        <td><button onClick="numSel(9)">9</button></td>
+        <td><button>♤</button></td>
+      </tr>
+      <tr>
+        <td><button onClick="ret()">←</button></td>
+        <td><button onClick="numSel(0)">0</button></td>
+        <td><button onClick="equal()">=</button></td>
+        <td><button>♤</button></td>
+      </tr>
+    </table>
+  </body>
+</html>

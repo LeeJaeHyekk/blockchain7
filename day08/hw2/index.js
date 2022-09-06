@@ -2,6 +2,22 @@ count = 0;
 firstNum = 0;
 secondNum = 0;
 
+const kfc = function (num) {
+  count++;
+  if (count == 1) {
+    firstNum = 1;
+    console.log(firstNum);
+  } else if (count == 2) {
+    secondNum = 2;
+    console.log(secondNum);
+  }
+};
+// count == 3){
+//     treeNum =3;
+//      console.log(treeNum
+
+function num(firstNum,secondNum);
+
 const il = function () {
   count++;
   if (count == 1) {

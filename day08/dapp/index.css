@@ -1,0 +1,18 @@
+/* .grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: font-size 0.1s ease-in-out;
+}
+/* .grid-box div:hover {
+} */
+.tb {
+  margin: auto;
+  padding: auto;
+  text-align: center;
+  align-items: center;
+}

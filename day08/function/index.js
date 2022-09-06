@@ -22,7 +22,8 @@ let test3 = () => {
   //  const / let 이름  = () => {}
 
   //   함수를 호출합니다. 즉 함수에 있는 코드를 실행합니다.
-  // 매개변수란, 함수
+  // 매개변수란, 함수에게 데이터를 전달한다.
+  // 함수가 사용해야할 데이터를 호출할 때 전해준다?
 };
 function addFunc(firstName, secondNum) {
   // firstNum , secondNum가 매개변수다.
