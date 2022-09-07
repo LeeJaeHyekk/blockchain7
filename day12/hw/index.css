@@ -1,0 +1,8 @@
+.tb {
+  width: 500px;
+  height: 900px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid black;
+  margin: auto;
+}
