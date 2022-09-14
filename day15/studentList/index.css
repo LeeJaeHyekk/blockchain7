@@ -1,0 +1,34 @@
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  min-width: 80px;
+}
+
+th {
+  background-color: gray;
+  color: white;
+}
+
+tr {
+  border-top: 1px solid black;
+}
+
+thead th {
+  background-color: black;
+  color: white;
+  border-right: dashed lightgrey;
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+tbody tr:nth-child(2n) {
+  background-color: lightgray;
+}

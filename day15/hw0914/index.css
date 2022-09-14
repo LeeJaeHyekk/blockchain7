@@ -1,0 +1,43 @@
+#total {
+  width: 600px;
+  height: 700px;
+  display: block;
+  border: 1px solid lightblue;
+  background-color: beige;
+  justify-items: center;
+  margin-left: 200px;
+}
+
+table {
+  border-collapse: collapse;
+  border-top: 1px solid none;
+}
+td,
+th {
+  display: inline-block;
+  border-right: 1px solid white;
+  text-align: center;
+  min-width: 100px;
+}
+#head {
+  font-weight: bold;
+
+  text-align: center;
+}
+#btn {
+  background-color: aquamarine;
+  align-items: stretch;
+}
+
+#ser {
+  border: 1px solid none;
+  border-radius: 30px;
+  background-color: antiquewhite;
+  justify-content: center;
+  width: 370px;
+  justify-items: center;
+  margin-left: 90px;
+}
+tr {
+  border: 1px solid black;
+}
