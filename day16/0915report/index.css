@@ -1,0 +1,74 @@
+#gr {
+  width: 800px;
+  height: 700px;
+  background-color: #f2daf2;
+  justify-content: space-between;
+}
+
+#in {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px dashed #5383e8;
+  width: 600px;
+  height: 100px;
+  margin: auto;
+  color: red;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#in2 {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #5383e8;
+  width: 600px;
+  height: 100px;
+  margin: auto;
+  padding: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+#in3 {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  padding: 10px;
+  justify-content: space-between;
+  text-align: center;
+}
+#rc {
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  text-align: center;
+  background-image: url(rock.Png);
+  background-size: cover;
+  background-position: center;
+}
+#sg {
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  text-align: center;
+  background-image: url(siger.PNG);
+  background-size: cover;
+  background-position: center;
+}
+#pp {
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  text-align: center;
+  background-image: url(paper.PNG);
+  background-size: cover;
+  background-position: center;
+}
+
+#st {
+  width: 200px;
+  height: 150px;
+
+  background-image: url(start.PNG);
+  background-size: cover;
+  background-position: center;
+}

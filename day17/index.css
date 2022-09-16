@@ -1,0 +1,20 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div1 {
+  width: 400px;
+  height: 400px;
+}
+.div2 {
+  width: 300px;
+  height: 300px;
+}
+.div3 {
+  background-color: brown;
+}
+.div4 {
+  background-color: burlywood;
+}

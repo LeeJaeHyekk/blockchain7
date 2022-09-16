@@ -1,0 +1,41 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" name="form-test">
+      <input type="text" id="input-test" />
+      <button type="submit">확인버튼</button>
+      <a href="http://naver.com" id="test">네이버</a>
+    </form>
+    <script>
+      console.log(document.forms["form-test"]);
+      console.log(document.forms["form-test"]["input-test"]);
+      document.forms["form-test"].onsubmit = (e) => {
+        e.preventDefalut();
+      };
+      //   이벤트 매개변수(e)는 모든 이벤트에 대한 정보를 갖고있다.
+      // target, click ....등등
+      //   preventDefualt 매서드는 기존에 실행되는 기능을 멈춘다.
+      //    즉, 이벤트가 실행될 때 무조건적으로/ 기본적으로 실행되는 코드를 실행되지 않도록 막는다.
+
+      document.getElementById("test").onclick = (e) => {
+        console.log(e);
+        e.preventDefault();
+      };
+    </script>
+  </body>
+</html>
+
+<!--  -->
+q,9 / a, 6 / z,3 / <br />
+바위 / 가위 / 보 <br />
+2인 플레이 <br />
+스타트 버튼이 있고 좌우에 플레이어 2명이 무엇을 냈는지 표시 <br />
+qaz : 플레이어1 <br />
+963 : 플레이어2 ------------------------- | 0.0 | vs | 0.0 |
+------------------------- q = 가위 a = 바위 z = 보 ------------- 9 = 가위 6 =
+바위 3 = 보
