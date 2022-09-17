@@ -1,8 +1,14 @@
 div {
+  /* css문법 : div , .div1, #id, .class, *등을 선택자라고 한다. */
+  /* div,a , p 등 tag에 적용하는 것을 tag 선택자라고 한다. */
+  /* .class, .div1 , .div2 등 .***으로 설정하여 class를 기준으로 css스타일을 적용하는 것을 class선택자라고 한다. */
+  /* 이외에 id선택자,의사 선택자(가상클래스),의사요소(가상 클래스) 등이 있다. */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/*display, justify-content, align-items,width, height, 등등 css속성이라고 한다,  */
+/* css속성에 적용되는 것을 속성값이라고 한다. */
 
 .div1 {
   width: 400px;
