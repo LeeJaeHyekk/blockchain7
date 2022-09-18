@@ -52,6 +52,22 @@
   text-align: center;
 }
 
+#in4 {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  width: 900px;
+  height: 300px;
+  margin: auto;
+  padding: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+#in4 img {
+  width: 300px;
+  height: 200px;
+}
+
 #plR {
   display: block;
   width: 300px;
@@ -77,6 +93,8 @@
   height: 200px;
   border: 1px solid #e61919;
 }
+
+
 
 #rc {
   width: 100px;
