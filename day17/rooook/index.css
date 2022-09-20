@@ -49,7 +49,8 @@
   border: 1px solid black;
   padding: 10px;
   justify-content: space-between;
-  text-align: center;
+  justify-items: center;
+  /* text-align: top; */
 }
 
 #in4 {
@@ -94,11 +95,9 @@
   border: 1px solid #e61919;
 }
 
-
-
 #rc {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   align-items: center;
   text-align: center;
   border: #e61919;
@@ -107,8 +106,8 @@
   background-position: center;
 }
 #sg {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   align-items: center;
   text-align: center;
   border: #e61919;
@@ -117,8 +116,8 @@
   background-position: center;
 }
 #pp {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   align-items: center;
   text-align: center;
   border: #e61919;
@@ -128,8 +127,8 @@
 }
 
 #st {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border: #e61919;
   background-image: url(start.PNG);
   background-size: cover;
@@ -137,8 +136,8 @@
 }
 /*  */
 #rc1 {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   align-items: center;
   text-align: center;
   background-image: url(rock.Png);
@@ -146,8 +145,8 @@
   background-position: center;
 }
 #sg1 {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   align-items: center;
   text-align: center;
 
@@ -156,8 +155,8 @@
   background-position: center;
 }
 #pp1 {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   align-items: center;
   text-align: center;
 
@@ -167,8 +166,8 @@
 }
 
 #st1 {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 
   background-image: url(start.PNG);
 
@@ -186,4 +185,5 @@
   display: flex;
   border: 1px solid #e61919;
   padding: 5px;
+  margin-left: 160px;
 }
