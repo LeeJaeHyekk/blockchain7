@@ -1,0 +1,30 @@
+.bigone {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border: 1px solid #5383e8;
+  border-radius: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  animation-iteration-count: infinite;
+}
+.one {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #880808;
+  border-radius: 80%;
+  margin: auto;
+  padding: auto;
+}
+.onetwo {
+  width: 150px;
+  height: 150px;
+  border: 1px solid#95f252;
+  border-radius: 100%;
+  margin: auto;
+  padding: auto;
+}
+@keyframes identifier {
+}

@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+.roulette-container,
+.select-box {
+  width: 810px;
+  height: 860px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.roulette-container {
+  transform: rotate(90deg);
+}
+
+.needle {
+  width: 20px;
+  height: 60px;
+  overflow: hidden;
+  position: absolute;
+  left: calc(50% - 10px);
+  z-index: 10;
+}
+
+.ract {
+  width: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.ract div {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 50px solid blue;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+
+.roulette-box {
+  width: 90%;
+  padding-bottom: 90%;
+  position: absolute;
+  margin: 4% 5%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.roulette-box.rotate {
+  animation: rotate 10s linear infinite;
+}
+
+.roulette {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  border: 5px inset black;
+  border-radius: 100%;
+  transition: transform 5s ease-out;
+}
+
+.roulette div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.roulette div p {
+  font-size: 40px;
+  height: fit-content;
+  /* transform: translateY(32px) rotate(-90deg); */
+}
+
+.start-btn {
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  left: 35%;
+  top: 30%;
+  border: 5px solid black;
+  background-color: lightgray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+@keyframes selected {
+  0% {
+    font-size: 5rem;
+  }
+  25% {
+    font-size: 3rem;
+  }
+  50% {
+    font-size: 5rem;
+  }
+  75% {
+    font-size: 3rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+
+.start-btn.select {
+  font-size: 5rem;
+  animation: selected 2s linear;
+}
