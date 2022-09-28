@@ -1,0 +1,159 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+              //      // -------------------------------------
+              //      let answer = 0;
+
+              //      while(n >=1){
+              //     // 조건값이 true일떄 (자연수)
+              //     // -------------------------------------
+              //     answer += n%10;
+              //     // 123 answer += 123%10; answer =3
+              //      //   12/10 = 2 ||  2 answer에다가 넣어      |answer == 3 + 2| == 5
+              //      //  1/10 = 1    ||   1 answer에다가 넣어    |answer == 3 + 2 + 1| == 6
+              //      n = parseInt(n/10);
+
+              //      //   n 123 12.3 12 n 12
+              //      //   n  12  1.2  n=1
+              //      //   n  1   0.1  0
+              //      }
+              //      return answer;
+              //   //
+              //   //--------------------------------------------------------------------------------------- -
+              //   function solution(n)
+              //  //  함수 적용
+              //   {
+              //  let answer  =   0        ;
+              //  //  값 적용 초기값;
+
+              //  let m       =   toString(n);
+              // //  변수값을 문자로 변환
+
+              //  for(let i=0; i<m.length; i++){
+              //     //           [0][1]
+              // // i의 자릿수가 변수m값의 자릿수보다 작을때까지 반복
+              //  answer += parseInt(m[i]);
+              // // 변수 m값의 자리값을 숫자로 변환해서 정답에 누적시킴
+              // //  i값이 m값의 길이를 넘을때 까지 반복
+              //     }
+              //       return answer;
+              //    }
+              //------------------------------------------------------------------------------------------
+              //   function solution(n){
+
+              //      let answer=0;
+              //      let m = toString(n)
+
+              //      for(let i=0;i<m.length;i++){
+              //       answer += parseInt(m[i]);4
+              //      }
+              //      return answer;
+
+              //   }
+              //      3    5    7
+              //   1 -- 4  -- 9 -- 16                 121  -->   144 -->
+              // |1*1| |2*2| |3*3| |4*4|       11*11 -->  12*12 -->
+              // 121/11
+         1 4 5 9 16 25
+         0 1 4 5 break; -1
+         //    매서드 방식
+
+              function solution(n) {
+                let answer = 0;
+
+                for (i = 0; i < n; i++) {
+                  //  | 0 == 0 | 1 == 1 | 2 == 4 | 3 == 9 | 4 == 16 | 5 == 25 |
+                  Math.pow(i, 2);
+
+                  if (i) {
+                    n = n + 1;
+                  } else {
+                    return (n = -1);
+                  }
+                }
+
+                return answer;
+              }
+            //   ----------------------------------------------------------------------------------
+              // function solution(n) {
+              //  let answer = 0;
+              //     n
+
+              //  return answer;
+              // }
+
+              //                            let a = 3;
+              //                           console.log(a < 2 ? 1 : 2);
+
+              //                              // function sol(num){
+              //                              //     let answer=0;
+              //                              //     let sum = 0;
+              //                              //     for(let i=0;i<=arr.length;i++){
+              //                              //         sum += arr.length[i]
+              //                              //     }
+              //                              //     return answer = sum/arr.length
+              //                              // }
+
+              //        function solution(n, a=0, b=0) {
+              //            return n<=a/2 ? b : solution(n, a + 1, 3 ? 0 : a);
+              //        }
+              //        solution(12, 1, 0) {
+              //          return 12 <= 24/2 ? b : solution(12, 25, b = b + 12 % 24 ? 0 : 24)
+              //  //       }
+              //  // 12 ==  1 2 3 4 6 12
+              //  // return b;
+
+              //                            //   let answer = 0;
+              //                            //   let sum = 0;
+              //                            //   function solution(num) {
+              //                            //     for (let i = 0; i <= arr.length; i++) {
+              //                            //       sum += arr[i];
+              //                            //     }
+              //                            //     return answer  = sum/arr.length
+
+              //                              }
+
+              //                              //     function solution(arr) {
+              //                              //     let answer = 0;
+              //                              //     let sum = 0;
+
+              //                              //     for (let i = 0; i < arr.length; i++){
+              //                              //      sum += arr[i];
+              //                              //     }
+              //                              //     return answer = sum / arr.length;
+              //                              // }
+            //   -------------------------------------------------------------------------------------
+        //     function solution(n) {
+        //     let answer = 0;
+
+        //     for(i=0; i<n;i++){
+        // //         11  121
+        //         if(Math.pow(i,2) == n ){
+        // //                 11 ^2   121
+        //             Math.pow(i+1,2)
+        // //                      (11+1)^2 탈출
+        //             break;
+
+        //         }else{
+        //             n = -1
+        //             break ;
+
+        //     }
+        //     }
+
+
+        //     return answer;
+        // }
+      //----====================================--------
+      // let x = Math.sqrt(n);
+      // return Number.isInteger(x) ? Math.pow(x + 1, 2) : -1;
+      //----------------------------------------------------------
+    </script>
+  </body>
+</html>

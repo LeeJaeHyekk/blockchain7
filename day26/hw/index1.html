@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function solution(n) {
+        for (let i = 1; i < n; i++) {
+          console.log(`for문에 i에 ${i}가 들어갔어`);
+          if (Math.pow(i, 2) == n) return Math.pow(i + 1, 2);
+        }
+        return -1;
+      }
+      console.log(solution(120));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    알고리즘이란 어떤 문제를 해결하기 위해 일련의 절차나 방법을 공식화한 형태로
+    표현하는것<br />
+    예) 플로우 차트 알고리즘이라고 하는 이야기 하는것은 하나의 기능 조건:
+    입력,<br />
+    출력, 명확성, 유한성, 효율성 입력: 하나의 이상의 데이터를 입력받는다.<br />
+    명확성: 과정이 명확하고 모호하지 않아야 한다. 유한성:끝나야 한다.
+    무한대는<br />
+    안됨 효율성: 실행이 가능해야 한다. 검증이 된다.<br />
+    <br />
+
+    시간복잡도(big o 표현법)<br />
+    o(1) : 무조건 한번 돈다<br />
+    o(log n) : n지수 ? 만큼 돈다.<br />
+    o(n log n) : n의 n승 지수만큼 돈다.<br />
+    o(n^2) : n 제곱근 만큼 돈다.<br />
+    ...
+    <script>
+      function o1(data) {
+        console.log(data);
+      }
+      function on(data) {
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i]);
+        }
+        function on2(data) {
+          for (let i = 0; i < data.length; i++) {
+            for (let j = 0; j < data.length; j++) {
+              console.log(data[i]);
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
