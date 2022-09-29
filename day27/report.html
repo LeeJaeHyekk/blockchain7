@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sol2() {
+        return n % 2 ? odd : even;
+      }
+      function sol2() {
+        return arr.reduce((prev, curr) => prev + curr, 0) / arr.length;
+      }
+      function sol3() {
+        for (let i = 1; i < n; ++i) if (!(n % i)) answer += i + n / i;
+        return answer;
+      }
+      function sol4() {
+        return n
+          .toString()
+          .split("")
+          .reduce((prev, curr) => prev + curr, 0);
+        // let nstr = n.tostring
+        // let narr = nstr.split('');
+        // let result = n.reduce((prev, curr) => prev + curr, 0);
+      }
+      function sol5() {
+        return n
+          .toString()
+          .split("")
+          .map((_, index) => {
+            return arr[arr.length - 1 - index];
+          });
+        // (_) = 값을 쓰지 않을때 통상적으로 사용한다. << 우리는 배열 내의 아이템은 사용하지 않는다.
+        // map, forEach 의 경우 item , index , arry 순으로 매개변수를 받아 올 수 있다.
+      }
+      function sol6() {
+        return n
+          .toString()
+          .split("")
+          .reverce()
+          .map((item) => +item);
+      }
+      function sol7() {
+        let answer = parseInt(Math.sqrt(n));
+        if (n === Math.pow(answer, 2)) return Math.pow(answer + 1, 2);
+        return -1;
+      }
+    </script>
+  </body>
+</html>
