@@ -1,0 +1,30 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>피보나치</title>
+  </head>
+  <body>
+    <script>
+      function solution(n) {
+        // 재귀함수의 n의 의미는 몇번 반복할꺼냐??
+        
+        if (n == 1 || n == 2) {
+          return n;
+        }else{ 
+          return solution(n-1) + (solution(n-2))
+        }
+        for(let i =0;i<20;++i)console.log(solution(i));
+    }
+
+        // 입력값:  n
+        // 전값 :   n-1
+        // 전전값 : n-2
+        // ----------------
+        // 한번 돌면 n = n-1
+        // 전값 :    n-1 = n-2
+
+      console.log(solution(7))
+  </body>
+</html>

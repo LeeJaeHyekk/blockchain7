@@ -1,0 +1,34 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function quickSort(arr, left, right) {
+        // 함수에 매개변수값으로 (주소값,왼쪽값,오른쪽값)
+        if (arr.length < 2) return arr;
+        // [0,1] 보다 작으면 넣은 값을 반환
+        let pivot = arr.shift();
+        // 피벗이란 변수를 선언하는데  피벗은 arr(주소-배열 (을)를).shift(움직여 주는 함수)
+        const leftArr = [];
+        // leftArr를 배열로 선언해줌
+        const rightArr = [];
+        // rightArr를 배열로 선언해줌
+        while (arr.length) {
+          // 배열의 길이를 매개변수로 반복문을 돌리는데
+          const temp = arr.shift();
+          // while문 내부의 임시(temp)를 만드는데, temp는 주소이동이다.
+          if (temp < pivot) leftArr.push(temp);
+          // 조건을 = 임시(temp)가 피벗보다 작다면, 왼쪽주소(값)에 넣는다.
+          else rightArr.push(temp);
+          // 조건을 = 임시(temp)가 피벗보다 크다면, 오른쪽에(값)을 넣는다.
+        }
+        return [...quickSort(leftArr), pivot, ...quickSort(right)];
+        // 반환해서 배열에 추가시킨다. = [큇쇼트함수에 왼쪽에 할당된(주소값) , 기준이 되는 피벗값 , 큇쇼트함수에 오른쪽에 할당된(주소값) ]
+      }
+    </script>
+  </body>
+</html>

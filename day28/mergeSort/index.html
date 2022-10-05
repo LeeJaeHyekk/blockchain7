@@ -1,0 +1,75 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const result = [];
+      let count = 0;
+      let leftIdx = 0,
+        rightIdx = 0;
+      while (leftIdx < leftArr.length && rightIdx < rightArr.length) {
+        // 좌우 배열의 인덱스가 배열의 크기보다 작으면
+        if (leftArr[leftIdx] < rightArr[rightIdx]) {
+          // 왼쪽 배열의 아이템이 오른쪽 배열의 아이템보다 작으면
+          result.push(leftArr[leftIdx++]);
+          // 결과 배열에 왼쪽 아이템을 넣엉주고 왼쪽 인덱스를 증가시킨다.
+        } else {
+          result.push(rightArr[rightIdx++]);
+          // 결과 배열에 오른쪽 아이템을 넣어주고 오른쪽 인덱스를 증가시킨다.
+        }
+
+        return [
+          ...result,
+          // 결과와
+          ...leftArr.slice(leftIdx),
+          // 왼쪽의 남은 배열
+          ...rightArr.slice(rightIdx),
+        ];
+        // 오른쪽의 남은 배열
+        //-------------------------------------------------
+        // function merge(leftArr, rightArr) {
+        //   let leftItem = leftArr[0];
+        //   let rightItem = rightArr[0];
+        //   while (leftArr.length && rightArr.length) {
+        //     if (leftItem < rightItem) {
+        //       result.push(leftItem);
+        //       if (leftArr.length){
+        //          leftItem = leftArr.shift leftArr.shift();}
+        //     } else {
+        //       result.push(rightItem);
+        //       if (rightArr.length) rightItem = rightArr.shift();
+        //     }
+        //   }
+        // 합치는애
+        // [729], [129]
+        // -----------------------------------------------------------------
+        // count--;
+        // console.log("count :" + count, [...leftArr, ...rightArr]);
+        // return [...leftArr, ...rightArr]; //[729,129]
+        // concat을 사용해서 꺽쇠가 중복되는걸 방지한다.
+        return result;
+      }
+
+      function mergeSort(arr) {
+        // arr=[727, 129,621,333,100,707]
+        console.log(arr);
+        if (arr.length === 1) return arr;
+        //  분리 하는애
+        const midPoint = parseInt(arr.length / 2);
+        // 8=> 4=> 2 => 1
+        return merge(
+          mergeSort(arr.slice(0, midPoint)), //[727, 129, 621, 333 , 100, 708, 1112]
+          mergeSort(arr.slice(midPoint)) //[727, 129]
+        );
+      }
+      // merge == 병합
+      //
+      const dataArr = [727, 525, 511, 333, 604, 5124];
+      console.log(mergeSort(dataArr));
+    </script>
+  </body>
+</html>

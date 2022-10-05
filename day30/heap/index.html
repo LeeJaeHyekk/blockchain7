@@ -1,0 +1,75 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const heapArr = [];
+      //   heap이라는 배열을 생성
+
+      function swap(idx1, idx2) {
+        // 스왑(셔플)을 함
+        const temp = heapArr[idx1];
+        heapArr[idx1] = heapArr[idx2];
+        heapArr[idx2] = temp;
+      }
+      //   0 ==> 1, 2=> 0+1,0+2
+      // 1 =>
+
+      function heapInsert(item) {
+        // 인서트 (아이템)을 하는 함수
+        heapArr.push(item);
+        // 힙배열에 (아이템 = 매개변수)를 대입해줌
+        let nowIdx = heapArr.length - 1;
+        // 현재 인덱스는 heap배열의 -1
+        while (true) {
+          if (nowIdx < 1) return heapArr.length;
+          const parentIdx = parseInt((nowIdx - 1) / 2);
+          if (heapArr[parentIdx] * -1 > heapArr[nowIdx] * -1) {
+            swap(parentIdx, nowIdx);
+            nowIdx = parentIdx;
+          } else {
+            break;
+          }
+        }
+        return heapArr.length;
+      }
+      function heapRemove() {
+        const temp = heapArr.shift();
+        heapArr.unshift(heapArr.pop());
+
+        let nowIdx = 0;
+
+        while (true) {
+          const leftChild = nowIdx * 2 + 1,
+            rightChild = nowIdx * 2 + 2;
+          if (
+            heapArr[nowIdx] > heapArr[leftChild] ||
+            heapArr[nowIdx] > heapArr[rightChild]
+          ) {
+            if (heapArr[leftChild] > heapArr[rightChild]) {
+              swap(nowIdx, rightChild);
+              nowIdx = rightChild;
+            } else {
+              swap(nowIdx, leftChild);
+              nowIdx = leftChild;
+            }
+          } else {
+            break;
+          }
+        }
+        return temp;
+      }
+
+      heapInsert(10);
+      heapInsert(20);
+      heapInsert(28);
+      heapInsert(18);
+      heapInsert(777);
+      console.log(heapArr);
+    </script>
+  </body>
+</html>
