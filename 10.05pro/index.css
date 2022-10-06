@@ -1,40 +1,171 @@
 .allback {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
 .topmenubar {
   width: 100%;
-  height: 52px;
+  height: 6%;
   display: flex;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
-  background-color: #eb3232;
+  background-color: F0F8FF;
   padding: 10px 10px;
 }
+@media (max-width: 678px) {
+  .topmenubar {
+    position: relative;
+    text-indent: -10000px;
+  }
+  #text {
+    display: none;
+  }
+  #topleft {
+    position: absolute;
+    left: 90%;
+  }
+  #midline {
+    display: none;
+  }
+  #glass {
+    left: 7%;
+  }
+  #line {
+    left: 1%;
+  }
+  #logo {
+    left: 0%;
+    top: 0px;
+  }
+  #topright {
+    position: relative;
+    right: 10%;
+  }
+  #art {
+    position: relative;
+  }
+  #cart {
+    position: relative;
+  }
+  #cd {
+    display: none;
+  }
+  #paper {
+    display: none;
+  }
+  #global {
+    display: none;
+  }
+}
+
 .topleft {
   display: flex;
+  position: relative;
+  flex-wrap: wrap;
   min-width: 200px;
   overflow: hidden;
 }
 .topleft img {
+  position: relative;
+  left: 19px;
+  height: 20px;
+  min-height: 20px;
   object-fit: cover;
 }
-.toplogo {
+#logo {
   display: flex;
-  font-size: 24px;
+  position: relative;
 }
-.toplogo img {
-  object-fit: cover;
+#logo img {
+  position: relative;
+  width: 60%;
 }
 .topright {
   display: flex;
+  /* position: relative; */
+  height: 50%;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
 }
 .topright img {
-  object-fit: cover;
+  /* position: relative; */
+  height: 21px;
+  min-height: 21px;
+}
+.line {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: auto;
+}
+.line1 {
+  position: relative;
+  width: 15spx;
+  height: 0px;
+  border: 1px solid black;
+  margin-bottom: 4px;
+}
+.line2 {
+  position: relative;
+  width: 10px;
+  height: 0px;
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+.line3 {
+  position: relative;
+  width: 13px;
+  height: 0px;
+  border: 1px solid black;
+}
+.midline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 12px;
+  border: 1px solid lightslategrey;
+  width: 0px;
+  height: 15px;
+}
+/*        바디          */
+#bodymain {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+}
+#bodymp {
+  display: flex;
 }
 
-@media screen and (max-with: 500px) {
-  .topmenubar {
-  }
+#bodymm {
+  display: flex;
+  width: 55%;
+}
+#bodympimg {
+  display: flex;
+  background-position: center center;
+}
+#larrow {
+  position: absolute;
+  margin-top: 10%;
+  width: 5%;
+  height: 10%;
+}
+#rarrow {
+  position: absolute;
+  margin-left: 90%;
+  margin-top: 10%;
+  width: 5%;
+  height: 10%;
 }
