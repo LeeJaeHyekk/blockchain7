@@ -1,8 +1,9 @@
 .allback {
   display: flex;
   flex-wrap: wrap;
-  background-color: white;
+  background-color: #212930;
 }
+/*        해드          */
 .topmenubar {
   width: 100%;
   height: 6%;
@@ -10,7 +11,7 @@
   position: sticky;
   justify-content: space-between;
   align-items: center;
-  background-color: F0F8FF;
+  background-color: #868f98;
   padding: 10px 10px;
 }
 @media (max-width: 678px) {
@@ -131,41 +132,519 @@
   position: relative;
   left: 12px;
   border: 1px solid lightslategrey;
+  opacity: 0.3;
   width: 0px;
   height: 15px;
 }
-/*        바디          */
+
+/*        바디  사진,동영상        */
+
 #bodymain {
-  display: flex;
+  display: fiex;
+  width: 100%;
   flex-wrap: wrap;
   flex-direction: row;
   position: relative;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
 }
 #bodymp {
   display: flex;
+  position: relative;
 }
-
+#bodympim {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
 #bodymm {
   display: flex;
-  width: 55%;
+  width: 100%;
 }
 #bodympimg {
   display: flex;
-  background-position: center center;
+  width: 100%;
+  /* background-position: center center; */
 }
 #larrow {
   position: absolute;
-  margin-top: 10%;
+  margin-top: 15%;
   width: 5%;
   height: 10%;
+  z-index: 1;
 }
 #rarrow {
   position: absolute;
-  margin-left: 90%;
-  margin-top: 10%;
+  margin-left: 94%;
+  margin-top: 15%;
   width: 5%;
   height: 10%;
+  z-index: 1;
+}
+
+/*        바디   엘범,사진,티켓       */
+
+.container {
+  display: grid;
+  position: relative;
+  width: 100%;
+  /* gap: 7% 10%; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+  align-items: top;
+  overflow: hidden;
+}
+/* item1 */
+.item1 {
+  display: inline-block;
+  margin-top: 10%;
+}
+#item1var {
+  width: 70%;
+  border: 3px solid blueviolet;
+}
+#item1v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+}
+#item1p {
+  display: flex;
+  overflow: hidden;
+  /* justify-content: center;
+  align-items: center; */
+  width: 100%;
+}
+#itemAl {
+  font-size: 22px;
+  color: blueviolet;
+}
+#itemtext {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/*  item2*/
+.item2 {
+  display: block;
+  overflow: hidden;
+  margin-top: 10%;
+}
+#item2var {
+  width: 70%;
+  border: 3px solid lawngreen;
+}
+#item2v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item2p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item2Al {
+  font-size: 22px;
+  color: lawngreen;
+}
+#item2text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item3  */
+.item3 {
+  display: block;
+  margin-top: 10%;
+}
+#item3var {
+  width: 70%;
+  border: 3px solid lightseagreen;
+}
+#item3v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item3p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item3Al {
+  font-size: 22px;
+  color: lightseagreen;
+}
+#item3text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item4 */
+.item4 {
+  display: block;
+  margin-top: 10%;
+}
+#item4var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item4v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item4p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item4Al {
+  font-size: 22px;
+  color: red;
+}
+#item4text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item5 */
+.item5 {
+  display: block;
+  overflow: hidden;
+  margin-top: 5%;
+}
+#item5var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item5v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item5p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item5Al {
+  font-size: 22px;
+  color: red;
+}
+#item5text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item6 */
+.item6 {
+  display: block;
+  overflow: hidden;
+  margin-top: -6%;
+}
+#item6var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item6v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item6p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item6Al {
+  font-size: 22px;
+  color: red;
+}
+#item6text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item7 */
+.item7 {
+  display: block;
+  margin-top: -8%;
+  overflow: hidden;
+}
+#item7var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item7v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item7p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item7Al {
+  font-size: 22px;
+  color: red;
+}
+#item7text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item8 */
+.item8 {
+  display: block;
+  overflow: hidden;
+}
+#item8var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item8v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item8p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item8Al {
+  font-size: 22px;
+  color: red;
+}
+#item8text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item9 */
+.item9 {
+  display: block;
+  margin-top: 10%;
+}
+#item9var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item9v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item9p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item9Al {
+  font-size: 22px;
+  color: red;
+}
+#item9text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item10 */
+.item10 {
+  display: block;
+  margin-top: 10%;
+}
+#item10var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item10v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item10p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item10Al {
+  font-size: 22px;
+  color: red;
+}
+#item10text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item11 */
+.item11 {
+  display: block;
+  margin-top: 10%;
+}
+#item11var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item11v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item11p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item11Al {
+  font-size: 22px;
+  color: red;
+}
+#item11text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item12 */
+.item12 {
+  display: block;
+  margin-top: 10%;
+}
+#item12var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item12v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item12p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item12Al {
+  font-size: 22px;
+  color: red;
+}
+#item12text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item13 */
+.item13 {
+  display: block;
+  margin-top: 10%;
+}
+#item13var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item13v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item13p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item13Al {
+  font-size: 22px;
+  color: red;
+}
+#item13text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item14 */
+.item14 {
+  display: block;
+  margin-top: 10%;
+}
+#item14var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item14v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item14p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item14Al {
+  font-size: 22px;
+  color: red;
+}
+#item14text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item15 */
+.item15 {
+  display: block;
+  margin-top: 10%;
+}
+#item15var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item15v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item15p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item15Al {
+  font-size: 22px;
+  color: red;
+}
+#item15text {
+  display: flex;
+  font-size: 30px;
 }
