@@ -5,14 +5,15 @@
 }
 /*        해드          */
 .topmenubar {
-  width: 100%;
+  width: 97%;
   height: 6%;
   display: flex;
-  position: sticky;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
   background-color: #868f98;
   padding: 10px 10px;
+  z-index: 2;
 }
 @media (max-width: 678px) {
   .topmenubar {
@@ -107,9 +108,10 @@
 }
 .line1 {
   position: relative;
-  width: 15spx;
+  width: 15px;
   height: 0px;
   border: 1px solid black;
+  background-color: black;
   margin-bottom: 4px;
 }
 .line2 {
@@ -117,6 +119,7 @@
   width: 10px;
   height: 0px;
   border: 1px solid black;
+  background-color: black;
   margin-bottom: 5px;
 }
 .line3 {
@@ -124,6 +127,7 @@
   width: 13px;
   height: 0px;
   border: 1px solid black;
+  background-color: black;
 }
 .midline {
   display: flex;
@@ -139,19 +143,69 @@
 
 /*        바디  사진,동영상        */
 
-#bodymain {
-  display: fiex;
+/* #bodymain {
+  display: flex;
   width: 100%;
-  flex-wrap: wrap;
+  /* margin-top: 5.8%; */
+  /* flex-wrap: wrap;
   flex-direction: row;
   position: relative;
   justify-content: center;
   align-items: center;
+ */
+/* } */
+
+/*  슬라이드  */
+.section input[id *="slide"]{
+  display: none;
 }
-#bodymp {
-  display: flex;
+.section .slidewrap{
+  max-width: 1100px;
+  margin:  0 auto;
+  overflow: hidden;
+}
+.section .slidelist{
+  white-space: nowrap;
+  font-size: 0;
+}
+.section .slidelist > li{
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  transition: all .2s;
+}
+.section .slidelist > li > a{
+  display: block;
   position: relative;
+  
 }
+.section .slidelist >li > a img{
+  width:40%
+  
+}
+.section .slidelist >li > a video{
+  width:60%
+}
+.section .slidelist label{
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 50px;
+  cursor: pointer;
+}
+ .section .slidelist .left{
+  left: 10px;
+  background: url(lrarrow.png) center center /100% no-repeat;
+ }
+ .section .slidelist .right{
+  right:10px;
+  background: url(rarrow.png) center center /100% no-repeat ;
+ }
+ .section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+ .section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+ .section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+
 #bodympim {
   display: flex;
   justify-content: center;
@@ -161,26 +215,7 @@
   display: flex;
   width: 100%;
 }
-#bodympimg {
-  display: flex;
-  width: 100%;
-  /* background-position: center center; */
-}
-#larrow {
-  position: absolute;
-  margin-top: 15%;
-  width: 5%;
-  height: 10%;
-  z-index: 1;
-}
-#rarrow {
-  position: absolute;
-  margin-left: 94%;
-  margin-top: 15%;
-  width: 5%;
-  height: 10%;
-  z-index: 1;
-}
+
 
 /*        바디   엘범,사진,티켓       */
 
@@ -197,18 +232,28 @@
 /* item1 */
 .item1 {
   display: inline-block;
+  overflow: hidden;
   margin-top: 10%;
+
 }
+
 #item1var {
   width: 70%;
   border: 3px solid blueviolet;
+  background-color: blueviolet;  
 }
+
+.item1:hover #item1var {
+transform: translateX(-90%);
+  } 
+
 #item1v {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 35%;
 }
+
 #item1p {
   display: flex;
   overflow: hidden;
@@ -231,9 +276,13 @@
   overflow: hidden;
   margin-top: 10%;
 }
+.item2:hover #item2var {
+  transform: translateX(-90%);
+    } 
 #item2var {
   width: 70%;
   border: 3px solid lawngreen;
+  background-color:lawngreen
 }
 #item2v {
   display: flex;
@@ -260,10 +309,15 @@
 .item3 {
   display: block;
   margin-top: 10%;
+  overflow: hidden;
 }
+.item3:hover #item3var {
+  transform: translateX(-80%);
+    } 
 #item3var {
   width: 70%;
   border: 3px solid lightseagreen;
+  background-color: lightseagreen;
 }
 #item3v {
   display: flex;
@@ -290,10 +344,15 @@
 .item4 {
   display: block;
   margin-top: 10%;
+  overflow: hidden;
 }
+.item4:hover #item4var {
+  transform: translateX(-80%);
+    } 
 #item4var {
   width: 70%;
   border: 3px solid red;
+  background-color: red;
 }
 #item4v {
   display: flex;
@@ -386,7 +445,7 @@
 }
 #item7var {
   width: 70%;
-  border: 3px solid red;
+  border: 2px solid red;
 }
 #item7v {
   display: flex;
