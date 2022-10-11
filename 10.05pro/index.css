@@ -1,11 +1,16 @@
+* {
+  margin: 0px;
+}
 .allback {
   display: flex;
   flex-wrap: wrap;
   background-color: #212930;
+  padding: 0;
+  margin: 0;
 }
 /*        해드          */
 .topmenubar {
-  width: 97%;
+  width: 100%;
   height: 6%;
   display: flex;
   position: fixed;
@@ -13,8 +18,9 @@
   align-items: center;
   background-color: #868f98;
   padding: 10px 10px;
-  z-index: 2;
+  z-index: 5;
 }
+
 @media (max-width: 678px) {
   .topmenubar {
     position: relative;
@@ -85,12 +91,12 @@
 }
 .topright {
   display: flex;
-  /* position: relative; */
   height: 50%;
   overflow: hidden;
   justify-content: space-between;
   align-items: center;
-  gap: 7px;
+  margin-right: 24px;
+  gap: 11px;
   font-size: 10px;
 }
 .topright img {
@@ -98,17 +104,56 @@
   height: 21px;
   min-height: 21px;
 }
-.line {
-  display: flex;
+input[id="line"] {
+  display: none;
+}
+input[id="line"] + label {
+  display: block;
+  width: 30px;
+  height: 20px;
   position: relative;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   padding: auto;
+  cursor: pointer;
 }
-.line1 {
-  position: relative;
-  width: 15px;
+input[id="line"] + label span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 30px;
+  background-color: bisque;
+  transition: all 0.35s;
+}
+input[id="line"] + label span:nth-child(1) {
+  top: 0;
+}
+input[id="line"] + label span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+input[id="line"] + label span:nth-child(3) {
+  bottom: 0;
+}
+
+input[id="line"]:checked + label span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+input[id="line"]:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+input[id="line"]:checked + label span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* .line1 {
+  display: block;
+  position: absolute;
+  width: 10%;
   height: 0px;
   border: 1px solid black;
   background-color: black;
@@ -128,7 +173,8 @@
   height: 0px;
   border: 1px solid black;
   background-color: black;
-}
+} */
+
 .midline {
   display: flex;
   justify-content: center;
@@ -136,7 +182,6 @@
   position: relative;
   left: 12px;
   border: 1px solid lightslategrey;
-  opacity: 0.3;
   width: 0px;
   height: 15px;
 }
@@ -154,10 +199,34 @@
   align-items: center;
  */
 /* } */
+.play {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
 
+  width: 10%;
+  height: 16px;
+
+  border: none;
+  background: none;
+
+  padding: 0;
+  margin-top: 2%;
+  margin-left: 8%;
+
+  cursor: pointer;
+}
+
+.play #imgBt {
+  width: 100%;
+}
 /*  슬라이드  */
 .section input[id*="slide"] {
   display: none;
+}
+.section {
+  width: 100%;
+  margin-top: 10%;
 }
 .section .slidewrap {
   max-width: 1100px;
@@ -179,26 +248,27 @@
   position: relative;
 }
 .section .slidelist > li > a img {
-  width: 40%;
+  width: 45%;
 }
 .section .slidelist > li > a video {
-  width: 60%;
+  width: 54%;
 }
+
 .section .slidelist label {
   position: absolute;
   z-index: 10;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   padding: 50px;
   cursor: pointer;
 }
 .section .slidelist .left {
-  left: 10px;
-  background: url(lrarrow.png) center center / 100% no-repeat;
+  left: 3px;
+  background: url(lrarrow.png) center center / 50% no-repeat;
 }
 .section .slidelist .right {
-  right: 10px;
-  background: url(rarrow.png) center center / 100% no-repeat;
+  right: 3px;
+  background: url(rarrow.png) center center / 50% no-repeat;
 }
 .section [id="slide01"]:checked ~ .slidewrap .slidelist > li {
   transform: translateX(0%);
@@ -226,7 +296,7 @@
   display: grid;
   position: relative;
   width: 100%;
-  /* gap: 7% 10%; */
+
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: dense;
   align-items: top;
@@ -246,7 +316,20 @@
 }
 
 .item1:hover #item1var {
-  transform: translateX(-90%);
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item1Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
 }
 
 #item1v {
@@ -279,8 +362,22 @@
   margin-top: 10%;
 }
 .item2:hover #item2var {
-  transform: translateX(-90%);
+  animation-name: item1Bar;
+  animation-duration: 3s;
 }
+
+@keyframes item2Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item2var {
   width: 70%;
 
@@ -315,8 +412,22 @@
   overflow: hidden;
 }
 .item3:hover #item3var {
-  transform: translateX(-80%);
+  animation-name: item3Bar;
+  animation-duration: 3s;
 }
+
+@keyframes item3Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item3var {
   width: 70%;
   border: 3px solid lightseagreen;
@@ -350,8 +461,22 @@
   overflow: hidden;
 }
 .item4:hover #item4var {
-  transform: translateX(-80%);
+  animation-name: item4Bar;
+  animation-duration: 3s;
 }
+
+@keyframes item4Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item4var {
   width: 70%;
   border: 3px solid red;
@@ -384,10 +509,28 @@
   overflow: hidden;
   margin-top: 15%;
 }
+.item5:hover #item5var {
+  animation-name: item5Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item5Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
 #item5var {
   width: 70%;
   border: 3px solid red;
+  background-color: red;
 }
+
 #item5v {
   display: flex;
   justify-content: center;
@@ -418,7 +561,25 @@
 #item6var {
   width: 70%;
   border: 3px solid lightblue;
+  background-color: lightblue;
 }
+.item6:hover #item6var {
+  animation-name: item6Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item6Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item6v {
   display: flex;
   justify-content: center;
@@ -449,7 +610,25 @@
 #item7var {
   width: 70%;
   border: 2px solid red;
+  background-color: red;
 }
+.item7:hover #item7var {
+  animation-name: item7Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item7Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item7v {
   display: flex;
   justify-content: center;
@@ -480,12 +659,30 @@
 #item8var {
   width: 70%;
   border: 3px solid red;
+  background-color: red;
 }
+.item8:hover #item8var {
+  animation-name: item8Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item8Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item8v {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140%;
+  width: 100%;
 }
 #item8p {
   display: flex;
@@ -510,7 +707,25 @@
 #item9var {
   width: 70%;
   border: 3px solid lightseagreen;
+  background-color: lightseagreen;
 }
+.item9:hover #item9var {
+  animation-name: item9Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item9Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item9v {
   display: flex;
   justify-content: center;
@@ -535,12 +750,30 @@
 /* item10 */
 .item10 {
   display: block;
-  /* margin-top: %; */
+  overflow: hidden;
 }
 #item10var {
   width: 70%;
   border: 3px solid red;
+  background-color: red;
 }
+.item10:hover #item10var {
+  animation-name: item10Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item10Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item10v {
   display: flex;
   justify-content: center;
@@ -566,11 +799,29 @@
 .item11 {
   display: block;
   margin-top: -10%;
+  overflow: hidden;
 }
 #item11var {
   width: 70%;
   border: 3px solid red;
 }
+.item11:hover #item11var {
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item11Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item11v {
   display: flex;
   justify-content: center;
@@ -596,11 +847,30 @@
 .item12 {
   display: block;
   margin-top: 10%;
+  overflow: hidden;
 }
 #item12var {
   width: 70%;
   border: 3px solid red;
+  background-color: red;
 }
+.item12:hover #item12var {
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item12Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item12v {
   display: flex;
   justify-content: center;
@@ -626,11 +896,30 @@
 .item13 {
   display: block;
   margin-top: 10%;
+  overflow: hidden;
 }
 #item13var {
   width: 70%;
   border: 3px solid red;
+  background-color: red;
 }
+.item13:hover #item13var {
+  animation-name: item13Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item13Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item13v {
   display: flex;
   justify-content: center;
@@ -656,11 +945,29 @@
 .item14 {
   display: block;
   margin-top: 10%;
+  overflow: hidden;
 }
 #item14var {
   width: 70%;
   border: 3px solid red;
 }
+.item14:hover #item14var {
+  animation-name: item14Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item14Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
 #item14v {
   display: flex;
   justify-content: center;
