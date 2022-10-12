@@ -36,48 +36,44 @@
         </div>
       </div>
       <!--    몸통 부분   상단 메뉴바 아래 (사진,동영상)        -->
-      <div class="section">
-        <input type="radio" id="slide01" checked; />
-        <input type="radio" id="slide02" />
-        <input type="radio" id="slide03" />
-        <div class="slidewrap">
-          <ul class="slidelist">
-            <li>
-              <a>
-                <label for="slide03" class="left"></label>
-                <img src="Zino1.PNG.png" style="width: 50%; height: 330px" />
-                <video
-                  src="ill.music/Illionaire.01.We.Here.2.mp4"
-                  style="width: 50%; height: 330px"
-                ></video>
-                <label for="slide02" class="right"></label>
-              </a>
-            </li>
-            <li>
-              <a>
-                <label for="slide01" class="left"> </label>
-                <img
-                  src="Q2-removebg-preview.png"
-                  style="width: 420px; height: 330px"
-                />
-                <video src="ill.music/Illionaire.03.연결고리.mp4"></video>
-                <label for="slide03" class="right"></label>
-              </a>
-            </li>
-            <li>
-              <a>
-                <label for="slide02" class="left"> </label>
-                <img src="dok2.PNG.png" style="width: 50%; height: 330px" />
-                <video
-                  src="ill.music/훔쳐.Dok2.mp4"
-                  style="width: 50%; height: 330px"
-                ></video>
-                <label for="slide01" class="right"></label>
-              </a>
-            </li>
-          </ul>
-        </div>
+
+      <div class="slide_wrapper">
+        <ul class="slides">
+          <li>
+            <div id="sl11">
+              <img src="ill 티켓/11.11.Q(r).png" style="width: 45%" />
+              <video
+                src="ill.music/Profile (Feat. The Quiett & Dok2) [2 4 _ 2 6].mp4"
+                style="width: 55%"
+              ></video>
+            </div>
+          </li>
+          <li>
+            <div id="sl12">
+              <img src="ill 티켓/11.11.dok2(r).png" style="width: 45%" />
+              <video
+                poster="ill 티켓/ticat.2014.09.13.PNG"
+                src="ill.music/Profile (Feat. The Quiett & Dok2) [2 4 _ 2 6].mp4"
+                style="width: 55%"
+              ></video>
+            </div>
+          </li>
+          <li>
+            <div id="sl13">
+              <img src="ill 티켓/11.11.Zino(r).png" style="width: 45%" />
+              <video
+                poster="ill 티켓/ticat2015.1.11.PNG"
+                src="ill.music/Profile (Feat. The Quiett & Dok2) [2 4 _ 2 6].mp4"
+                style="width: 55%"
+              ></video>
+            </div>
+          </li>
+        </ul>
       </div>
+      <p class="controls">
+        <span class="prev">prev </span>
+        <span class="next">next </span>
+      </p>
 
       <!-- 몸통 부분 엘범,사진, 아티스트(인물), -->
       <div class="container">
@@ -90,17 +86,16 @@
           <div>힙합씬의 대부</div>
         </div>
         <!-- item2 -->
-        <div class="item2">
+        <div class="item2" id="play2" onclick="playVideo(2)">
           <div id="item2var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt2" />
             </button>
           </div>
           <div>
             <video
               style="width: 100%"
-              autoplay="false"
               src="ill.music/Illionaire.01.We.Here.2.mp4"
               id="item2v"
               style="position: center"
@@ -118,18 +113,17 @@
           <div id="item3var"></div>
           <div>
             <img style="width: 100%" src="dok2.PNG.png" id="item3p" />
-            <!-- <video src="ill.music/Illionaire.04.go.mp4" id="item3v"></video> -->
           </div>
           <div id="item3Al">Album</div>
           <div id="item3text">Dok2</div>
           <div>Rapstar들의 Rapstar</div>
         </div>
         <!-- item4 -->
-        <div class="item4">
+        <div class="item4" id="play4" onclick="playVideo(4)">
           <div id="item4var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt4" />
             </button>
           </div>
           <div>
@@ -148,11 +142,11 @@
           </div>
         </div>
         <!-- item5 -->
-        <div class="item5">
+        <div class="item5" id="play5" onclick="playVideo(5)">
           <div id="item5var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt5" />
             </button>
           </div>
           <div>
@@ -180,11 +174,11 @@
           <div>"내 a.k.a 는 사기캐"</div>
         </div>
         <!-- item7 -->
-        <div class="item7">
+        <div class="item7" id="play7" onclick="playVideo(7)">
           <div id="item7var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt7" />
             </button>
           </div>
           <div>
@@ -201,18 +195,18 @@
           <div>"AOMG Style"</div>
         </div>
         <!-- item8 -->
-        <div class="item8">
+        <div class="item8" id="play8" onclick="playVideo(8)">
           <div id="item8var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt8" />
             </button>
           </div>
           <div>
             <video
               style="width: 100%"
               src="ill.music/훔쳐.Dok2.mp4"
-              id="item7v"
+              id="item8v"
             ></video>
           </div>
           <div id="item8Al">music video</div>
@@ -230,11 +224,11 @@
           <div>"도덕팀이 공중에 있다(=너희들보다 높다)"</div>
         </div>
         <!-- item10 -->
-        <div class="item10">
+        <div class="item10" id="play10" onclick="playVideo(10)">
           <div id="item10var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt10" />
             </button>
           </div>
           <div>
@@ -250,11 +244,11 @@
           <div>"이건 괴물2 촬영씬"</div>
         </div>
         <!-- item11 -->
-        <div class="item11">
+        <div class="item11" id="play11" onclick="playVideo(11)">
           <div id="item11var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt11" />
             </button>
           </div>
           <div>
@@ -262,7 +256,7 @@
               style="width: 100%"
               poster="공중도덕.PNG"
               src="ill.music/공중도덕.part2.FeatDok2.mp4"
-              id="item10v"
+              id="item11v"
             ></video>
           </div>
           <div id="item11Al">music video</div>
@@ -273,11 +267,11 @@
           </div>
         </div>
         <!-- item12 -->
-        <div class="item12">
+        <div class="item12" id="play12" onclick="playVideo(12)">
           <div id="item12var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt12" />
             </button>
           </div>
           <div>
@@ -285,7 +279,7 @@
               style="width: 100%"
               poster="공중도덕.PNG"
               src="ill.music/공중도덕3.part3.FeatDok2.mp4"
-              id="item10v"
+              id="item12v"
             ></video>
           </div>
           <div id="item12Al">music video</div>
@@ -293,11 +287,11 @@
           <div>"야망은 종일 펄펄끓어 야망은"</div>
         </div>
         <!-- item13 -->
-        <div class="item13">
+        <div class="item13" id="play13" onclick="playVideo(13)">
           <div id="item13var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt13" />
             </button>
           </div>
           <div>
@@ -310,11 +304,11 @@
           <div>성공해서 돌아왔다.</div>
         </div>
         <!-- item14 -->
-        <div class="item14">
+        <div class="item14" id="play14" onclick="playVideo(14)">
           <div id="item14var"></div>
           <div>
-            <button class="play" onclick="playVideo()">
-              <img src="play.png" id="imgBt" />
+            <button class="play">
+              <img src="play.png" id="imgBt14" />
             </button>
           </div>
           <div>

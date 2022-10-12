@@ -74,6 +74,7 @@
   min-width: 200px;
   overflow: hidden;
 }
+.midline {
 .topleft img {
   position: relative;
   left: 19px;
