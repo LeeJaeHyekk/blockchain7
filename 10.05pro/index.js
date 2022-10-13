@@ -1,4 +1,6 @@
 let clickCount = 0;
+
+//  ------------ 동영상 -------------------
 function playVideo(num) {
   let playVideo2 = document.getElementById("item2v");
   let playVideo4 = document.getElementById("item4v");
@@ -10,6 +12,9 @@ function playVideo(num) {
   let playVideo12 = document.getElementById("item12v");
   let playVideo13 = document.getElementById("item13v");
   let playVideo14 = document.getElementById("item14v");
+  let playVideo100 = document.getElementById("item100v");
+  let playVideo110 = document.getElementById("item110v");
+  let playVideo120 = document.getElementById("item120v");
 
   // 재생 이미지
   let playimgoff2 = document.getElementById("imgBt2");
@@ -22,6 +27,9 @@ function playVideo(num) {
   let playimgoff12 = document.getElementById("imgBt12");
   let playimgoff13 = document.getElementById("imgBt13");
   let playimgoff14 = document.getElementById("imgBt14");
+  let playimgoff100 = document.getElementById("imgBt100");
+  let playimgoff110 = document.getElementById("imgBt110");
+  let playimgoff120 = document.getElementById("imgBt120");
 
   while (true) {
     if (num === 2) {
@@ -115,11 +123,35 @@ function playVideo(num) {
         playVideo14.pause();
         playimgoff14.style.visibility = "visible";
       }
+    } else if (num === 100) {
+      playVideo100.play();
+
+      clickCount++;
+
+      if (clickCount % 2 === 0) {
+        playVideo100.pause();
+      }
+    } else if (num === 110) {
+      playVideo110.play();
+
+      clickCount++;
+
+      if (clickCount % 2 === 0) {
+        playVideo110.pause();
+      }
+    } else if (num === 120) {
+      playVideo120.play();
+
+      clickCount++;
+
+      if (clickCount % 2 === 0) {
+        playVideo120.pause();
+      }
     }
     break;
   }
 }
-//  슬라이드 //
+// --------------- 슬라이드 -------------------------//
 
 let slides = document.querySelector(".slides");
 let slide = document.querySelectorAll(".slides li");
@@ -170,7 +202,6 @@ prevBtn.addEventListener("click", function () {
 function moveslide(num) {
   slides.style.left = -num * (slidewidth + slidemargin) + "px";
   currentIdx = num;
-  console.log(currentIdx, slideCount);
 
   if (currentIdx == slideCount || currentIdx == -slideCount) {
     setTimeout(function () {
@@ -183,3 +214,19 @@ function moveslide(num) {
     }, 400);
   }
 }
+// ------------ 슬라이드 ENd ------------------//
+// ------------ 무한 스크롤  ------------------//
+window.onscroll = function () {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    let toAdd = document.createElement("div");
+    let newnew = document.createElement("div");
+    toAdd.classList.add("box");
+    document.getElementsByTagName("section")[0].appendChild(toAdd);
+    const str = document.getElementById("itbx").outerHTML;
+    if (toAdd) {
+      newnew.innerHTML = str;
+      toAdd.appendChild(newnew);
+    }
+  }
+};
+//------------ 무한스크롤 END ------------------//
