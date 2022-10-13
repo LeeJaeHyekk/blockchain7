@@ -338,24 +338,24 @@ section .box:nth-child(2n) {
   background: none;
   padding: 0;
   margin-top: 2%;
-  margin-left: 8%;
+  margin-left: 4%;
   cursor: pointer;
 }
 
 .play #imgBt {
-  width: 100%;
+  width: 50%;
 }
 .play #imgBt2 {
-  width: 100%;
+  width: 50%;
 }
 .play #imgBt4 {
-  width: 100%;
+  width: 50%;
 }
 .play #imgBt5 {
-  width: 100%;
+  width: 50%;
 }
 .play #imgBt7 {
-  width: 100%;
+  width: 50%;
 }
 .item2 {
   display: block;
