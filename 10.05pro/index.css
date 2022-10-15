@@ -8,7 +8,7 @@
   padding: 0;
   margin: 0;
 }
-/*        해드          */
+
 .topmenubar {
   width: 100%;
   height: 6%;
@@ -114,8 +114,6 @@
   min-height: 21px;
 }
 
-/*       3라인 메뉴 영역       */
-
 input[id="line"] {
   display: none;
 }
@@ -161,9 +159,7 @@ input[id="line"]:checked + label span:nth-child(3) {
   bottom: 50%;
   transform: translateY(50%) rotate(-45deg);
 }
-/* 3라인 메뉴 -끝- */
 
-/* 슬라이드 */
 #sl11 {
   display: flex;
   width: 900px;
@@ -266,7 +262,6 @@ input[id="line"]:checked + label span:nth-child(3) {
 }
 .slides li {
   display: flex;
-  /* border: 1px solid blueviolet; */
   width: 100%;
   list-style: none;
 }
@@ -275,7 +270,6 @@ input[id="line"]:checked + label span:nth-child(3) {
   margin-right: 30px;
 }
 
-/*        바디   엘범,사진,티켓       */
 #itbx {
   display: flex;
   overflow: hidden;
@@ -283,7 +277,7 @@ input[id="line"]:checked + label span:nth-child(3) {
 section .box:nth-child(2n) {
   background: #212930;
 }
-/*       바디  */
+
 .item1 {
   display: inline-block;
   overflow: hidden;

@@ -1,6 +1,5 @@
 let clickCount = 0;
 
-//  ------------ 동영상 -------------------
 function playVideo(num) {
   let playVideo2 = document.getElementById("item2v");
   let playVideo4 = document.getElementById("item4v");
@@ -16,7 +15,6 @@ function playVideo(num) {
   let playVideo110 = document.getElementById("item110v");
   let playVideo120 = document.getElementById("item120v");
 
-  // 재생 이미지
   let playimgoff2 = document.getElementById("imgBt2");
   let playimgoff4 = document.getElementById("imgBt4");
   let playimgoff5 = document.getElementById("imgBt5");
@@ -41,7 +39,6 @@ function playVideo(num) {
         playVideo2.pause();
         playimgoff2.style.visibility = "visible";
       }
-      console.log(playVideo2);
     } else if (num === 4) {
       playVideo4.play();
       playimgoff4.style.visibility = "hidden";
@@ -151,7 +148,6 @@ function playVideo(num) {
     break;
   }
 }
-// --------------- 슬라이드 -------------------------//
 
 let slides = document.querySelector(".slides");
 let slide = document.querySelectorAll(".slides li");
@@ -214,8 +210,7 @@ function moveslide(num) {
     }, 400);
   }
 }
-// ------------ 슬라이드 ENd ------------------//
-// ------------ 무한 스크롤  ------------------//
+
 window.onscroll = function () {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     let toAdd = document.createElement("div");
@@ -229,4 +224,3 @@ window.onscroll = function () {
     }
   }
 };
-//------------ 무한스크롤 END ------------------//
