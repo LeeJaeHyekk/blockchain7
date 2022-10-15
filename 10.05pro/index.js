@@ -1,4 +1,12 @@
 let clickCount = 0;
+let slides = document.querySelector(".slides");
+let slide = document.querySelectorAll(".slides li");
+let currentIdx = 0;
+let slideCount = slide.length;
+let slidemargin = 30;
+let slidewidth = 900;
+let prevBtn = document.querySelector(".prev");
+let nextBtn = document.querySelector(".next");
 
 function playVideo(num) {
   let playVideo2 = document.getElementById("item2v");
@@ -149,14 +157,6 @@ function playVideo(num) {
   }
 }
 
-let slides = document.querySelector(".slides");
-let slide = document.querySelectorAll(".slides li");
-let currentIdx = 0;
-let slideCount = slide.length;
-let slidemargin = 30;
-let slidewidth = 900;
-let prevBtn = document.querySelector(".prev");
-let nextBtn = document.querySelector(".next");
 makeClone();
 
 function makeClone() {
