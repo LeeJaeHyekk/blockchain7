@@ -1,0 +1,1032 @@
+<div class="container">
+        <div class="box">
+          <!-- item1 -->
+          <div class="item1">
+            <div id="item1var"></div>
+            <div><img style="width: 100%" src="Q.PNG.png" id="item1p" /></div>
+            <div id="itemAl">Album</div>
+            <div id="itemtext">The Quiett</div>
+            <div>힙합씬의 대부</div>
+          </div>
+          <!-- item2 -->
+          <div class="item2" id="play2" onclick="playVideo(2)">
+            <div id="item2var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt2" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                src="ill.music/Illionaire.01.We.Here.2.mp4"
+                id="item2v"
+                style="position: center"
+              ></video>
+            </div>
+            <div id="item2Al">music video</div>
+            <div id="item2text">
+              1LLIONAIRE 01.WeHere2<br />
+              (Dok2, The Quiett & Beenzino)
+            </div>
+            <div>"우리는 밑바닥에서 시작해서 여기까지 왔다."</div>
+          </div>
+          <!-- item3 -->
+          <div class="item3">
+            <div id="item3var"></div>
+            <div>
+              <img style="width: 100%" src="dok2.PNG.png" id="item3p" />
+            </div>
+            <div id="item3Al">Album</div>
+            <div id="item3text">Dok2</div>
+            <div>Rapstar들의 Rapstar</div>
+          </div>
+          <!-- item4 -->
+          <div class="item4" id="play4" onclick="playVideo(4)">
+            <div id="item4var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt4" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                src="ill.music/Illionaire.02.11_11.mp4"
+                id="item4v"
+              ></video>
+            </div>
+            <div id="item4Al">music video</div>
+            <div id="item4text">
+              Illionaire.02.(Dok2, The Quiett & Beenzino) 11_11
+            </div>
+            <div>
+              "우리는 열심히 해서 이렇게 돈도 많이 번다. 그리고 항상 열심히
+              한다."
+            </div>
+          </div>
+        </div>
+        <!-- item5 -->
+        <div class="box">
+          <div class="item5" id="play5" onclick="playVideo(5)">
+            <div id="item5var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt5" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                src="ill.music/Illionaire.03.연결고리.mp4"
+                id="item5v"
+              ></video>
+            </div>
+            <div id="item5Al">music video</div>
+            <div id="item5text">
+              1LLIONAIRE.03.(Dok2, The Quiett & Beenzino)<br />
+              연결고리
+            </div>
+            <div>"신과 구의 힙합 트렌드를 잇는다."</div>
+          </div>
+          <!-- item6 -->
+          <div class="item6">
+            <div id="item6var"></div>
+            <div>
+              <img style="width: 100%" src="Zino1.PNG.png" id="item1p" />
+            </div>
+            <div id="item6Al">Album</div>
+            <div id="item6text">Beenzino</div>
+            <div>"내 a.k.a 는 사기캐"</div>
+          </div>
+          <!-- item7 -->
+          <div class="item7" id="play7" onclick="playVideo(7)">
+            <div id="item7var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt7" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                src="ill.music/Illionaire.05.아닌 척.mp4"
+                id="item7v"
+              ></video>
+            </div>
+            <div id="item7Al">music video</div>
+            <div id="item7text">
+              1LLIONAIRE 05.아닌 척 (Dok2, The Quiett & Beenzino)
+            </div>
+            <div>"AOMG Style"</div>
+          </div>
+          <!-- item8 -->
+          <div class="item8" id="play8" onclick="playVideo(8)">
+            <div id="item8var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt8" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                src="ill.music/훔쳐.Dok2.mp4"
+                id="item8v"
+              ></video>
+            </div>
+            <div id="item8Al">music video</div>
+            <div id="item8text">Dok2 - 훔쳐 (Feat. Double K)</div>
+            <div>"난 싹다 훔쳐"</div>
+          </div>
+        </div>
+        <!-- item9 -->
+        <div class="box">
+          <div class="item9">
+            <div id="item9var"></div>
+            <div>
+              <img style="width: 100%" src="dok2remove.png" id="item9p" />
+            </div>
+            <div id="item9Al">Album</div>
+            <div id="item9text">공중도덕 (Air DoTheQ)</div>
+            <div>"도덕팀이 공중에 있다(=너희들보다 높다)"</div>
+          </div>
+          <!-- item10 -->
+          <div class="item10" id="play10" onclick="playVideo(10)">
+            <div id="item10var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt10" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                poster="공중도덕.PNG"
+                src="ill.music/공중도덕.part1.FeatDok2.mp4"
+                id="item10v"
+              ></video>
+            </div>
+            <div id="item10Al">music video</div>
+            <div id="item10text">공중도덕 (Air DoTheQ)</div>
+            <div>"이건 괴물2 촬영씬"</div>
+          </div>
+          <!-- item11 -->
+          <div class="item11" id="play11" onclick="playVideo(11)">
+            <div id="item11var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt11" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                poster="공중도덕.PNG"
+                src="ill.music/공중도덕.part2.FeatDok2.mp4"
+                id="item11v"
+              ></video>
+            </div>
+            <div id="item11Al">music video</div>
+            <div id="item11text">공중도덕 Part. 2 (Air DoTheQ Part. 2)</div>
+            <div>
+              "힙합에 대한 사랑과 MC로서의 패기 그것들이 영원하기를 바라는 나의
+              외길"
+            </div>
+          </div>
+          <!-- item12 -->
+          <div class="item12" id="play12" onclick="playVideo(12)">
+            <div id="item12var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt12" />
+              </button>
+            </div>
+            <div>
+              <video
+                style="width: 100%"
+                poster="공중도덕.PNG"
+                src="ill.music/공중도덕3.part3.FeatDok2.mp4"
+                id="item12v"
+              ></video>
+            </div>
+            <div id="item12Al">music video</div>
+            <div id="item12text">공중도덕 Part. 3 (Air DoTheQ Part. 3)</div>
+            <div>"야망은 종일 펄펄끓어 야망은"</div>
+          </div>
+        </div>
+        <!-- item13 -->
+        <div class="box">
+          <div class="item13" id="play13" onclick="playVideo(13)">
+            <div id="item13var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt13" />
+              </button>
+            </div>
+            <div>
+              <video src="ill.music/Illionaire.04.go.mp4" id="item13v"></video>
+            </div>
+            <div id="item13Al">music video</div>
+            <div id="item13text">
+              1LLIONAIRE (Dok2, The Quiett & Beenzino)-weHere2
+            </div>
+            <div>성공해서 돌아왔다.</div>
+          </div>
+          <!-- item14 -->
+          <div class="item14" id="play14" onclick="playVideo(14)">
+            <div id="item14var"></div>
+            <div>
+              <button class="play">
+                <img src="play.png" id="imgBt14" />
+              </button>
+            </div>
+            <div>
+              <video src="ill.music/Illionaire.04.go.mp4" id="item14v"></video>
+            </div>
+            <div id="item14Al">music video</div>
+            <div id="itemtext">
+              1LLIONAIRE (Dok2, The Quiett & Beenzino)-weHere2
+            </div>
+            <div>성공해서 돌아왔다.</div>
+          </div>
+        </div>
+      </div>
+--------------------------------------------------------------------------------
+html
+--------------------------------------------------------------------------------
+
+.container {
+  position: relative;
+  width: 100%;
+  align-items: top;
+  overflow: hidden;
+}
+.box {
+  display: grid;
+  margin-top: 10px;
+  margin-bottom: 80px;
+  position: relative;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+}
+.play {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  width: 10%;
+  height: 16px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-top: 2%;
+  margin-left: 8%;
+  cursor: pointer;
+}
+
+.play #imgBt {
+  width: 100%;
+}
+.play #imgBt2 {
+  width: 100%;
+}
+.play #imgBt4 {
+  width: 100%;
+}
+.play #imgBt5 {
+  width: 100%;
+}
+.play #imgBt7 {
+  width: 100%;
+}
+.play #imgBt8 {
+  width: 100%;
+}
+.play #imgBt10 {
+  width: 100%;
+}
+.play #imgBt11 {
+  width: 100%;
+}
+.play #imgBt12 {
+  width: 100%;
+}
+.play #imgBt13 {
+  width: 100%;
+}
+.play #imgBt14 {
+  width: 100%;
+}
+
+/* item1 */
+.item1 {
+  display: inline-block;
+  overflow: hidden;
+}
+
+#item1var {
+  width: 70%;
+  border: 3px solid blueviolet;
+  background-color: blueviolet;
+}
+
+.item1:hover #item1var {
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item1Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item1v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+}
+
+#item1p {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+#itemAl {
+  font-size: 22px;
+  color: blueviolet;
+}
+#itemtext {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/*  item2*/
+.item2 {
+  display: block;
+  overflow: hidden;
+}
+.item2:hover #item2var {
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item2Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item2var {
+  width: 70%;
+
+  border: 3px solid lawngreen;
+  background-color: lawngreen;
+}
+#item2v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item2p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item2Al {
+  font-size: 22px;
+  color: red;
+}
+#item2text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item3  */
+.item3 {
+  display: block;
+
+  overflow: hidden;
+}
+.item3:hover #item3var {
+  animation-name: item3Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item3Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item3var {
+  width: 70%;
+  border: 3px solid lightseagreen;
+  background-color: lightseagreen;
+}
+#item3v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item3p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item3Al {
+  font-size: 22px;
+  color: lightseagreen;
+}
+#item3text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item4 */
+.item4 {
+  display: block;
+
+  overflow: hidden;
+}
+.item4:hover #item4var {
+  animation-name: item4Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item4Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item4var {
+  width: 70%;
+  border: 3px solid red;
+  background-color: red;
+}
+#item4v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item4p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item4Al {
+  font-size: 22px;
+  color: red;
+}
+#item4text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item5 */
+.item5 {
+  display: block;
+  overflow: hidden;
+}
+.item5:hover #item5var {
+  animation-name: item5Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item5Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+#item5var {
+  width: 70%;
+  border: 3px solid red;
+  background-color: red;
+}
+
+#item5v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item5p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item5Al {
+  font-size: 22px;
+  color: red;
+}
+#item5text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item6 */
+.item6 {
+  display: block;
+  overflow: hidden;
+}
+#item6var {
+  width: 70%;
+  border: 3px solid lightblue;
+  background-color: lightblue;
+}
+.item6:hover #item6var {
+  animation-name: item6Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item6Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item6v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item6p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110%;
+}
+#item6Al {
+  font-size: 22px;
+  color: lightblue;
+}
+#item6text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item7 */
+.item7 {
+  display: block;
+
+  overflow: hidden;
+}
+#item7var {
+  width: 70%;
+  border: 2px solid red;
+  background-color: red;
+}
+.item7:hover #item7var {
+  animation-name: item7Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item7Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item7v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110%;
+}
+#item7p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item7Al {
+  font-size: 22px;
+  color: red;
+}
+#item7text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item8 */
+.item8 {
+  display: block;
+  overflow: hidden;
+}
+#item8var {
+  width: 70%;
+  border: 3px solid red;
+  background-color: red;
+}
+.item8:hover #item8var {
+  animation-name: item8Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item8Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item8v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item8p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item8Al {
+  font-size: 22px;
+  color: red;
+}
+#item8text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item9 */
+.item9 {
+  display: block;
+}
+#item9var {
+  width: 70%;
+  border: 3px solid lightseagreen;
+  background-color: lightseagreen;
+}
+.item9:hover #item9var {
+  animation-name: item9Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item9Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item9v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item9p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item9Al {
+  font-size: 22px;
+  color: lightseagreen;
+}
+#item9text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item10 */
+.item10 {
+  display: block;
+  overflow: hidden;
+}
+#item10var {
+  width: 70%;
+  border: 3px solid red;
+  background-color: red;
+}
+.item10:hover #item10var {
+  animation-name: item10Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item10Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item10v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 140%; */
+}
+#item10p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item10Al {
+  font-size: 22px;
+  color: red;
+}
+#item10text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item11 */
+.item11 {
+  display: block;
+
+  overflow: hidden;
+}
+#item11var {
+  width: 70%;
+  border: 3px solid red;
+}
+.item11:hover #item11var {
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item11Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item11v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item11p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item11Al {
+  font-size: 22px;
+  color: red;
+}
+#item11text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item12 */
+.item12 {
+  display: block;
+
+  overflow: hidden;
+}
+#item12var {
+  width: 70%;
+  border: 3px solid red;
+  background-color: red;
+}
+.item12:hover #item12var {
+  animation-name: item1Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item12Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item12v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item12p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item12Al {
+  font-size: 22px;
+  color: red;
+}
+#item12text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item13 */
+.item13 {
+  display: block;
+
+  overflow: hidden;
+}
+#item13var {
+  width: 70%;
+  border: 3px solid red;
+  background-color: red;
+}
+.item13:hover #item13var {
+  animation-name: item13Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item13Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item13v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item13p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item13Al {
+  font-size: 22px;
+  color: red;
+}
+#item13text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item14 */
+.item14 {
+  display: block;
+
+  overflow: hidden;
+}
+#item14var {
+  width: 70%;
+  border: 3px solid red;
+}
+.item14:hover #item14var {
+  animation-name: item14Bar;
+  animation-duration: 3s;
+}
+
+@keyframes item14Bar {
+  0% {
+    width: 70%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+#item14v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item14p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item14Al {
+  font-size: 22px;
+  color: red;
+}
+#item14text {
+  display: flex;
+  font-size: 26px;
+  font-style: italic;
+}
+/* item15 */
+.item15 {
+  display: block;
+}
+#item15var {
+  width: 70%;
+  border: 3px solid red;
+}
+#item15v {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140%;
+}
+#item15p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#item15Al {
+  font-size: 22px;
+  color: red;
+}
+#item15text {
+  display: flex;
+  font-size: 30px;
+}
+
+
+
+
