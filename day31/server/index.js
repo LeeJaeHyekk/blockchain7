@@ -1,8 +1,12 @@
 // npm => node package manager
 // Node.js에서 사용하는 라이브러리 관리자
 // yarn(React)도 사용가능
-// npm install 라이브러리명
+
+// npm install 라이브러리명 /npm i 라이브러리명
+//  라이브러리 설치
+
 // packager.json : Node.js를 사용해 구현된 프로그램(모듈,라이브러리,...)에 대한 정보를 모아둔 파일
+// dependencies는 의존성을 뜻하며 현재 프로그램이 실행되기 위해서 필요한 라이브러리 이다.
 
 // const express = require("express");
 // require는 외부 라이브러리를 가져오는 함수

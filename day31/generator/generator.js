@@ -18,8 +18,9 @@ function* what() {
   }
 }
 let generator = what();
-while (!generator.done) {
-  // done 프로퍼티는 generator가 끝났는가?
-  generator.next();
-  //   next 메서드는 코드를 실행한다. (단, yield에서 멈춘다.)
-}
+generator.next();
+//while (!generator.done) {
+// done 프로퍼티는 generator가 끝났는가?
+// generator.next();
+//   next 메서드는 코드를 실행한다. (단, yield에서 멈춘다.)
+//    }
