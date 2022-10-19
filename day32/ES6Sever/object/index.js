@@ -20,6 +20,7 @@ const { testNum, testNum2 } = object;
 console.log(testNum, testNum2);
 
 export default object;
+
 export function minus(a, b) {
   return a - b;
 }

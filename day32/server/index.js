@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   //   dev는 개발 모드로 사용된다.
 });
 
-app.use("/", express.static(path.join(__dirname, "web")));
+app.use("/", express.static(__dirname + "/web"));
 // '/' : 서버의 root, 즉 서버에 접근 시에 라우터가 없을 때
 // 라우터란? 서버 내의 폴더
 //   서버의 하위 페이지를 구현할 때 사용한다.
