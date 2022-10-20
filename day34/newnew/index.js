@@ -6,6 +6,7 @@ import URL from "url";
 import dotenv from "dotenv";
 import session from "express-session";
 import { fileURLToPath } from "url";
+import listApi from "./routes/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config();

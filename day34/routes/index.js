@@ -9,7 +9,6 @@ router
     });
   })
   .post((req, res) => {
-    console.log(req.body);
     todoList.push({ text: req.body["do-name"], time: req.body.time });
     res.end();
   })
