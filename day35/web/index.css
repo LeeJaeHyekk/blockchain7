@@ -1,0 +1,200 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+}
+
+#board {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+  padding: 20px 50px;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#list li {
+  padding: 0;
+  margin: 0;
+  border: 1px solid lightgray;
+  width: 100%;
+}
+
+#list li div * {
+  pointer-events: none;
+}
+
+#list li .title {
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: beige;
+}
+
+#list li .title h3 {
+  flex: 1;
+}
+
+#list li .title img {
+  width: 30px;
+  transform: scaleY(-1);
+  transition: transform 0.5s ease-in-out;
+}
+
+#list li .title img.on {
+  transform: scaleY(1);
+}
+
+#list li .text {
+  width: 100%;
+  padding: 0px 30px;
+  margin: 0;
+  transition: padding 0.5s ease-in-out;
+  display: flex;
+}
+
+#list li .text p {
+  flex: 1;
+  font-size: 0;
+  transition: font-size 0.5s ease-in-out;
+}
+
+#list li .text.on {
+  padding: 10px 30px 20px;
+}
+
+#list li .text.on p {
+  font-size: 1rem;
+}
+
+#list li .text textarea {
+  flex: 1;
+  display: none;
+  width: 100%;
+  height: 200px;
+  resize: none;
+  pointer-events: auto;
+}
+
+#list li .text.on.edit p {
+  display: none;
+}
+
+#list li .text.on.edit textarea {
+  display: block;
+}
+
+#list li .text .list-btn-box {
+  display: none;
+}
+
+#list li .text .list-btn-box img {
+  width: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#list li .text.on .list-btn-box {
+  display: flex;
+}
+
+#list li .text.on .cancel {
+  display: none;
+}
+
+#list li .text.on.edit .delete {
+  display: none;
+}
+
+#list li .text.on.edit .cancel {
+  display: block;
+}
+
+#page {
+  list-style: none;
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+  width: fit-content;
+}
+
+#page li {
+  margin: 0 10px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+#page li.now {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+#user-input-container {
+  width: 50px;
+  padding: 10px;
+  background-color: lightgray;
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+#user-input-container.on {
+  width: 300px;
+}
+
+#menu-btn-box {
+  margin-bottom: 20px;
+}
+
+#menu-btn {
+  width: 30px;
+}
+
+#board-add {
+  width: 280px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#user-input-container.on #board-add {
+  opacity: 1;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#board-title {
+  padding: 5px;
+}
+
+#board-text {
+  width: 100%;
+  resize: none;
+  padding: 10px;
+}
