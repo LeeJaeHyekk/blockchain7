@@ -12,14 +12,14 @@ document.getElementById("board-add").onsubmit = async function (e) {
     e.target["board-text"].focus();
     return;
   }
-  //   console.log(e.target["board-title"].value);
-  //   console.log(e.target["board-text"].value);
+
   try {
     const data = await axios.post("/api/board/add", {
       title: e.target["board-title"].value,
       text: e.target["board-text"].value,
       uptime: Date.now(),
     });
+
     // console.log(data.data);
     if (data.data.status == 200) {
       e.target["board-title"].value = e.target["board-text"].value = "";
@@ -60,7 +60,9 @@ async function getList() {
     // console.log(data.data.maxCount);
 
     pageElem.innerHTML = "";
+
     maxCount = data.data.maxCount;
+
     for (let i = 0; i < maxCount; ++i) {
       const tempLi = document.createElement("li");
       tempLi.innerText = i + 1;
@@ -77,6 +79,7 @@ async function getList() {
     }
 
     listElem.innerHTML = "";
+
     data.data.list.forEach((data, index) => {
       // tempData[count].forEach((data) => {
       const tempLi = document.createElement("li");
