@@ -53,7 +53,17 @@ const tempData = [];
         for(let i=0;i<maxCount;++i){
             const tempLi =document.createElement("li");
             tempLi.innerText = i+1;
+            tempLi.onclick = function(e){
+                count =i;
+                pageElem.getElementsByClassName("now")[0].classList.remove("now");
+                tempLi.classList.add("now");
+                getList()
+            };
+            if(count ===i){
+                tempLi.classList.add("now");
+            }
+            pageElem.append(tempLi)
         }
     }
 
-// }
+ }
