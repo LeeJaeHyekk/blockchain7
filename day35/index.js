@@ -14,8 +14,11 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const path = require("path");
+// import "./api/crypotoTest.js"
+require("./api/ctyptoTest.js");
+require("./api/jwt.js");
 
-// const routes = require("./routes/index.js");
+const routes = require("./routes/index.js");
 
 const boardList = [
   { title: "arvserv1", text: "9baresrsearvstb" },
@@ -53,8 +56,6 @@ app.use(
   })
 );
 
-// app.use("/api", routes);
-
 app.post("/api/board/add", (req, res) => {
   boardList.unshift(req.body);
   res.send({ status: 200, data: "정상 입력 완료" });
@@ -83,6 +84,7 @@ app.get("/api/board", (req, res) => {
     // 조건 ? 참 : 거짓
   });
 });
+app.use("/api", routes);
 
 app.listen(8080, () => {
   console.log("http://localhost:8080");
@@ -96,4 +98,16 @@ app.listen(8080, () => {
 // 사용자가 입력한 데이터를 알 수 있어야 할까?
 //   알면 안되는 것들도 있다. => 단방향 / 양방향 암호화
 // 단방향은 암호화만 가능하다. => 복호화가 불가능하다.
+
+// Hashing : 일종의 배열 , 객체?
+// 0,      1,   2,      3,   4  << 내가 원하는 위치값
+// asd, asd ,asdasd,  adad  << 입력된 데이터
+// 중복이 최대한 안되게 해야 된다.
+// SHA256, RIPEMD160
 // 양방향은 복호화가 가능하다.
+// 대칭키 : 암호화와 복호화가 같은 키로 변환된다.
+// AES ,DES , SEED
+// 비대칭키: 암호화와 복호화가 다른키로 변환된다.
+// 퍼블릭 , 프라이빗 키로 나뉜다.
+// RSA ,ECC
+//  << 예제 하려면 openSsl 등을 사용해야 한다. << 알아서 찾아봐

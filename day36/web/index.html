@@ -3,59 +3,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>게시판?</title>
     <link rel="stylesheet" href="index.css" />
+    <title>계시판</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div id="root">
       <div id="board">
-        <ul id="list">
-          <!-- <li>
-            <div class="title">
-              <h3>23423142v34v</h3>
-              <img src="./imgs/angle-up-solid.svg" alt="list-item-btn" />
-            </div>
-            <div class="text">
-              <p>avswerasvr</p>
-            </div>
-          </li> -->
-        </ul>
+        <ul id="list"></ul>
         <ul id="page"></ul>
       </div>
       <div id="user-input-container">
         <div id="user-box">
           <form id="user-info">
-            <!-- <legend></legend>
-            <fieldset></fieldset> -->
             <div id="sign-input">
               <input type="text" id="id" placeholder="ID" />
-              <input type="password" id="pw" placeholder="Password" />
-            </div>
-            <div id="btn-box">
-              <button id="sign-in">Sign-In</button>
-              <button id="sign-up">Sign-p</button>
+              <input type="passward" id="pw" placeholder="Password" />
             </div>
           </form>
         </div>
         <div id="menu-btn-box">
-          <img id="menu-btn" src="./imgs/bars-solid.svg" alt="menu button" />
+          <img id="menu-btn" src="./img/angle-up-solid.svg" alt="menu button" />
         </div>
         <form id="board-add">
           <label for="board-title"
-            >글 제목 :
+            >글 제목:
             <input
               type="text"
               id="board-title"
-              placeholder="글 제목을 입력하세요."
-          /></label>
+              placeholder="글 제목을 입력하세요"
+            />
+          </label>
           <label for="board-text">
             <textarea
               name="board-text"
               id="board-text"
               cols="30"
               rows="10"
-              placeholder="글 내용을 입력하세요."
+              placeholder="글 내용을 입력하세요"
             ></textarea>
           </label>
           <button>업로드</button>
