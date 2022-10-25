@@ -14,27 +14,10 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const path = require("path");
-// import "./api/crypotoTest.js"
-require("./api/ctyptoTest.js");
-require("./api/jwt.js");
-
 const routes = require("./routes/index.js");
-
-const boardList = [
-  { title: "arvserv1", text: "9baresrsearvstb" },
-  { title: "arvserv2", text: "8baresrsearvstb" },
-  { title: "arvserv3", text: "7baresrsearvstb" },
-  { title: "arvserv4", text: "6baresrsearvstb" },
-  { title: "arvserv5", text: "5baresrsearvstb" },
-  { title: "arvserv6", text: "4baresrsearvstb" },
-  { title: "arvserv7", text: "3baresrsearvstb" },
-  { title: "arvserv8", text: "2baresrsearvstb" },
-  { title: "arvserv9", text: "1baresrsearvstb" },
-];
-
 const app = express();
-dotenv.config();
 
+dotenv.config();
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") morgan("combined")(req, res, next);
   else morgan("dev")(req, res, next);
@@ -55,6 +38,23 @@ app.use(
     name: "session",
   })
 );
+// import "./api/crypotoTest.js"
+app.use("/api", routes);
+
+require("./api/ctyptoTest.js");
+require("./api/jwt.js");
+
+const boardList = [
+  { title: "arvserv1", text: "9baresrsearvstb" },
+  { title: "arvserv2", text: "8baresrsearvstb" },
+  { title: "arvserv3", text: "7baresrsearvstb" },
+  { title: "arvserv4", text: "6baresrsearvstb" },
+  { title: "arvserv5", text: "5baresrsearvstb" },
+  { title: "arvserv6", text: "4baresrsearvstb" },
+  { title: "arvserv7", text: "3baresrsearvstb" },
+  { title: "arvserv8", text: "2baresrsearvstb" },
+  { title: "arvserv9", text: "1baresrsearvstb" },
+];
 
 app.post("/api/board/add", (req, res) => {
   boardList.unshift(req.body);
@@ -84,7 +84,6 @@ app.get("/api/board", (req, res) => {
     // 조건 ? 참 : 거짓
   });
 });
-app.use("/api", routes);
 
 app.listen(8080, () => {
   console.log("http://localhost:8080");

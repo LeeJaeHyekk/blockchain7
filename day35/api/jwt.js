@@ -4,7 +4,7 @@
 // form['dataName'] == forms.dataName
 // forms?.[dataName]form?.dataName
 //jwt : 웹에서 사용하는 JSON 형식의 토큰(짧은 데이터)
-const tempHeader = JSON.stringify({});
+const tempHeader = JSON.stringify({ name: "block7", alg: "HS512" });
 
 // stringify : 객체를   json 형식으로 변환
 // parse : json 형식을 객체로 변환

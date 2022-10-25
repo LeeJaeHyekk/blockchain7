@@ -1,12 +1,12 @@
 const express = require("express");
 const session = require("express-session");
 const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const path = require("path");
-const cookieParser = require("cookie-parser");
-const routes = require("./routes/index.js");
+// const routes = require("./routes/index.js");
 const app = express();
-
+const boardList = [{ title: "arvser1", text: "12312" }];
 dotenv.config();
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") morgan("combined")(req, res, next);
@@ -29,8 +29,22 @@ app.use(
   })
 );
 
-const boardList = [];
+app.post("/api/board/add", (req, res) => {
+  boardList.unshift(req.body);
+  res.send({ status: 200, data: "정상 입력 완료" });
+});
+
+app.get("/api/board", (req, res) => {
+  res.send({
+    status: 200,
+    list: boardList.slice(+req.query.count * 5, (+req.query.count + 1) * 5),
+    maxCount:
+      parseInt(
+        (boardList.length ? boardList.length - 1 : boardList.length) / 5
+      ) + 1,
+  });
+});
 
 app.listen(8080, () => {
-  console.log("서버가 오픈합니닭");
+  console.log("서버 실행중");
 });
