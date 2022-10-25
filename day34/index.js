@@ -10,6 +10,7 @@ import listApi from "./routes/index.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // url => 주소, 라우터?, 서버내에서의 파일 위치 등등을 ,관리하는 내장 모듈
 dotenv.config();
+
 const app = express();
 app.set("port", process.env.port || 8089);
 app.use((req, res, next) => {
