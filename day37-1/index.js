@@ -4,13 +4,17 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const path = require("path");
-// const routes = require("./routes/index.js");
+const routes = require("./routes/index.js");
 const app = express();
+const userlist = [{ id: "", pw: "", name: "" }];
 const boardList = [{ title: "arvser1", text: "12312" }];
 dotenv.config();
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") morgan("combined")(req, res, next);
   else morgan("dev")(req, res, next);
+  // 로그를 남겨주는건데 모드일때
+  // 환경변수
+  // parser 틀에 맞춰서 해주는거
 });
 app.use("/", express.static(path.join(__dirname, "web")));
 app.use(express.json());
@@ -44,6 +48,9 @@ app.get("/api/board", (req, res) => {
       ) + 1,
   });
 });
+app.post("/", (req, res) => {});
+
+app.use("/api", routes);
 
 app.listen(8080, () => {
   console.log("서버 실행중");

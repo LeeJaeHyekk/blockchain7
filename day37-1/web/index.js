@@ -143,3 +143,29 @@ async function getList() {
   }
 }
 getList();
+
+// web쪽의  sign in <--> sign out 을 각각 설정해야함
+document.getElementById("sign-up").onclick = async (e) => {
+  e.preventDefault();
+  const data = await axios.post("api/user/regist", {
+    id: document.forms["user-info"].id.value,
+    pw: document.forms["user-info"].pw.value,
+    name: document.forms["user-info"].name.value,
+  });
+  document.forms["user-info"].id.value = "";
+  document.forms["user-info"].pw.value = "";
+  document.forms["user-info"].name.value = "";
+  console.log(data.data);
+};
+
+document.getElementById("sign-in").onclick = async (e) => {
+  e.preventDefault();
+  const data = await axios.post("api/user/login", {
+    id: document.forms["user-info"].id.value,
+    pw: document.forms["user-info"].pw.value,
+  });
+  document.forms["user-info"].id.value = "";
+  document.forms["user-info"].pw.value = "";
+  document.forms["user-info"].name.value = "";
+  console.log(data.data);
+};

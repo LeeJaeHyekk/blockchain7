@@ -4,7 +4,6 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const path = require("path");
-// const routes = require("./routes/index.js");
 const app = express();
 const boardList = [{ title: "arvser1", text: "12312" }];
 dotenv.config();
