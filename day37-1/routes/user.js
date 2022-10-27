@@ -43,22 +43,22 @@ router.route("/login").post((req, res) => {
 
   // }
 
-  res.cookie(
-    "log_jwt",
-  jwt.sign({ name: userlist[req.body.id].name }, "block777", {
-    // data.data
-      algorithm: "HS256",
-       expiresIn: "10m",
-     issuer: "ljh",
-  }),
-    {
-       expires: new Date(Date.now() + 10000),
-     }
+  //   res.cookie(
+  //     "log_jwt",
+  //   jwt.sign({ name: userlist[req.body.id].name }, "block777", {
+  //     // data.data
+  //       algorithm: "HS256",
+  //        expiresIn: "10m",
+  //      issuer: "ljh",
+  //   }),
+  //     {
+  //        expires: new Date(Date.now() + 10000),
+  //      }
 
-  // res.cookie("mycookie:","set Cookie ",{maxAge:1000})
+  //   // res.cookie("mycookie:","set Cookie ",{maxAge:1000})
+  // });
+
+  //  }
 });
-
-//  }
-//  });
 
 module.exports = router;

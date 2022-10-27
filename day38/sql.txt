@@ -1,0 +1,97 @@
+CREATE SCHEMA `testing1` DEFAULT CHARACTER SET utf8mb4 ;
+
+create : 생성하는 명령어 이다.
+-DB , TABLE
+
+DEFAULT CHARACTER SET utf8mb4
+-utf8mb4 방식으로 인코딩 한다. << 저장할떄 인코딩 방식이다.
+-text 파일 만들때 선택하는 인코딩과 같다
+
+`testing`.`new_table1`
+-`DB명`.`생성할 테이블명`
+-(`컬럼명`자료형 옵션, `컬럼명`자료형 옵션,옵션)
+-idx 컬럼명을 INT 자료형을 사용하여 생성하되 idx는 빈값이면 안된다.
+new_table1 컬럼명을 varchar(45) 자료형을 사용하여 생성하고 빈값이 들어가도 상관없다.
+PERIMARY KEY(고유 식별 컬럼, 값)으로 idx를 설정한다.
+
+자료형
+-BOOLEAN : 참거짓,1BYTE
+-TINYINT : 1BYTE의 정수 << -64 ~ 63
+    -잡설 : 127 +1 => - 128  << 비폭력 간디 탄생 ==> 0 - 1 => 255
+-INT : 4 BYTE의 정수 <<  –2,147,483,648 ~ 2,147,483,647
+-BIGINT : 8 BYTE의 정수
+-FLOAT : 4 BYTE의 실수(NUMBER)
+-계산할 떄 확률적으로 오류가 뜬다.
+-DOUBLE : 8 BYTE의 실수(NUMBER)
+-FLOAT 는 조금 덜 오류가 뜬다.
+
+BIT(n) : n BIT의 정수 << 몇개든지 내가 설정한다.
+-BIT(4) => 0~ 15
+
+자료형 (숫자)
+
+자료형 (문자)
+- CHAR(n) : n BYTE의 문자, 최대 2^8 BYTE까지만 가능
+-ASCII => ? 1 BYTE(8 BIT) << 최대 몇글자? 2^8
+-UTF8 => 1~3 BYTE << 최대 글자수는 2^8 /3
+-UTF8MB4 => 1~4 BYTE
+-UTF16 => 3BYTE 고정
+-varchar(n) : 최대 n BYTE의 가변 문자, 최대 2^8 BYTE
+ 0 ~ 126 < 2^7 -1 < 7 BIT < 앞에 1 BIT를 버리고 총 8 BIT
+ 
+ -text : 최대 2^16 BYTE의 가변 문자
+ -longTEXT : 최대 2^32 BYTE의 가변문자
+
+ 자료형(시간)
+ -DATE : 3 BYTE 의 날짜 YYYY-MM-DD
+ -DATETIME : 8 BYTE 의 날짜와 시간 YYYY-MM-DD HH:MM:SS
+ -TIMESTAMP : 4 BYTE 의 UTC 시간의 날짜와 시간 => YYYY-MM-DD HH:MM:SS
+ -YEAR : 1 BYTE 연도 => YYYY
+
+ 옵션 
+- NOT NULL : 비면 안된다.
+- UNIQE : 값이 중복되면 안된다.
+- PERIMARY KEY : 고유 식별 키
+- FOREIGN KEY : 테이블 연결 시 사용
+- CHEK : 저장할 데이터의 범위나 조건을 지정한다.
+- DEFAULT : 기본값
+- AUTO_INCREMENT : 인덱스 값 자동증가
+- COMMET : 설명
+
+SELECT : 데이터를 가져온다.
+* : 전부
+FROM : 어디서 가져올껀데?
+USE testing1;
+testing1 DB를 사용한다 . << 접속한다.  << 기준으로 설정된다.
+
+table1 WHERE 조건 ; 
+tabl1 WHERE name LIKE "";
+LIKE ==> "어쩌구" 가 포함되어 있으면
+
+SELECT name , id FROM  tabl1 WHERE name LIKE "어쩌구";
+name에 어쩌구 가 포함되어 있으면 name을 가져온다.
+
+SELECT *FROM tabl1 ORDER BY name DESC;
+name을 기준으로 내림차순으로 가져온다.(ASC : 오름차순)
+
+SELECT COMMET FROM tabl1;
+개수 가져오기
+
+INSERT
+-데이터를 저장한다.
+- INTO : 어디에
+-(`idx`) : 컬럼명
+- VALUES(`0`): 어떤 값들이냐?
+
+INSERT INTO `testing`.`new_table1` SET(`idx`=`0`,)
+` ` << 객체(컬럼명)
+' ' << 고유값(스트링이나 숫자 등등 데이터)
+
+SELECT * FROM testing.new_table1;
+
+INSERT INTO `testing`.`new_table1` (`idx`, `name`, `pw`, `id`, `create_at`) VALUES ('0', '12', '123', '123213', '2022-10-27');
+INSERT INTO `testing`.`new_table1` (`idx`, `name`, `pw`, `id`, `create_at`) VALUES ('1', '12312', '123124', '121243', '2022-10-27');
+INSERT INTO `testing`.`new_table1` (`idx`, `name`, `pw`, `id`, `create_at`) VALUES ('2', '2345', '345', '345', '2022-10-27');
+INSERT INTO `testing`.`new_table1` (`idx`, `name`, `pw`, `id`, `create_at`) VALUES ('3', '345', '345', '345345', '2022-10-27');
+INSERT INTO `testing`.`new_table1` (`idx`, `name`, `pw`, `id`, `create_at`) VALUES ('4', '345', '345', '345', '2022-10-27');
+INSERT INTO `testing`.`new_table1` (`idx`, `name`, `pw`, `id`, `create_at`) VALUES ('5', '345', '345', '345', '2022-10-27');
