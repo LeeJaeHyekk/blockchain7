@@ -1,0 +1,53 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="user">
+      <form id="sign-up">
+        <input id="user-id" type="text" placeholder="ID" />
+        <input id="user-pw" type="password" placeholder="Password" />
+        <input id="user-name" type="text" placeholder="Name" />
+        <input id="user-class" type="text" placeholder="Class" />
+        <button id="sign-up-btn">회원 가입</button>
+      </form>
+      <form id="sign-in">
+        <input id="user-id" type="text" placeholder="ID" />
+        <input id="user-pw" type="password" placeholder="Password" />
+        <button id="sign-in-btn">로그 인</button>
+      </form>
+      <button id="sign-out-btn">로그 아웃</button>
+    </div>
+    <div id="board">
+      <div id="board-list">
+        <div class="board-item">
+          <div class="board-title"></div>
+          <div class="board-text"></div>
+          <div class="board-btn-box">
+            <button class="board-delete">게시판 삭제</button>
+            <button class="board-update">게시판 수정</button>
+          </div>
+          <form id="comment-add">
+            <input id="comment-text" type="text" placeholder="Text" />
+          </form>
+          <div class="comment-list">
+            <div class="comment-text"></div>
+            <div class="comment-btn-box">
+              <button class="comment-delete">댓글 삭제</button>
+              <button class="comment-update">댓글 수정</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form id="board-add">
+        <input id="board-title" type="text" placeholder="Title" />
+        <input id="board-text" type="text" placeholder="Text" />
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
