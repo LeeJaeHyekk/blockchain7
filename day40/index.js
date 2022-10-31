@@ -12,3 +12,6 @@ db.sequelize
   .catch((err) => {
     console.error(err);
   });
+app.listen(app.get("port"), () => {
+  console.log("Express Server Open");
+});
