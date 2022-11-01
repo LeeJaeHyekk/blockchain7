@@ -1,0 +1,37 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socat</title>
+  </head>
+  <body>
+    <button id="send-msg">보내기</button>
+    <button id="send-end">끊기</button>
+    <script>
+      const sendBtn = document.getElementById("send-msg");
+      const endBtn = document.getElementById("send-end");
+      function sockat() {
+        const websocket = new WebSocket("ws://localhost:8080");
+
+        websocket.onopen = () => {
+          console.log("socat link");
+        };
+        websocket.onmessage = (data) => {
+          // 서버에서 보낸 데이터를 받느 이벤트 함수 이다.
+          console.log(data);
+        };
+        sendBtn.onclick = () => {
+          // 서버에서 데이터를 보내는 메서드
+          // send 랑 on 함수랑 세트
+          websocket.send("testing");
+        };
+        endBtn.onclick = () => {
+          websocket.close();
+          websocket.send(end);
+        };
+      }
+      sockat();
+    </script>
+  </body>
+</html>

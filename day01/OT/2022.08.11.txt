@@ -1,0 +1,40 @@
+2022 . 08 . 11 수업 
+
+Git 에 대한 이해 
+
+branch 	: 작업 공간
+push    	: 업로드
+log 	: 일정 코드로 변환되서 저장
+
+git       push      origin         master     checkout
+ -   	 -         -                -	    - 
+깃        올리기    파일이름     
+
+
+ 변경된 파일     index        저장소        원격
+
+	  <--           <--
+
+              add            commit       push   
+              -->             -->             -->
+
+
+merge  충돌된거
+full      파일의  전체 내용
+pach    log(변경된 기록만 가져옴)
+
+branch : 내 저장소에 자리를 만드는것
+
+
+코드
+------------------------
+ > git remote add origin https://github.com/LeeJaeHyekk/blockchain7.git
+ > git branch -M master
+ > git branch
+ > git add  tt.txt
+ > git commit -m "test"
+ > git log
+
+중요도
+--------------------
+add >>> comit  >>
