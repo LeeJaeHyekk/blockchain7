@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+      .login-box,
+      .logout-box {
+        display: none;
+      }
+      div .on {
+        display: block;
+      }
+      .alert {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="test"></button>
+    <div class="user-box">
+      <div class="login-box on">
+        <input type="text" id="name" />
+        <button id="login-btn">Log In</button>
+      </div>
+      <div class="logout-box">
+        <p><span id="user-info"></span>님 어서오세요.</p>
+        <input type="text" id="room" />
+        <button id="room-btn">방 생성 / 입장</button>
+        <button id="logout-btn">Log Out</button>
+      </div>
+    </div>
+    <div>
+      <input type="text" id="text" />
+      <button id="text-btn">메세지</button>
+    </div>
+    <ul id="chat"></ul>
+    <script>
+      const logInBoxElem = document.getElementsByClassName("login-box")[0];
+      const logOutBoxElem = document.getElementsByClassName("logout-box")[0];
+      const nameElem = document.getElementById("name");
+      const logInElem = document.getElementById("login-btn");
+      const userInfoElem = document.getElementById("user-info");
+      const logOutElem = document.getElementById("logout-btn");
+      const roomElem = document.getElementById("room");
+      const roomBtnElem = document.getElementById("room-btn");
+      const textElem = document.getElementById("text");
+      const textBtnElem = document.getElementById("text-btn");
+      const chatElem = document.getElementById("chat");
+      function socketFunc() {
+        const socket = io();
+
+        logInElem.onclick = () => {
+          socket.emit("login", { id: nameElem.value });
+        };
+
+        socket.on("login", (data) => {
+          logInBoxElem.classList.toggle("on");
+          logOutBoxElem.classList.toggle("on");
+          userInfoElem.innerText = data.id;
+        });
+
+        socket.on("loginInfo", (data) => {
+          const tempElem = document.createElement("li");
+          tempElem.innerText = data.id + "님이 접속하셨습니다.";
+          chatElem.append(tempElem);
+        });
+
+        logOutElem.onclick = () => {
+          socket.emit("logout");
+        };
+
+        socket.on("logout", (data) => {
+          logInBoxElem.classList.toggle("on");
+          logOutBoxElem.classList.toggle("on");
+          userInfoElem.innerText = "";
+        });
+
+        socket.on("logoutInfo", (data) => {
+          const tempElem = document.createElement("li");
+          tempElem.innerText = data.id + " 잡아와!";
+          chatElem.append(tempElem);
+        });
+
+        textBtnElem.onclick = () => {
+          socket.emit("chat", { text: textElem.value });
+        };
+
+        socket.on("chat", (data) => {
+          const tempElem = document.createElement("li");
+          if (data.id) {
+            tempElem.innerText = data.id + " : " + data.text;
+          } else {
+            tempElem.classList.add("alert");
+            tempElem.innerText = data.text;
+          }
+          chatElem.append(tempElem);
+        });
+
+        roomBtnElem.onclick = () => {
+          socket.emit("room", { room: roomElem.value });
+        };
+
+        socket.on("roomInfo", (data) => {
+          const tempElem = document.createElement("li");
+          if (data.room) {
+            tempElem.innerText = data.room + "에 입장했습니다.";
+          } else {
+            tempElem.innerText = "방에서 퇴장했습니다.";
+          }
+          chatElem.append(tempElem);
+        });
+      }
+      socketFunc();
+      function testFunc() {
+        const socket = io("/test");
+        document.getElementById("test").onclick = () => {
+          socket.emit("test", { text: "test 테스트중" });
+        };
+      }
+    </script>
+  </body>
+</html>

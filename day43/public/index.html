@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+    <style>
+      .login-box,
+      .logout-box {
+        display: none;
+      }
+      div .on {
+        display: block;
+      }
+      .alert {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="user-box">
+      <div class="login-box on">
+        <input type="text" id="name" />
+        <button id="login-btn">Log In</button>
+      </div>
+      <div class="logout-box">
+        <p><span id="user-info"></span>님 어서오세요.</p>
+        <button id="logout-btn">Log Out</button>
+      </div>
+    </div>
+    <div>
+      <input type="text" id="text" />
+      <button id="text-btn">메세지</button>
+    </div>
+    <ul id="chat"></ul>
+    <script>
+      const logInBoxElem = document.getElementsByClassName("login-box")[0];
+      const logOutBoxElem = document.getElementsByClassName("logout-box")[0];
+      const nameElem = document.getElementById("name");
+      const logInElem = document.getElementById("login-btn");
+      const userInfoElem = document.getElementById("user-info");
+      const logOutElem = document.getElementById("logout-btn");
+      const textElem = document.getElementById("text");
+      const textBtnElem = document.getElementById("text-btn");
+      const chatElem = document.getElementById("chat");
+      //
+      function socketFunc() {
+        const socket = io();
+
+        logInElem.onclick = () => {
+          socket.emit("login", { id: nameElem.value });
+        };
+
+        socket.on("login", (data) => {
+          logInBoxElem.classList.toggle("on");
+          logOutBoxElem.classList.toggle("on");
+          userInfoElem.innerText = data.id;
+        });
+        socket.on("loginInfo", (data) => {
+          const tempElem = document.createElement("li");
+          tempElem.innerText = data.id + "님이 접속하였습니다";
+          chatElem.append(tempElem);
+        });
+
+        logOutBoxElem.onclick = () => {
+          socket.emit("logout");
+        };
+        socket.on("logout", (data) => {
+          logInBoxElem.classList.toggle("on");
+          logOutBoxElem.classList.toggle("on");
+          userInfoElem.innerText = "";
+        });
+        socket.on("logoutInfo", (data) => {
+          const tempElem = document.createElement("li");
+          tempElem.innerText = data.id + "님 잡아와";
+          chatElem.append(tempElem);
+        });
+        textBtnElem.onclick = () => {
+          socket.emit("chat", { text: textElem.value });
+        };
+        socket.on("chat", (data) => {
+          const tempElem = document.createElement("li");
+          if (data.id) {
+            tempElem.innerText = data.id + ":" + data.text;
+            chatElem.append(tempElem);
+          } else {
+            tempElem.classList.add("alert");
+
+            tempElem.innerText = "거수자는 이름을 밝혀라";
+            chatElem.append(tempElem);
+          }
+        });
+
+        socket.on("list", (data) => {
+          data.list.forEach((item) => {
+            // 배열이니까 forEach쓸수 있지 그러니까 각각 받아와야지
+            const tempElem = document.createElement("li");
+            tempElem.innerText = item.userId + ":" + item.text;
+            chatElem.append(tempElem);
+          });
+        });
+      }
+      socketFunc();
+    </script>
+  </body>
+</html>
