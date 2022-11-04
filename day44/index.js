@@ -4,10 +4,14 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-const app = express();
+// -------------------------------------
 const db = require("./models/index.js");
-
+const routes = require("./routes/index.js");
+const { sequelize } = require("./models/index.js");
+// -------------------------------------
+const app = express();
 dotenv.config();
+// -------------------------------------
 app.set("port", process.env.PORT || 8080);
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === "production") morgan("combined")(req, res, next);
@@ -29,6 +33,8 @@ app.use(
     name: "seed",
   })
 );
+app.use("/api", routes);
+
 db.sequelize
   .sync({ force: false })
   .then(() => {
