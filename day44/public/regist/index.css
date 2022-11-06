@@ -7,8 +7,20 @@
 :before {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "maple-bold";
+  src: url("../font/Maplestory\ Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "maple-light";
+  src: url("../font/Maplestory\ Light.ttf") format("truetype");
+  font-weight: normal;
+}
 
 .html {
+  font-family: "maple-bold";
   position: relative;
 }
 
