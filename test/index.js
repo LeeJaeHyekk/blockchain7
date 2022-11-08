@@ -68,6 +68,7 @@ function start() {
       props.opacity0,
       `${props.opacity1} ${props.trnsDelay} ${props.zIndex}`,
     ];
+    console.log(elms);
     // const userId = document.getElementById["login-username"].value;
     // const userPassword = document.getElementById["login-password"].value;
     // try {
