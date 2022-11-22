@@ -1,4 +1,2 @@
 import React from "react";
-export default function Search() {
-  //     const
-}
+export default function Search() {}

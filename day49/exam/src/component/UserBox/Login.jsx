@@ -29,6 +29,7 @@ export default function Login({ users, setUser }) {
     // user.push({userId , userPw}); 적용은 되나 절대적으로 권장하지 않는 방식이다.
     // setUsers(users);
   }
+
   return (
     <LoginBox>
       <input
