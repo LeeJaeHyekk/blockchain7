@@ -33,7 +33,7 @@ function App() {
   ]);
   return (
     <>
-      <div>
+      <Div>
         <AppElem>
           <div>
             <Menu arr={arr} />
@@ -45,7 +45,13 @@ function App() {
         <Limo>
           <TakList limoarr={limoarr} />
         </Limo>
-      </div>
+        <MainImg>
+          <Img></Img>
+        </MainImg>
+        <SearchDiv>
+          <MainSearch />
+        </SearchDiv>
+      </Div>
     </>
   );
 }
@@ -53,6 +59,9 @@ function App() {
 // map으로 바꾸고 , 목차들을 state로 바꾸고  // 데이터 기준으로 바꿔보자 변수를 넣고
 
 export default App;
+const Div = styled.div`
+  background-color: #5383e8;
+`;
 
 const AppElem = styled.div`
   display: flex;
@@ -85,6 +94,41 @@ const Limo = styled.div`
   align-items: center;
   gap: 10px;
   padding-left: 100px;
+  border-bottom: 1px solid #4171d6;
+`;
+const MainImg = styled.div`
+  display: flex;
+  width: 1080px;
+  height: 460px;
+  background-color: #5383e8;
+  margin-left: 20%;
+  justify-content: center;
+  align-items: center;
+`;
+const Img = styled.div`
+  display: flex;
+  width: 63%;
+  height: 63%;
+  background-image: url("/img/op.ggImg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+const SearchDiv = styled.div`
+  display: flex;
+  width: 1080px;
+  height: 100px;
+  margin-left: 20%;
+  justify-content: top;
+  align-items: center;
+`;
+const MainSearch = styled.div`
+  display: flex;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 /19%);
+  background: #fff;
+  width: 80%;
+  height: 60px;
+  border: 1px solid white;
+  border-radius: 30px;
 `;
 // const MenuBar = styled.div`
 //   display: flex;
