@@ -13,14 +13,14 @@ export default function ContextTest() {
   );
 }
 function Child1({}) {
-  return <Child1 />;
-}
-function Child2({}) {
   return <Child2 />;
 }
-function Child3({}) {
+function Child2({}) {
   return <Child3 />;
 }
-function Child4({}) {
+function Child3({}) {
   return <Child4 />;
+}
+function Child4({}) {
+  return <div></div>;
 }
