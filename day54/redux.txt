@@ -1,0 +1,23 @@
+Redux란? 
+- 정의 : 상태 관리 라이브러리
+- 상태(state)를 관리해주는 라이브러리. 전역 상태값을 관리해주는 애라고 생각해주면 된다.
+- 특징 : 왜 나왔나?
+- FLUX 모델을 사용한다.
+- flux 모델이란 기존에 많이 사용했던 MVC모델의 단점을 보완하기 위해 개발되었다.
+- MVC : Model view controller
+ - Controller -> Model <-> view
+
+-action -> dispatch -> reducer -> store ->view ->controller
+-store : 저장소 , state들을 모아둔 객체
+-action : 요청 , 요청 내용에 대해 목적과 필요한 내용
+-reducer : 요청을 실행 하는 함수\
+-dispatch : 요청을 받아 reducer에게 전달하는 함수
+-reducx의 3가지 원칙
+-single sourse of trurh(진실은 하나의 근원으로 부터)
+: state를 담고 있는 store는 하나만 있어야 한다.
+- state is read-only(상태는 읽기전용이다.): state를 변경(재정의)
+하는 방법은 action을 dispatch로 전달하는것 뿐이다.
+- Changes are made with pure functions(변화는 순수함수로 작정되어야 한다) : 순수함수란: 같은 매개변수가 전달되었을때
+항상 같은 값을 반환하는 함수이다.
+- 함수 외부의 변수를 변경하지 않고 매개변수 또한 변경하지 않는다.
+- 함수 외부의 변수를 변경하지 않고 외부의 변수에 의존하지 않고 매개 변수 또한 변경 하지 않는다.
