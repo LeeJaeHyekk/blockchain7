@@ -29,7 +29,7 @@ const remove = (id) => ({
   },
 });
 
-export const actoin = { add, edit, remove };
+export const action = { add, edit, remove };
 export const initialize = [];
 let id = 0;
 export const reducer = (state = initialize, action) => {

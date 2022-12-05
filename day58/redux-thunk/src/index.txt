@@ -1,0 +1,11 @@
+redux-thunk
+- action을 함수로 쓸 수 있게 해주는 리덕스의 미들웨어이다.
+- 단순한 연결 방법을 사용해 action에 함수를 전달할수 있다.
+- action 이 함수라면 action내에서 dispatch 호출해 다른 action을 실행해야 state를 정의 할 수 있다.
+reducer가 state를 정의한다.
+
+redux-saga
+- redux-thunk와 같은 리덕스 미들웨어 이다.
+-generator를 사용한다.(NEW.NO.28)
+-테스트 결과 reducer를 사용하는 것이 아닌 action에서 saga를 통해 state를 정의한다.
+- 궁금한 사람은 각자 알아서 해볼것

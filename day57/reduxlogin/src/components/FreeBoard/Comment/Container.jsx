@@ -1,6 +1,6 @@
 import CommentComponets from "./Component";
 import { useDispatch, useSelector } from "react-redux";
-import { actoin } from "../../../modules/comment";
+import { action } from "../../../modules/comment";
 const CommentContainer = ({ userName, boardId }) => {
   const dispatch = useDispatch();
   const list = useSelector(
@@ -9,15 +9,15 @@ const CommentContainer = ({ userName, boardId }) => {
     // filter는 find와 같으나 조건에 맞느 ㄴ아이템들을 배열로 가져온다.
   );
   const add = (text) => {
-    dispatch(actoin.add(text, userName, boardId));
+    dispatch(action.add(text, userName, boardId));
   };
 
   const edit = (id, text) => {
-    dispatch(actoin.edit(id, text));
+    dispatch(action.edit(id, text));
   };
 
   const remove = (id) => {
-    dispatch(actoin.remove(id));
+    dispatch(action.remove(id));
   };
 
   return <CommentComponets add={add} list={list} edit={edit} remove={remove} />;
