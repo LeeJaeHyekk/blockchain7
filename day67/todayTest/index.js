@@ -2,6 +2,7 @@ let AA = document.getElementById("Btn1");
 let BB = document.getElementById("Btn2");
 let CC = document.getElementById("Btn3");
 let DD = document.getElementById("Btn4");
+
 let daap = document.getElementById("answer");
 let restart = document.getElementById("re");
 
