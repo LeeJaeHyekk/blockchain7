@@ -12,7 +12,7 @@ TCP란?
 - OSI 7 Layer보다 많이 사용된다.
 - 우리가 말하는 IP는 TCP의 2단계인 인터넷프로토콜을 뜻함
 - 3단계 에는 TCP/UDP를 포함한다.
-- 4단계 에는 HTML, FTP, SSH등을 포함한다.
+- 4단계에는 HTTP(HTML, 브라우저), FTP(FileZilla), SSH(Putty) 등을 포함한다.
 - 각 단계
 
   1. Network interface
@@ -41,7 +41,7 @@ TCP란?
     - 연결로 정보를 재대로 받았는지 확인한다. => 신뢰도가 높다.
     - 단점은 UDP보다 느리다. -> 연결하고 검사하는 과정들 떄문에
     - 3-way handshaking 과정을 통해 연결한다.
-      1. 클라이언트(브라우저)가 서버에 요청을 보낸다.(SYN == syncronize sequence numbers(동기화된 순차 번호))
+      1. 클라이언트(브라우저)가 서버에 요청을 보낸다.(SYN => synchronize sequence numbers(동기화된 순차 번호))
       2. 서버는 브라우저에게 요청 수락을 보낸다.(SYN/ACK)
       3. 브라우저는 요청 수락을 잘 받았다고 서버에 보낸다.(ASK -> acknowledgment(승인))
       4. 데이터를 주고 받는다.
