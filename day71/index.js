@@ -1,7 +1,7 @@
 const net = require("net");
 // net은 Node.js에서 제공하는 TCP 서버를 열 수 있는 모듈이다.
 // express, morgan, cookie-parser, express-session, dotenv << npm에 올라와있는 라이브러리이다.
-//   - 두 차이는 무엇이냐? 딱히 차이는 없으나 Node.js 자체에 이미 설치가 되어 있는지 아닌지 정도의 차이이다.
+// - 두 차이는 무엇이냐? 딱히 차이는 없으나 Node.js 자체에 이미 설치가 되어 있는지 아닌지 정도의 차이이다.
 // net과 비슷 모듈이 path
 
 // Buffer란
