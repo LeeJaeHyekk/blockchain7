@@ -11,9 +11,3 @@ declare interface IBlock extends IBlockHeader {
   hash: string;
   data: Array<string>;
 }
-//---------------------- IBlock -------------------------------------------//
-// 테스트를 위해서
-declare interface IConfig {
-  DAI: number;
-  averageGenerationTime: number;
-}
