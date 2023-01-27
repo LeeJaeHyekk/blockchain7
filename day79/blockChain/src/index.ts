@@ -76,6 +76,6 @@ const ports = [
 const idx = 0;
 
 app.listen(ports[idx][0], () => {
-  console.log("server start 8080" + ports[idx][0]);
+  console.log("server start " + ports[idx][0]);
   ws.listen(ports[idx][1]);
 });
