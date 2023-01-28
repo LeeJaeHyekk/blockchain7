@@ -1,16 +1,24 @@
 import merkle from "merkle";
+// ES6 문법 머클 불러오기
 import { SHA256 } from "crypto-js";
+// ES6 SHA256 버전으로 크립토 암호화 한다.
 import hexToBinary from "hex-to-binary";
-
+// ES6 16진수 를 2진수로 치환
 class BlockHeader implements IBlockHeader {
   // implements는 interface를 기준으로 타입을 확인한다.
   // class의 프로퍼티의 타입을 선언해주는 것이 아닌 정상적으로 타입이 정의되었나 확인한다.
   version: string;
+  // 버젼 자료형 : string
   merkleRoot: string;
+  // 머클루트 자료형 : string
   timestamp: number;
+  // 타임스템프 자료형 : number
   height: number;
+  // 높이 자료형 : number
   difficulty: number;
+  // 난이도 자료형 : number
   nonce: number;
+  //
   ip: string = "192.168.0.129";
 
   constructor(_data: Array<string>, _previousBlock?: IBlock) {
@@ -83,6 +91,7 @@ class BlockHeader implements IBlockHeader {
 
 class Block extends BlockHeader implements IBlock {
   previousHash: string;
+  //
   hash: string;
   data: Array<string>;
 
