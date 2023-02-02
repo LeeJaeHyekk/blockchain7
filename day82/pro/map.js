@@ -20,13 +20,14 @@ function study2(array) {
 study2(array);
 
 function for1(arr) {
-  let dapFor = [];
+  let dapFor = 0;
   for (let i = 1; i < arr.length + 1; i++) {
-    dapFor.push(i);
+    dapFor = i;
+    console.log("dap", dapFor);
   }
+
   return dapFor;
 }
-
 for1(array);
 
 function map(arr) {
@@ -37,4 +38,4 @@ function map(arr) {
   return dap;
 }
 
-console.log(map(array));
+map(array);

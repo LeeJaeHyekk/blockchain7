@@ -51,6 +51,7 @@ document.getElementById("wallet_list_btn").onclick = () => {
 };
 
 document.getElementById("transaction_form").onsubmit = (e) => {
+  console.log("6-1 전송 버튼 클릭");
   e.preventDefault();
   console.log("5-1 전송 버튼 클릭");
   // 조건 : 위에 지갑 데이터 있어야함 && received 입력값이 있어야함 && amount 입력값이 있어야함
@@ -71,11 +72,19 @@ document.getElementById("transaction_form").onsubmit = (e) => {
   console.log(
     "5-2 현재 지갑 정보와 입력된 값으로 /transaction/send 에 요청 보냄"
   );
+  console.log(
+    "6-2 현재 지갑 정보와 입력된 값으로 /transaction/send 에 요청 보냄"
+  );
+
   axios.post("/transaction/send", req);
 };
 
 document.getElementById("block_mine_btn").onclick = () => {
   const data = addressLi.innerHTML;
   if (data === "") return;
-  axios.post("/block/mine", { data }).then(() => {});
+  axios.post("/block/mine", { data: data }).then(() => {
+    axios.post("/balance", { address: data }).then(({ data }) => {
+      balanceLi.innerHTML = data.balance;
+    });
+  });
 };

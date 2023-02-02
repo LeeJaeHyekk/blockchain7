@@ -27,14 +27,36 @@ app.get("/wallet/list", (req: Request, res: Response) => {
   // 3-5 응답
 });
 
-app.get("/wallet/:address", (req: Request, res: Response) => {
+app.get("/wallet/:address", async (req: Request, res: Response) => {
   console.log("4-2 GET 메서드, /wallet/지갑주소 라우터로 요청 받음");
   // 4-3
   const address: string = req.params.address;
   const privateKey: string = Wallet.getWalletPrivateKey(address);
   // 4-5
   console.log("4-8 생성된 지갑을 json 형식으로 응답");
-  res.json(new Wallet(privateKey));
+
+  const wallet = new Wallet(privateKey);
+
+  const balance = (
+    await axios.post(
+      "http://localhost:8080/balance",
+      { address },
+      {
+        headers: {
+          Authorization:
+            "Basic " +
+            Buffer.from(
+              "58D3B85D37DC0642182430519BFCD30B31FD34DF:58D3B85D37DC0642182430519BFCD30B31FD34DF"
+            ).toString("base64"),
+          // HTTP 통신에서의 인증 방법
+          // Authorization: Basic 방식은 base64 포멧을 기본으로 한다.
+        },
+      }
+    )
+  ).data.balance;
+  wallet.balance = balance;
+
+  res.json(wallet);
 });
 
 app.post("/transaction/send", (req: Request, res: Response) => {
@@ -66,17 +88,23 @@ app.post("/transaction/send", (req: Request, res: Response) => {
 
   res.json(signature);
 });
-app.post("/block/mine", (req: Request, res: Response) => {
-  axios.post("http://localhost:8080/block/mine", req.body, {
-    headers: {
-      Authorization:
-        "Basic" +
-        Buffer.from(
-          "58D3B85D37DC0642182430519BFCD30B31FD34DF:58D3B85D37DC0642182430519BFCD30B31FD34DF"
-        ).toString("base64"),
-    },
-  });
-  res.end();
+
+app.post("/balance", async (req: Request, res: Response) => {
+  const balance = (
+    await axios.post("http://localhost:8080/balance", req.body, {
+      headers: {
+        Authorization:
+          "Basic " +
+          Buffer.from(
+            "58D3B85D37DC0642182430519BFCD30B31FD34DF:58D3B85D37DC0642182430519BFCD30B31FD34DF"
+          ).toString("base64"),
+        // HTTP 통신에서의 인증 방법
+        // Authorization: Basic 방식은 base64 포멧을 기본으로 한다.
+      },
+    })
+  ).data.balance;
+  console.log("bal : ", balance);
+  res.send({ balance });
 });
 
 app.listen(9514, () => {
