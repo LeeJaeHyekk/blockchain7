@@ -11,4 +11,5 @@ declare interface IBlock extends IBlockHeader {
   previousHash: string;
   hash: string;
   data: Array<ITransaction>;
+  //   data: ITransaction[];
 }

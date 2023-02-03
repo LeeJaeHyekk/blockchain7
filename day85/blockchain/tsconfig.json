@@ -1,0 +1,27 @@
+{
+  "include": ["src", "@types", "wallet"],
+  // 파일명 넣어줘야 읽어올수있음 wallet추가해줌
+  "exclude": ["node_modules"],
+  // 이건 적용안하고 하겠다
+  "compilerOptions": {
+    "outDir": "./build/",
+    "target": "ES6",
+    "lib": ["ES6"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    // type이 가져올수있다.
+    "paths": {
+      "@core/*": ["src/core/*"],
+      "*": ["@types/*"]
+    }
+  },
+  "ts-node": {
+    "files": true,
+    "require": ["tsconfig-paths/register"]
+  }
+}

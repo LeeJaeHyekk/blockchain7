@@ -1,33 +1,23 @@
 import merkle from "merkle";
-// ES6 문법 머클 불러오기
 import { SHA256 } from "crypto-js";
-// ES6 SHA256 버전으로 크립토 암호화 한다.
 import hexToBinary from "hex-to-binary";
-// ES6 16진수 를 2진수로 치환
+
 class BlockHeader implements IBlockHeader {
   // implements는 interface를 기준으로 타입을 확인한다.
   // class의 프로퍼티의 타입을 선언해주는 것이 아닌 정상적으로 타입이 정의되었나 확인한다.
   version: string;
-  // 버젼 자료형 : string
   merkleRoot: string;
-  // 머클루트 자료형 : string
   timestamp: number;
-  // 타임스템프 자료형 : number
   height: number;
-  // 높이 자료형 : number
   difficulty: number;
-  // 난이도 자료형 : number
   nonce: number;
-  //
-  ip: string = "192.168.0.129";
+  ip: string = "192.168.0.140";
 
   constructor(_data: Array<ITransaction>, _previousBlock?: IBlock) {
+    console.log("7-14 블록 헤더 생성");
+
     this.version = "1.0.0";
-    // 문자(string)
-    const merkleRoot: TResult<string, string> =
-      // 에러, 답  2가지가 있으며 에러와 답 둘다 string 형식으로 만들어져 있다.
-      this.createMerkleRoot(_data);
-    //
+    const merkleRoot: TResult<string, string> = this.createMerkleRoot(_data);
     if (merkleRoot.isError === true) {
       // 확실하게 확인하면 msg 또는 value를 구분할 수 있다.
       this.merkleRoot = "";
@@ -43,11 +33,15 @@ class BlockHeader implements IBlockHeader {
   }
 
   setTimestamp(): void {
+    console.log("7-16 현재  시간 설정");
+
     // return 없으므로 void
     this.timestamp = Date.now();
   }
 
   createMerkleRoot(_data: Array<ITransaction>): TResult<string, string> {
+    console.log("7-15  머클 루트 생성");
+
     if (!Array.isArray(_data) || !_data.length) {
       return { isError: true, msg: "data가 배열이 아니거나 빈 배열" };
     }
@@ -96,7 +90,6 @@ class BlockHeader implements IBlockHeader {
 
 class Block extends BlockHeader implements IBlock {
   previousHash: string;
-  //
   hash: string;
   data: Array<ITransaction>;
 
@@ -105,15 +98,14 @@ class Block extends BlockHeader implements IBlock {
     _previousBlock?: IBlock,
     _adjustmentBlock?: IBlock,
     _config?: IConfig
+    // 앞에 빈칸이 있을 수 없기 때문에 입력되지 않을수도 있는 ?는 뒤로 빠져야한다.
   ) {
+    console.log("7-13 블록생성 시 블록 헤더 생성");
+
     super(_data, _previousBlock);
-    // 초기 constructur()에 data, previousBlock 매개변수로 넘겨서 돌림
     this.previousHash = _previousBlock ? _previousBlock.hash : "0".repeat(64);
-    // 프리비어스 해시(이전 해시) = 있으면 전 해시를 가져오고 , 없으면  0을 64개 채운다
     if (this.merkleRoot) {
-      // 머클루트가 있으면
       if (_adjustmentBlock && _config) {
-        //
         this.getDifficulty({
           previousDifficulty: _previousBlock.difficulty,
           adjustmentDifficulty: _adjustmentBlock.difficulty,
@@ -139,7 +131,7 @@ class Block extends BlockHeader implements IBlock {
     }
 
     this.data = _data;
-    // console.log(this);
+    // if(global.debug)console.log(this);
   }
 
   static createHash(_block: IBlock): string {
@@ -155,10 +147,14 @@ class Block extends BlockHeader implements IBlock {
     return SHA256(tempStr).toString().toUpperCase();
   }
 
-  updateBlock(difficultyOptions: { [keys: string]: number }): void {
-    // [키(문자): 값(숫자)] 나머지 싹다 집어 넣는다.
+  updateBlock(difficultyOptions: {
+    previousDifficulty: number;
+    adjustmentDifficulty: number;
+    adjustmentTimestamp: number;
+    DAI: number;
+    averageGenerationTime: number;
+  }): void {
     let hashBinary = hexToBinary(this.hash);
-    // 해쉬바이너리에
     while (!hashBinary.startsWith("0".repeat(this.difficulty))) {
       this.nonce += 1;
       this.setTimestamp();
@@ -166,16 +162,14 @@ class Block extends BlockHeader implements IBlock {
       this.hash = Block.createHash(this);
       hashBinary = hexToBinary(this.hash);
     }
-    // console.log(hashBinary);
-    // console.log(hashBinary.slice(0, this.difficulty));
+    console.log(hashBinary);
+    console.log(hashBinary.slice(0, this.difficulty));
   }
 
   static isValidBlock(
     _newBlock: IBlock,
     _previousBlock: IBlock
   ): TResult<IBlock, string> {
-    // TResult == merkleRoot( Error /result) 중 result 인데
-    // <> 제네릭은 ~가 올꺼 같을때 임시로 정해주는건데 답일지 틀리지 모르니까 아예 식을 때려 넣는다?
     if (_newBlock.height !== _previousBlock.height + 1) {
       return { isError: true, msg: "높이가 다르다." };
     }

@@ -2,6 +2,7 @@ const addressLi = document.getElementById("wallet_address");
 const publicKeyLi = document.getElementById("wallet_publicKey");
 const privateKeyLi = document.getElementById("wallet_privateKey");
 const balanceLi = document.getElementById("wallet_balance");
+window.debug = false;
 
 const info = (_wallet) => {
   console.log("2-9/4-10 전달받은 지갑 정보(data)를 웹페이지에 출력");
@@ -16,8 +17,9 @@ document.getElementById("new_wallet_btn").onclick = () => {
   console.log("2-1 지갑 생성 클릭했다.");
   // 2-1
   axios.post("/wallet/create").then(({ data }) => {
-    // console.log(data);
+    // if(window.debug)console.log(data);
     // 2-6
+
     console.log("2-8 응답받은 지갑 정보(data)를 info 함수에 전달");
     info(data);
   });
@@ -27,6 +29,7 @@ const getInfo = async (_address) => {
   // 4-2
   console.log("4-1 지갑 주소 목록 중 하나 클릭");
   const wallet = (await axios.get("/wallet/" + _address)).data;
+
   console.log("4-9 응답받은 지갑 정보(data)를 info 함수에 전달");
   info(wallet);
 };
@@ -40,7 +43,7 @@ document.getElementById("wallet_list_btn").onclick = () => {
       "3-5 파일 목록을 응답 받음, ul 엘리먼트 내(innerHTML)를 비우고, 받은 파일 목록으로 채운다"
     );
     // 3-6
-    // console.log(data);
+    // if(window.debug)console.log(data);
     listUl.innerHTML = "";
     data.forEach((item) => {
       listUl.innerHTML += `<li onclick="getInfo('${item}')">${item}</li>`;
@@ -52,13 +55,13 @@ document.getElementById("wallet_list_btn").onclick = () => {
 
 document.getElementById("transaction_form").onsubmit = (e) => {
   e.preventDefault();
-  console.log("5-1 전송 버튼 클릭");
+  console.log("5-1/6-1 전송 버튼 클릭");
   // 조건 : 위에 지갑 데이터 있어야함 && received 입력값이 있어야함 && amount 입력값이 있어야함
 
   const publicKey = publicKeyLi.innerHTML;
   const address = addressLi.innerHTML;
   const received = e.target.received.value;
-  const amount = e.target.amount.value;
+  const amount = +e.target.amount.value;
 
   const req = {
     sender: {
@@ -68,14 +71,22 @@ document.getElementById("transaction_form").onsubmit = (e) => {
     received,
     amount,
   };
+
   console.log(
-    "5-2 현재 지갑 정보와 입력된 값으로 /transaction/send 에 요청 보냄"
+    "5-2/6-2 현재 지갑 정보와 입력된 값으로 /transaction/send 에 요청 보냄"
   );
   axios.post("/transaction/send", req);
 };
 
 document.getElementById("block_mine_btn").onclick = () => {
+  console.log("7-1 채굴버튼 클릭");
   const data = addressLi.innerHTML;
   if (data === "") return;
-  axios.post("/block/mine", { data }).then(() => {});
+  console.log("7-2 지갑주소 가 있다면 지갑서버에 블록 생성 요청");
+
+  axios.post("/block/mine", { data: data }).then(() => {
+    axios.post("/balance", { address: data }).then(({ data }) => {
+      balanceLi.innerHTML = data.balance;
+    });
+  });
 };

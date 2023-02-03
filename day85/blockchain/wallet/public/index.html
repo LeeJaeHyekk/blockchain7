@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지갑관리</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- axios쓰려고넣음 -->
+  </head>
+  <body>
+    <button id="new_wallet_btn">지갑만들기</button>
+    <!-- 클릭이 2-1 -->
+    <h1>지갑 계정 정보</h1>
+    <!-- 3 -->
+    <ul>
+      <li>Coin : Custom-coin</li>
+      <li>address: <span id="wallet_address"></span></li>
+      <li>publicKey: <span id="wallet_publicKey"></span></li>
+      <li>privateKey: <span id="wallet_privateKey"></span></li>
+      <li>balance:<span id="wallet_balance"></span></li>
+    </ul>
+    <!-- 3 -->
+    <button id="block_mine_btn">채굴</button>
+
+    <form id="transaction_form">
+      <ul>
+        <li>
+          recevied: <input type="text" id="received" placeholder="받는사람" />
+        </li>
+        <li>
+          amount: <input type="number" id="amount" placeholder="보내는 금액" />
+        </li>
+      </ul>
+      <input type="submit" value="전송" />
+      <!--  5-1 전송 버튼클릭 -->
+    </form>
+
+    <h1>지갑목록</h1>
+    <button id="wallet_list_btn">목록 가져오기</button>
+    <!-- 3-1 버튼클릭했을때 -->
+    <ul id="wallet_list">
+      목록 가져오기를 클릭해주세요
+    </ul>
+    <script src="index.js"></script>
+  </body>
+</html>

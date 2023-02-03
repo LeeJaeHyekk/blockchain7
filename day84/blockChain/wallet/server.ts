@@ -36,7 +36,6 @@ app.get("/wallet/:address", async (req: Request, res: Response) => {
   console.log("4-8 생성된 지갑을 json 형식으로 응답");
 
   const wallet = new Wallet(privateKey);
-
   const balance = (
     await axios.post(
       "http://localhost:8080/balance",
@@ -44,10 +43,7 @@ app.get("/wallet/:address", async (req: Request, res: Response) => {
       {
         headers: {
           Authorization:
-            "Basic " +
-            Buffer.from(
-              "58D3B85D37DC0642182430519BFCD30B31FD34DF:58D3B85D37DC0642182430519BFCD30B31FD34DF"
-            ).toString("base64"),
+            "Basic " + Buffer.from("admin:1234").toString("base64"),
           // HTTP 통신에서의 인증 방법
           // Authorization: Basic 방식은 base64 포멧을 기본으로 한다.
         },
@@ -60,7 +56,7 @@ app.get("/wallet/:address", async (req: Request, res: Response) => {
 });
 
 app.post("/transaction/send", (req: Request, res: Response) => {
-  console.log("5-3 POST 메서드, /transaction/send 라우터로 요청 받음");
+  console.log("5-3/6-3 POST 메서드, /transaction/send 라우터로 요청 받음");
   const signature = Wallet.createSign(req.body);
   console.log(signature);
 
@@ -72,15 +68,11 @@ app.post("/transaction/send", (req: Request, res: Response) => {
   };
 
   console.log(
-    "5-7 생성한 서명과 hash를 만들기 위한 데이터를 가지고 http://localhost:8080/transaction/send에 요청 보냄"
+    "5-7/6-7 생성한 서명과 hash를 만들기 위한 데이터를 가지고 http://localhost:8080/transaction/send에 요청 보냄"
   );
   axios.post("http://localhost:8080/transaction/send", txObj, {
     headers: {
-      Authorization:
-        "Basic " +
-        Buffer.from(
-          "58D3B85D37DC0642182430519BFCD30B31FD34DF:58D3B85D37DC0642182430519BFCD30B31FD34DF"
-        ).toString("base64"),
+      Authorization: "Basic " + Buffer.from("admin:1234").toString("base64"),
       // HTTP 통신에서의 인증 방법
       // Authorization: Basic 방식은 base64 포멧을 기본으로 한다.
     },
@@ -89,24 +81,32 @@ app.post("/transaction/send", (req: Request, res: Response) => {
   res.json(signature);
 });
 
+app.post("/block/mine", (req: Request, res: Response) => {
+  console.log("7-3 블록생성 요청을 블록체인 서버에 전달");
+
+  axios.post("http://localhost:8080/block/mine", req.body, {
+    headers: {
+      Authorization: "Basic " + Buffer.from("admin:1234").toString("base64"),
+      // HTTP 통신에서의 인증 방법
+      // Authorization: Basic 방식은 base64 포멧을 기본으로 한다.
+    },
+  });
+  res.end();
+});
+
 app.post("/balance", async (req: Request, res: Response) => {
   const balance = (
     await axios.post("http://localhost:8080/balance", req.body, {
       headers: {
-        Authorization:
-          "Basic " +
-          Buffer.from(
-            "58D3B85D37DC0642182430519BFCD30B31FD34DF:58D3B85D37DC0642182430519BFCD30B31FD34DF"
-          ).toString("base64"),
+        Authorization: "Basic " + Buffer.from("admin:1234").toString("base64"),
         // HTTP 통신에서의 인증 방법
         // Authorization: Basic 방식은 base64 포멧을 기본으로 한다.
       },
     })
   ).data.balance;
-  console.log("bal : ", balance);
-  res.send({ balance });
+  res.json({ balance });
 });
 
-app.listen(9514, () => {
+app.listen(9515, () => {
   console.log("wallet server open 9514");
 });

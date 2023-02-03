@@ -18,12 +18,14 @@ export default class UnspentTxOut implements IUnspentTxOut {
 
   static getMyUTXO(
     _address: string,
-    _utxo: Array<UnspentTxOut>
+    _utxos: Array<UnspentTxOut>
   ): Array<UnspentTxOut> {
-    return _utxo.filter((item) => item.address === _address);
+    console.log("6-21 보내는 사람의 utxo 목록 가져오기");
+    return _utxos.filter((item) => item.address === _address);
+
     // const temp = [];
-    // for (let i = 0; i < _utxo.length; ++i) {
-    //   if (_utxo[i].address === _address) temp.push(_utxo[i]);
+    // for (let i = 0; i < _utxos.length; ++i) {
+    //   if (_utxos[i].address === _address) temp.push(_utxos[i]);
     // }
     // return temp;
   }

@@ -1,8 +1,8 @@
 {
-  "include": ["src", "Wallet", "@types"],
+  "include": ["src", "wallet", "@types"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "outDir": "./bulid/",
+    "outDir": "./build/",
     "target": "ES6",
     "lib": ["ES6"],
     "moduleResolution": "node",
@@ -14,7 +14,7 @@
     "typeRoots": ["./node_modules/@types", "./@types"],
     "paths": {
       "@core/*": ["src/core/*"],
-      "*": ["@type/*"]
+      "*": ["@types/*"]
     }
   },
   "ts-node": {

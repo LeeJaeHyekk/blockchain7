@@ -55,30 +55,27 @@ class Wallet implements IWallet {
     console.log("3-3 walletData 폴더의 파일 목록을 가져온다.");
     // 3-4
     const files: Array<string> = fs.readdirSync(addressDir);
-    // walletData의 경로를 가져온다.
-    console.log("files:", files);
     return files;
   }
 
   static getWalletPrivateKey(_address) {
     console.log(
-      "4-3/5-5 지갑 주소 파일 명으로 파일을 불러와서 그 내용의 개인키를 가져온다."
+      "4-3/5-5/6-5 지갑 주소 파일 명으로 파일을 불러와서 그 내용의 개인키를 가져온다."
     );
     // 4-4
     const filePath = path.join(addressDir, _address);
     const fileContent = fs.readFileSync(filePath);
-    // 아마도 개인키를 가져온다.
     return fileContent.toString();
   }
 
   static createSign(_data) {
-    console.log("5-4 서명 생성 시작");
+    console.log("5-4/6-4 / 8-4 서명 생성 시작");
     const hash = SHA256(_data.sender.publicKey + _data.received + _data.amount)
       .toString()
       .toUpperCase();
     const privateKey = Wallet.getWalletPrivateKey(_data.sender.address);
     const keyPair = ec.keyFromPrivate(privateKey);
-    console.log("5-6 서명 반환(return)");
+    console.log("5-6/6-6 서명 반환(return)");
     return keyPair.sign(hash, "hex");
   }
 }
