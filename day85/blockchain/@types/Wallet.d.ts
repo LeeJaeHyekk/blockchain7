@@ -4,7 +4,7 @@ declare interface IWallet {
   privateKey: string;
   balance: number;
 
-  getAddress(): string;
   getPrivateKey(): string;
   getPublicKey(): string;
+  getAddress(): string;
 }

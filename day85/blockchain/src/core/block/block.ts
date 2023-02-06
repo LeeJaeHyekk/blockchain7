@@ -1,28 +1,24 @@
-console.log("block 확인중");
-
-// const merkle = require("merkle");
-// const SHA256 = require("crypto-js").SHA256;
-// const hexToBinary = require("hex-to-binary");
 import merkle from "merkle";
 import { SHA256 } from "crypto-js";
 import hexToBinary from "hex-to-binary";
-//16진수를 2진수로
 
 class BlockHeader implements IBlockHeader {
   // implements는 interface를 기준으로 타입을 확인한다.
-  // class의 프로터티의 타입을 선언해주는 것이 아닌 정상적으로 타입이 정의되었나 확인한다.
+  // class의 프로퍼티의 타입을 선언해주는 것이 아닌 정상적으로 타입이 정의되었나 확인한다.
   version: string;
   merkleRoot: string;
   timestamp: number;
   height: number;
   difficulty: number;
   nonce: number;
+  ip: string = "192.168.0.140";
 
   constructor(_data: Array<ITransaction>, _previousBlock?: IBlock) {
+    console.log("7-14 블록 헤더 생성");
     this.version = "1.0.0";
     const merkleRoot: TResult<string, string> = this.createMerkleRoot(_data);
     if (merkleRoot.isError === true) {
-      // 확실하게 확인하면 msg 또는 value를 구분할수잇다
+      // 확실하게 확인하면 msg 또는 value를 구분할 수 있다.
       this.merkleRoot = "";
       console.error(merkleRoot.msg);
     } else if (merkleRoot.isError === false) {
@@ -36,14 +32,15 @@ class BlockHeader implements IBlockHeader {
   }
 
   setTimestamp(): void {
-    //메서드내에 return이없어서 void다
+    // return 없으므로 void
+    console.log("7-16 현재 시간으로 블록 생성 시간 설정");
     this.timestamp = Date.now();
   }
 
   createMerkleRoot(_data: Array<ITransaction>): TResult<string, string> {
-    // 여기서의 <string>은 ErrorCheck.d.ts파일의 매개변수로 T로 들어감
+    console.log("7-15 머클 루트 생성");
     if (!Array.isArray(_data) || !_data.length) {
-      return { isError: true, msg: "data가 배열이 아니거나 빈배열" };
+      return { isError: true, msg: "data가 배열이 아니거나 빈 배열" };
     }
     return {
       isError: false,
@@ -65,16 +62,15 @@ class BlockHeader implements IBlockHeader {
     // adjustmentTimestamp: number;
     // DAI: number;
     // averageGenerationTime: number;
-    //이건 매개변수의 타입
     [keys: string]: number;
-    // string 타입의 키에 대해서 값은 number 타입을 가진다
-    // keys는 그냥 이름 지은거 아무거나 적어도됨 통상적으로 keys
-    // 이렇게 줄여서 적을수있음
+    // string 타입의 키에 대해서 값은 number 타입을 가진다.
   }): void {
-    //void는 return없다 함수의 타입
-    if (this.height < DAI) this.difficulty = 0;
-    else if (this.height < DAI * 2) this.difficulty = 1;
-    else if (this.height % DAI !== 0) {
+    console.log("7-17 난이도 설정");
+    if (this.height < DAI) {
+      this.difficulty = 0;
+    } else if (this.height < DAI * 2) {
+      this.difficulty = 1;
+    } else if (this.height % DAI !== 0) {
       this.difficulty = previousDifficulty;
     } else {
       const timeToken: number = this.timestamp - adjustmentTimestamp;
@@ -100,9 +96,9 @@ class Block extends BlockHeader implements IBlock {
     _previousBlock?: IBlock,
     _adjustmentBlock?: IBlock,
     _config?: IConfig
-    //앞에 빈칸이 있을 수 없기 때문에 입력되지 않을수도 있는 ?는
-    //뒤로 빠져야한다.
+    // 앞에 빈칸이 있을 수 없기 때문에 입력되지 않을수도 있는 ?는 뒤로 빠져야한다.
   ) {
+    console.log("7-13 블록 생성 시 블록 헤더 생성");
     super(_data, _previousBlock);
     this.previousHash = _previousBlock ? _previousBlock.hash : "0".repeat(64);
     if (this.merkleRoot) {
@@ -110,22 +106,19 @@ class Block extends BlockHeader implements IBlock {
         this.getDifficulty({
           previousDifficulty: _previousBlock.difficulty,
           adjustmentDifficulty: _adjustmentBlock.difficulty,
-
           adjustmentTimestamp: _adjustmentBlock.timestamp,
-
           DAI: _config.DAI,
           averageGenerationTime: _config.averageGenerationTime,
         });
       }
 
       this.hash = Block.createHash(this);
+
       if (_adjustmentBlock && _config) {
         this.updateBlock({
           previousDifficulty: _previousBlock.difficulty,
           adjustmentDifficulty: _adjustmentBlock.difficulty,
-
           adjustmentTimestamp: _adjustmentBlock.timestamp,
-
           DAI: _config.DAI,
           averageGenerationTime: _config.averageGenerationTime,
         });
@@ -133,12 +126,13 @@ class Block extends BlockHeader implements IBlock {
     } else {
       this.hash = "";
     }
+
     this.data = _data;
+    // if(global.debug)console.log(this);
   }
 
   static createHash(_block: IBlock): string {
-    console.log("7-18 해시 설정");
-
+    console.log("7-18 해시 생성");
     let tempStr = "";
     const keys = Object.keys(_block);
     for (let i = 0; i < keys.length; i++) {
@@ -151,7 +145,14 @@ class Block extends BlockHeader implements IBlock {
     return SHA256(tempStr).toString().toUpperCase();
   }
 
-  updateBlock(difficultyOptions: { [keys: string]: number }): void {
+  updateBlock(difficultyOptions: {
+    previousDifficulty: number;
+    adjustmentDifficulty: number;
+    adjustmentTimestamp: number;
+    DAI: number;
+    averageGenerationTime: number;
+  }): void {
+    console.log("7-19 난이도에 따라 문제 풀이");
     let hashBinary = hexToBinary(this.hash);
     while (!hashBinary.startsWith("0".repeat(this.difficulty))) {
       this.nonce += 1;
@@ -160,6 +161,8 @@ class Block extends BlockHeader implements IBlock {
       this.hash = Block.createHash(this);
       hashBinary = hexToBinary(this.hash);
     }
+    console.log(hashBinary);
+    console.log(hashBinary.slice(0, this.difficulty));
   }
 
   static isValidBlock(
@@ -172,14 +175,11 @@ class Block extends BlockHeader implements IBlock {
     if (_newBlock.previousHash !== _previousBlock.hash) {
       return {
         isError: true,
-        msg: "이전블록의 해시와 새로운 블록의 이전hash가 다르다",
+        msg: "이전 블록의 hash와 새로운 블록의 이전 hash가 다르다.",
       };
     }
     if (_newBlock.hash !== Block.createHash(_newBlock)) {
-      return {
-        isError: true,
-        msg: "hash 생성중 오류 발생",
-      };
+      return { isError: true, msg: "hash 생성 중 오류 발생" };
     }
     return { isError: false, value: _newBlock };
   }

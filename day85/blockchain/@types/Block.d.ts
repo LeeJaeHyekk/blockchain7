@@ -11,11 +11,5 @@ declare interface IBlock extends IBlockHeader {
   previousHash: string;
   hash: string;
   data: Array<ITransaction>;
-  // data: string[]
+  //   data: ITransaction[];
 }
-
-// //테스트 위에서
-// declare interface IConfig {
-//   DAI: number;
-//   averageGenerationTime: number;
-// }

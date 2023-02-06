@@ -75,7 +75,7 @@ class Wallet implements IWallet {
       .toUpperCase();
     const privateKey = Wallet.getWalletPrivateKey(_data.sender.address);
     const keyPair = ec.keyFromPrivate(privateKey);
-    console.log("5-6/6-6 서명 반환(return)");
+    console.log("5-6/6-6 8-6 서명 반환(return)");
     return keyPair.sign(hash, "hex");
   }
 }

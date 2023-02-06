@@ -4,8 +4,8 @@ declare interface IConfig {
 }
 
 declare interface IChain {
-  // 함수도 interface에 포함시킨다
-  getchain: Array<IBlock>;
+  // 함수도 interface에 포함시킨다.
+  getChain: Array<IBlock>;
   lastBlock: IBlock;
   config: IConfig;
   adjustmentBlock: IBlock;

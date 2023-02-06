@@ -2,8 +2,6 @@ import P2P, { IMessage, MessageType } from "./p2p";
 import express, { Express, Request, Response } from "express";
 import Wallet from "@core/wallet";
 
-global.debug = false;
-
 const app: Express = express();
 const ws: P2P = new P2P();
 
@@ -92,7 +90,7 @@ app.post("/transaction/send", (req: Request, res: Response) => {
   console.log("6-11 트랜잭션 추가 함수를 호출");
   const result = Wallet.sendTransaction(req.body, ws.getUtxo);
   console.log(result);
-  console.log("6-32 트랜잭션이 정상적으로 추가되었는지 확인");
+  console.log("6-32 8-24 트랜잭션이 정상적으로 추가되었는지 확인");
   if (result.isError === true) res.send(result.msg);
   else {
     console.log("6-33 UTXO 수정 함수 호출");

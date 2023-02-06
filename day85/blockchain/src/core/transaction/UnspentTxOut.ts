@@ -20,10 +20,8 @@ export default class UnspentTxOut implements IUnspentTxOut {
     _address: string,
     _utxos: Array<UnspentTxOut>
   ): Array<UnspentTxOut> {
-    console.log("6-21 보내는 사람의 utxo 목록 가져오기");
-
+    console.log("6-21/8-16 보내는 사람의 utxo 목록 가져오기");
     return _utxos.filter((item) => item.address === _address);
-    // address utxo가 address가 각각 다르니까 같은걸 가져옴  특정 계정의 adress를 가져오려고 씀
 
     // const temp = [];
     // for (let i = 0; i < _utxos.length; ++i) {
