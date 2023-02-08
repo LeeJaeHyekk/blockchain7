@@ -27,7 +27,7 @@ E-->B-->E
 
 - Windows SubSystem for Linux
 - 윈도우에서 Linux OS를 사용하세 해주는 서비스
-- Linux OS에는 Ubentu,cent OS, Redhat 등이 있다.
+- Linux OS에는 Ubuntu,cent OS, Redhat 등이 있다.
 
   - Linux 는 Unix 기반의 OS이다.
   - Mac OS도 Unix 기반의 OS이다.
