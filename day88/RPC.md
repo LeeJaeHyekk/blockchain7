@@ -9,7 +9,7 @@
     - HTTP 통신을 사용하기 때문에 port가 열려있으면 외부에서 조작 가능
 
 ```sh
-geth --datadir ~/myGeth --http --http.addr "15.165.160.40" --http.port 8080 --http.corsdomain "*" -http.api "admin,miner,txpool,web3,personal,eth,net" --allow-insecure-unlock --syncmode full --networkid 50
+geth --datadir ~/realGeth --http --http.addr "0.0.0.0" --http.port 8080 --http.corsdomain "*" --http.api "admin,miner,txpool,web3,personal,eth,net" --allow-insecure-unlock --syncmode full --networkid 50
 ```
 
 # datadir
