@@ -1,12 +1,13 @@
-console.log(window.ethereum);
 const nowAccountElem = document.getElementById("now-account");
 const balanceElem = document.getElementById("balance");
 const toElem = document.getElementById("to");
 const etherElem = document.getElementById("ether");
+console.log(window.ethereum);
 
 if (window.ethereum) {
   const isConnected = window.ethereum.isConnected();
-  console.log("javascript 읽자마자 ", isConnected);
+  console.log("javascript 읽자마자 isConnected : ", isConnected);
+
   const getBalance = async (accounts) => {
     nowAccountElem.innerHTML = accounts[0];
 
@@ -14,12 +15,15 @@ if (window.ethereum) {
       method: "eth_getBalance",
       params: accounts,
     });
-    console.log((balanceElem.innerHTML = parseInt(balance) / Math.pow(10, 18)));
     balanceElem.innerHTML = parseInt(balance) / Math.pow(10, 18);
   };
+
   ethereum.on("connect", async (connectInfo) => {
     console.log(connectInfo);
+
     const isConnected = window.ethereum.isConnected();
+    console.log("connect 후 isConnected:", isConnected);
+
     try {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
@@ -37,8 +41,28 @@ if (window.ethereum) {
     } catch (error) {
       console.log(error);
     }
-    console.log(parseInt(connectInfo.chainId));
   });
+
+  ethereum.on("chainChanged", (chainId) => {
+    console.log(chainId);
+  });
+
+  ethereum.on("chainChanged", (message) => {
+    console.log(message);
+  });
+
+  ethereum.on("accountsChanged", async (accounts) => {
+    console.log(accounts);
+    //   const balance = await ethereum.request({
+    //     method: "eth_getBalance",
+    //     params: accounts,
+    //   });
+    //   nowAccountElem.innerHTML = accounts[0];
+    //   console.log(parseInt(balance) / Math.pow(10, 18));
+    //   console.log(accounts);
+    await getBalance(accounts);
+  });
+
   document.getElementById("sendTransaction").onclick = () => {
     const from = nowAccountElem.innerHTML;
     const to = toElem.value;
@@ -56,25 +80,10 @@ if (window.ethereum) {
       })
       .then((result) => {
         console.log(result);
-        getBalance(accounts);
+        getBalance([from]);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 }
-
-ethereum.on("accountsChanged", async (accounts) => {
-  //   const balance = await ethereum.request({
-  //     method: "eth_getBalance",
-  //     params: accounts,
-  //   });
-  //   nowAccountElem.innerHTML = accounts[0];
-  //   console.log(parseInt(balance) / Math.pow(10, 18));
-  //   console.log(accounts);
-  await getBalance(accounts);
-});
-
-ethereum.on("chainChanged", (chainId) => {
-  console.log(chainId);
-});
