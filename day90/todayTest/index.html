@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      input,
+      select {
+        display: block;
+        margin: 0.5rem;
+      }
+    </style>
+    <title>메타마스크 연결</title>
+  </head>
+  <body>
+    <h1>현재 지갑:<span id="account"></span></h1>
+    <h2>잔액: <span id="wallet-balance"></span></h2>
+    <button id="miner-start">채굴 시작</button>
+    <button id="miner-stop">채굴 중지</button>
+    <div>
+      <form id="transaction">
+        <input type="text" id="wallet" placeholder="Now_wallet" />
+        <input type="password" id="wallet-Pw" placeholder="password" />
+        <select id="wallet-list-send"></select>
+        <input type="number" id="ether" placeholder="ether" step="0.001" />
+        <button>이더 보내기</button>
+      </form>
+    </div>
+
+    <div style="border: 1px solid black; width: auto; height: auto">
+      <div>
+        <ul id="wallet-list"></ul>
+      </div>
+    </div>
+    <form id="walletForms">
+      <button id="wallet-newAccount">계정생성</button>
+      <input type="password" id="new-wallet-Pw" placeholder="password" />
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
