@@ -17,7 +17,9 @@ const request = axios.create({
 // aaaa();
 
 const test = async () => {
+  //
   const accounts = await web3.eth.getAccounts();
+  //
   for (let i = 0; i < accounts.length; ++i) {
     const balanceWei = await web3.eth.getBalance(accounts[i]);
     const balance = web3.utils.fromWei(balanceWei);
@@ -29,6 +31,7 @@ const test = async () => {
   console.log("accounts:", accounts);
 
   document.getElementById("sendBT").onclick = async () => {
+    web3.eth.txpool.content().then(console.log).catch(console.error);
     await request({
       data: {
         id: 50,
@@ -37,19 +40,19 @@ const test = async () => {
         params: [accounts[0], "1234567890"],
       },
     });
-    const transaction = web3.eth.sendTransaction({
+    const transaction = await web3.eth.sendTransaction({
       from: accounts[0],
       to: accounts[1],
       value: web3.utils.toWei("1"),
     });
 
     console.log(transaction);
-  };
-  const transaction = await web3.eth.getTransaction(
-    "0x7c40ccd1a6e52614d13ec117232a11e02c78f0441a74255c7a956d9169ec23d6"
-  );
-  console.log("tran", transaction);
 
+    const transaction1 = await web3.eth.getTransaction(
+      transaction.transactionHash
+    );
+    console.log("tran", transaction1);
+  };
   document.getElementById("stop").onclick = async function mineStop() {
     await request({
       data: {
@@ -77,7 +80,26 @@ const test = async () => {
       },
     });
   };
+  web3.eth.extend({
+    property: "txpool",
+    methods: [
+      {
+        name: "content",
+        call: "txpool_content",
+      },
+      {
+        name: "inspect",
+        call: "txpool_inspect",
+      },
+      {
+        name: "status",
+        call: "txpool_status",
+      },
+    ],
+  });
+  web3.eth.txpool.content().then(console.log).catch(console.error);
 };
+
 test();
 
 // web3.eth
