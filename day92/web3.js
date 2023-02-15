@@ -1,4 +1,6 @@
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8080"));
+//  geth에서 사용하는 모듈들을  사용할 수 있다.(web3)
+// const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8080"))
 const request = axios.create({
   method: "POST",
   baseURL: "http://localhost:8080",
