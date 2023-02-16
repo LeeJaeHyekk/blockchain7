@@ -35,7 +35,7 @@ const BlockComponent = ({ funcs, checkBlock }) => {
 export default BlockComponent;
 
 const Block = styled.div`
-  label {
+  & > label {
     display: block;
   }
 `;
