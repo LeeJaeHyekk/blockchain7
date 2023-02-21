@@ -33,9 +33,11 @@ app.use(
     name: "ljh",
   })
 );
-app.use("/api", routes);
+
+// app.use("/api", routes);
+
 db.sequelize
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
     console.log("디비연결");
   })
@@ -43,6 +45,6 @@ db.sequelize
     console.error(error);
   });
 
-app.listen(8080, () => {
-  console.log("8080 server open");
+app.listen(8082, () => {
+  console.log("8082 server open");
 });

@@ -1,6 +1,5 @@
-const { Block } = require("../models");
-
 const router = require("express").Router();
+const { Block } = require("../models");
 
 router.post("/check", async (req, res) => {
   console.log(req.body);

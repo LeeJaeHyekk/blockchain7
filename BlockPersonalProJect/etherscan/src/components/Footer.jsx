@@ -9,7 +9,7 @@ const FooterComponent = () => {
           decentralized smart contracts platform.
         </div>
         <div>
-          <img src="./img/map1.png" />
+          <img src="/img/map1.png" />
         </div>
       </div>
       <div>

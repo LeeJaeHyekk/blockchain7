@@ -5,24 +5,23 @@ module.exports = class Block extends Sequelize.Model {
     return super.init(
       {
         difficulty: {
-          type: Sequelize.INTEGER.UNSIGNED,
+          //
+          type: Sequelize.STRING(255),
         },
         extraData: {
+          //
           type: Sequelize.STRING(255),
         },
         gasLimit: {
+          //
           type: Sequelize.INTEGER.UNSIGNED,
         },
         gasUsed: {
+          //
           type: Sequelize.INTEGER.UNSIGNED,
         },
         hash: {
-          type: Sequelize.STRING(255),
-        },
-        logsBloom: {
-          type: Sequelize.STRING(255),
-        },
-        miner: {
+          //
           type: Sequelize.STRING(255),
         },
         mixhash: {
@@ -55,12 +54,6 @@ module.exports = class Block extends Sequelize.Model {
         totaldifficulty: {
           type: Sequelize.INTEGER.UNSIGNED,
         },
-        transactions: {
-          type: Sequelize.STRING(255),
-        },
-        transactionsroot: {
-          type: Sequelize.STRING(255),
-        },
       },
       {
         sequelize,
@@ -71,5 +64,12 @@ module.exports = class Block extends Sequelize.Model {
         timestamps: true,
       }
     );
+  }
+
+  static associate(db) {
+    db.Block.hasMany(db.Transaction, {
+      foreignKey: "number",
+      sourceKey: "number",
+    });
   }
 };
