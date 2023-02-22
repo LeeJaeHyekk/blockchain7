@@ -6,12 +6,7 @@ import MainContainer from "./containers/MainPage";
 function App() {
   return (
     <div className="App">
-      <div>
-        <MainContainer />
-      </div>
-      {/* <Routes>
-        <Route path="/checkBlock" element={<BlockCheckMain />} />
-      </Routes> */}
+      <MainContainer />
     </div>
   );
 }

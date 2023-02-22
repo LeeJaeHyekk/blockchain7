@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import axios from "axios";
 import { useState, useEffect } from "react";
 
-const LatestTransction = () => {
-  const [ltTx, setLtTx] = useState([]);
+const LatestTransction = ({ txFrom, txto, txvalue, txhash }) => {
   return (
     <>
       <LatestTxBox>

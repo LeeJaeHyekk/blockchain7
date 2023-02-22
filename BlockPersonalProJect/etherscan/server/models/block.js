@@ -32,6 +32,7 @@ module.exports = class Block extends Sequelize.Model {
         },
         number: {
           type: Sequelize.INTEGER.UNSIGNED,
+          unique: true,
         },
         parenthash: {
           type: Sequelize.STRING(255),

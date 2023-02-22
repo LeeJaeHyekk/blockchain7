@@ -34,10 +34,10 @@ app.use(
   })
 );
 
-// app.use("/api", routes);
+app.use("/api", routes);
 
 db.sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     console.log("디비연결");
   })
@@ -48,3 +48,13 @@ db.sequelize
 app.listen(8082, () => {
   console.log("8082 server open");
 });
+
+// app.post("/test", (req, res) => {
+//   // {data:"3"}
+//   // if (req.body.data == "1") {
+//   //   res.send({ data2: "받은건 1이다" });
+//   // } else {
+//   //   res.send({ data2: "받은건 1이 아니다." });
+//   // }
+//   res.send({ asdfwaerwf: "aserfwdsesrtd" });
+// });
