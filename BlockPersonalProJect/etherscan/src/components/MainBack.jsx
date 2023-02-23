@@ -62,41 +62,62 @@ const BackBox = styled.div`
       flex-wrap: wrap;
       width: 100%;
       height: 5%;
-      border: 1px solid aqua;
+      border: 1px solid black;
       border-radius: 8px;
       background-color: white;
       justify-content: space-between;
+
       & > span:first-child {
-        display: block;
+        display: flex;
         width: 30%;
         position: sticky;
+
         & > select {
           display: flex;
           position: sticky;
           width: 100%;
           cursor: pointer;
-          /* select */
+          border: none;
         }
       }
-      & > span {
+      & > span:last-child {
         display: flex;
         width: 70%;
-      }
-      & > span form {
-        display: flex;
-        width: 70%;
-        cursor: pointer;
-        justify-content: center;
-        background-color: white;
-        justify-content: space-between;
 
-        & > span {
+        & > form {
           display: flex;
-          width: 35%;
-          object-fit: cover;
-          & > button img {
+          width: 100%;
+          cursor: pointer;
+          justify-content: center;
+          background-color: white;
+          justify-content: space-between;
+          & > span:nth-child(1) {
+            display: flex;
+            position: sticky;
+            width: 85%;
+            & > input {
+              display: flex;
+              width: 100%;
+              cursor: pointer;
+            }
+          }
+          & > span:nth-child(2) {
             display: flex;
             width: 30%;
+            object-fit: cover;
+            align-items: center;
+            justify-content: center;
+            & > button {
+              width: 30%;
+              border: none;
+              cursor: pointer;
+              & > img {
+                display: flex;
+                width: 100%;
+                position: sticky;
+                cursor: pointer;
+              }
+            }
           }
         }
       }

@@ -3,19 +3,32 @@ import LatestBlocksContaniner from "./LatestBlocks";
 import MainBack from "../components/MainBack";
 import LatestTransactionContaniner from "./LatestTransaction";
 import MiddleMiddle from "../components/MiddleMiddleComp";
-import { newBlock } from "../api";
-import { useEffect } from "react";
+import { newBlock, latestTx } from "../api";
+import { useEffect, useState } from "react";
 const MiddleMainPageContainer = () => {
-  const start = async () => {
-    await newBlock();
-  };
+  const [tx, useTx] = useState([]);
+
   useEffect(() => {
+    const TxIdMain = async () => {
+      let temptxId = await latestTx();
+      console.log(temptxId);
+      let temp = temptxId.latesttx;
+      console.log(temp);
+      useTx(temp);
+    };
+
+    TxIdMain();
+  }, []);
+  useEffect(() => {
+    const start = async () => {
+      await newBlock();
+    };
     start();
   }, []);
   return (
     <MainBlock>
       <MainBack />
-      <MiddleMiddle />
+      <MiddleMiddle tx={tx} />
       <Test>
         <LatestBlocksContaniner />
         <LatestTransactionContaniner />

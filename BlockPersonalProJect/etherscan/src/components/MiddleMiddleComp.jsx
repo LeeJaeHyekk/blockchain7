@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-const MiddleMiddle = () => {
+const MiddleMiddle = ({ tx }) => {
+  // {
+  //   <>
+  //     {tx.map(({ id }) => {
+  //       <MMBox Mid={id} />;
+  //     })}
+  //   </>;
+  // }
   return (
     <MMBox>
       <div>
@@ -8,13 +15,17 @@ const MiddleMiddle = () => {
           <span>
             <img src="/img/eth.png" />
           </span>
-          <div>이더 가격</div>
+          <div>
+            <img src="/img/etherprice.png" />
+          </div>
         </div>
         <div>
           <span>
             <img src="/img/world.png" />
           </span>
-          <div> 마켓 가격</div>
+          <div>
+            <img src="/img/marketPrice.png" />
+          </div>
         </div>
       </div>
       <div>
@@ -22,7 +33,7 @@ const MiddleMiddle = () => {
           <span>
             <img src="/img/transaction.png" />
           </span>
-          <div> 트랜잭션</div>
+          <div> 트랜잭션수</div>
         </div>
         <div>
           <span>
@@ -44,7 +55,7 @@ const MMBox = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   width: 90%;
-  border: 1px solid blue;
+
   margin-top: -3%;
   justify-content: center;
 
@@ -77,6 +88,9 @@ const MMBox = styled.div`
         align-items: center;
         justify-content: center;
         text-align: center;
+        & > img {
+          width: 80%;
+        }
       }
     }
     & > div:nth-child(2) {
@@ -92,7 +106,7 @@ const MMBox = styled.div`
       & > div {
         display: flex;
         width: 100%;
-
+        margin-right: 40px;
         justify-content: center;
         align-items: center;
       }
