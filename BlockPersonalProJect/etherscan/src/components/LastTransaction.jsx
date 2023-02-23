@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
-const LatestTransction = ({ txFrom, txto, txvalue, txhash }) => {
+const LatestTransction = () => {
   return (
     <>
       <LatestTxBox>
@@ -9,7 +9,8 @@ const LatestTransction = ({ txFrom, txto, txvalue, txhash }) => {
           <img src="/img/transaction.png" />
         </div>
         <div>
-          <div>TransactionHash</div>
+          <div>TxId</div>
+          <div>TxHash</div>
           <div>From</div>
           <div>to</div>
           <div>eth</div>
@@ -26,7 +27,7 @@ const LatestTxBox = styled.div`
   justify-content: space-around;
   width: 80%;
   border: 1px solid black;
-  border-top: none;
+
   overflow: hidden;
 
   & > div:first-child {
@@ -51,24 +52,8 @@ const LatestTxBox = styled.div`
 
     & > div {
       display: flex;
-      border: 1px solid black;
+
       width: 100%;
     }
   }
 `;
-
-// & > div:last-child {
-//   display: flex;
-//   width: 80%;
-//   background-color: white;
-//   justify-content: center;
-//   align-items: center;
-//   justify-content: space-around;
-//   overflow: hidden;
-
-//   & > div {
-//     display: flex;
-//     border: 1px solid black;
-//     width: 30%;
-//   }
-// }

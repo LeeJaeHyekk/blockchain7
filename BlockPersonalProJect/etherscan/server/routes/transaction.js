@@ -1,10 +1,9 @@
-const { Transaction } = require("../models");
 const router = require("express").Router();
-
+const { Transaction } = require("../models");
 router.post("/listTx", async (req, res) => {
   try {
     const listtx = await Transaction.findAll({
-      attributes: ["from", "to", "value", "gasPrice"],
+      attributes: ["from", "to", "value", "gasPrice", "blockNumber", "hash"],
     });
     res.send({ listtx });
   } catch (error) {
@@ -14,12 +13,12 @@ router.post("/listTx", async (req, res) => {
 
 router.post("/latest", async (req, res) => {
   try {
-    const transaction = await Transaction.findAll({
+    const latesttx = await Transaction.findAll({
       limit: 10,
-      attributes: ["hash", "from", "to", "value"],
+      order: [["id", "DESC"]],
+      attributes: ["hash", "from", "to", "value", "id"],
     });
-
-    res.send({ transaction });
+    res.send({ latesttx });
   } catch (error) {
     console.log(err);
   }

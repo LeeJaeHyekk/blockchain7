@@ -8,12 +8,12 @@ export const newBlock = async (blockData) => {
 export const latestBlock = async () => {
   return (await request.post("/block/latest")).data;
 };
-export const latestTx = async (data) => {
-  return await request.post("/transaction/latest", data).data;
+export const latestTx = async () => {
+  return (await request.post("/transacton/latest")).data;
 };
-export const listBlock = async (data) => {
-  return (await request.post("/block/listBlock", data)).data;
+export const listBlock = async () => {
+  return (await request.post("/block/listBlock")).data;
 };
-export const listTx = async (data) => {
-  return (await request.post("/transaction/listTx", data)).data;
+export const listTx = async () => {
+  return (await request.post("/transacton/listTx")).data;
 };

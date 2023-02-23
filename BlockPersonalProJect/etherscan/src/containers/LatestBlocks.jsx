@@ -1,11 +1,13 @@
 import LatestBlocks from "../components/LatestBlocks";
 import LatestBlocksHeader from "../components/LatestBlocksHeader ";
-import { latestBlock } from "../api";
+import { AddBlock } from "./AddBlock";
+
 const LatestBlocksContaniner = () => {
   return (
     <div>
       <LatestBlocksHeader />
       <LatestBlocks />
+      <AddBlock />
     </div>
   );
 };

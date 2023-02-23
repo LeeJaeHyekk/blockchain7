@@ -1,24 +1,34 @@
 import styled from "styled-components";
-const AddBlockComp = ({ blockId, blockHash }) => {
+const AddBlockComp = ({ blockAll }) => {
+  return (
+    <>
+      {blockAll.map(({ number, hash }, idx) => (
+        <Block blockId={number} blockHash={hash} key={idx} />
+      ))}
+    </>
+  );
+};
+export default AddBlockComp;
+
+const Block = ({ blockId, blockHash }) => {
   return (
     <LatestBox>
       <div>
         <img src="/img/redblock.gif" />
       </div>
       <div>
-        <div>{blockId}</div>
+        <div>#{blockId}</div>
         <div>{blockHash} </div>
         <div>eth</div>
       </div>
     </LatestBox>
   );
 };
-export default AddBlockComp;
 
 const LatestBox = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 39.5%;
+  width: 80%;
   justify-content: space-around;
   border: 1px solid black;
   border-top: none;
@@ -42,12 +52,14 @@ const LatestBox = styled.div`
     justify-content: center;
     align-items: center;
     justify-content: space-around;
-    overflow: hidden;
+    white-space: nowrap;
 
     & > div {
-      display: flex;
-      border: 1px solid black;
-      font-size: 1%;
+      display: block;
+      font-size: 0.7rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       width: 30%;
     }
   }

@@ -1,15 +1,13 @@
 import HeaderContaniner from "./Header";
 import FooterContainer from "./Footer";
-import MiddleMainPageContainer from "./MiddleMainPage";
-
-const MainContainer = () => {
+import LatestBlockPage from "../components/LatesBlockPage";
+const LastBlockPageContainer = () => {
   return (
     <>
       <HeaderContaniner />
-      <MiddleMainPageContainer />
+      <LatestBlockPage />
       <FooterContainer />
     </>
   );
 };
-
-export default MainContainer;
+export default LastBlockPageContainer;

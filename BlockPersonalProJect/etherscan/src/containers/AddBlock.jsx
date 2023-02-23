@@ -1,83 +1,47 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { latestBlock, latestTx, listBlock, listTx } from "../api";
+import { latestBlock, latestTx } from "../api";
 import AddBlockComp from "../components/AddBlockComponent";
+import AddTxComp from "../components/AddTxComp";
 
-const Add = () => {
-  const [blockHash, setBlockHash] = useState([]);
-  const [blockId, setBlockId] = useState([]);
-  // const [txFrom, setTxFrom] = useState([]);
-  // const [txto, setTxto] = useState([]);
-  // const [txvalue, setTxvalue] = useState([]);
-  // const [txhash, setTxhash] = useState([]);
-  const block = async () => {
-    const lBData = await latestBlock();
-    const listBD = await listBlock();
+const AddBlock = () => {
+  const [blockAll, setBlockAll] = useState([]);
 
-    for (let i = 0; i < lBData.block.length; i++) {
-      setBlockHash(lBData.block[i].hash);
-    }
-    for (let i = 0; i < lBData.block.length; i++) {
-      setBlockId(lBData.block[i].id);
-    }
-
-    // setBlockHash(lBData);
-    // lBData.map((item) => setBlockHash(item));
-    // console.log(listBD);
-  };
   useEffect(() => {
+    const block = async () => {
+      const lBData = await latestBlock();
+      console.log(lBData);
+      let tempBlock = lBData.block;
+      setBlockAll(tempBlock);
+      console.log(tempBlock);
+    };
     block();
   }, []);
-
-  // const lTData = async () => await latestTx();
-  // const listBD = async () => await listBlock();
-  // const listTD = async () => await listTx();
-  // const sync = async () => {
-  //   const lBData = await latestBlock();
-  //   const lTData = await latestTx();
-  //   const listBD = await listBlock();
-  //   const listTD = await listTx();
-  //   console.log(lBData);
-  //   // lBData.map((item) => console.log(item));
-  // };
-
-  // const AddBlock = () => {
-  //    const latestblock = () => {
-  //     lBData.map {
-  //        setBlockHash(data.block[i].hash);
-  //        blockId.push(data.block[i].id);
-  //      }
-  //    };
-  // }
-
-  // const AddTx = () => {
-  //   const [tx, setTx] = useState({
-  //     txhash: "",
-  //     txFrom: "",
-  //     txto: "",
-  //     txvalue: "",
-  //   });
-
-  //   const sync1 = async () => {
-  //     const data = await latestBlock(tx);
-  //     for (let j = 0; j < data.transaction.length; j++) {
-  //       txFrom.push(data.transaction[j].from);
-  //       txto.push(data.transaction[j].to);
-  //       txvalue.push(data.transaction[j].value);
-  //       txhash.push(data.transaction[j].hash);
-  //     }
-  //   };
-  // };
-
-  // useEffect(() => {
-  //   sync();
-  // }, []);
-
   return (
-    <div>
-      <AddBlockComp blockHash={blockHash} blockId={blockId} />
-    </div>
+    <>
+      <AddBlockComp blockAll={blockAll} />
+    </>
   );
 };
 
-export default Add;
+const AddTx = () => {
+  const [txAll, setTxAll] = useState([]);
+
+  const transaction = async () => {
+    const lTData = await latestTx();
+    let tempTx = lTData.latesttx;
+    setTxAll(tempTx);
+  };
+  useEffect(() => {
+    transaction();
+  }, []);
+  useEffect(() => {}, [txAll]);
+
+  return (
+    <>
+      <AddTxComp txAll={txAll} />
+    </>
+  );
+};
+
+export { AddBlock, AddTx };

@@ -2,7 +2,11 @@ const router = require("express").Router();
 const { Block } = require("../models");
 router.post("/listBlock", async (req, res) => {
   try {
-    const listBlock = await Block.findAll();
+    const listBlock = await Block.findAll({
+      order: [["id", "DESC"]],
+      limit: 100,
+    });
+    console.log(listBlock);
     res.send(listBlock);
   } catch (error) {
     console.log(error);
@@ -12,8 +16,8 @@ router.post("/listBlock", async (req, res) => {
 router.post("/latest", async (req, res) => {
   try {
     const block = await Block.findAll({
+      order: [["number", "DESC"]],
       limit: 10,
-      attributes: ["id", "hash"],
     });
     res.send({ block });
   } catch (error) {

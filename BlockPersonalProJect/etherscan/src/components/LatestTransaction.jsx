@@ -11,10 +11,10 @@ export default LastestTransactionHeader;
 
 const LatestBlock = styled.div`
   & > div {
-    display: flex;
+    display: block;
+    text-align: left;
+    width: 100%;
     font-size: 1.3rem;
-    width: 80%;
-    border: 1px solid black;
     border-bottom: none;
     z-index: 3;
   }

@@ -1,16 +1,13 @@
 import LatestTransction from "../components/LastTransaction";
 import LastestTransactionHeader from "../components/LatestTransaction";
-// import { listTx } from "../api";
-// const [ltTx, setLtTx] = useState([]);
+import { AddTx } from "./AddBlock";
 
 const LatestTransactionContaniner = () => {
-  // listTx({ test: "text" }).then((data) => {
-  //   console.log("data", data);
-  // });
   return (
     <div>
       <LastestTransactionHeader />
       <LatestTransction />
+      <AddTx />
     </div>
   );
 };

@@ -12,12 +12,9 @@ export default LatestBlocksHeader;
 
 const HeaderBox = styled.div`
   & > div {
-    display: flex;
-    width: 80%;
+    display: block;
+    width: 100%;
     font-size: 1.3rem;
-    border: 1px solid black;
-    border-bottom: none;
-    border-radius: 1px;
     z-index: 3;
   }
 `;

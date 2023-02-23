@@ -8,9 +8,9 @@ const LatestBlocks = () => {
           <img src="/img/redblock.gif" />
         </div>
         <div>
-          <div>blockHash</div>
-          <div>Free Recipient </div>
-          <div>eth</div>
+          <div>blockNumber</div>
+          <div>blockHash </div>
+          <div>hasTransactions</div>
         </div>
       </LatestBox>
     </>
@@ -24,7 +24,7 @@ const LatestBox = styled.div`
   width: 80%;
   justify-content: space-around;
   border: 1px solid black;
-  border-top: none;
+  text-align: center;
   overflow: hidden;
 
   & > div:first-child {
@@ -44,11 +44,13 @@ const LatestBox = styled.div`
     align-items: center;
     justify-content: space-around;
     overflow: hidden;
+    text-align: center;
 
     & > div {
       display: flex;
-      border: 1px solid black;
       width: 30%;
+      text-align: center;
+      justify-content: center;
     }
   }
 `;
