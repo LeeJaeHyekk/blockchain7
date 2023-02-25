@@ -89,7 +89,7 @@ const MMBox = styled.div`
         justify-content: center;
         text-align: center;
         & > img {
-          width: 80%;
+          width: 55%;
         }
       }
     }

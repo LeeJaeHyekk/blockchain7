@@ -1,6 +1,7 @@
 import LatestTransction from "../components/LastTransaction";
 import LastestTransactionHeader from "../components/LatestTransaction";
 import { AddTx } from "./AddBlock";
+import ToTx from "../components/ToTx";
 
 const LatestTransactionContaniner = () => {
   return (
@@ -8,6 +9,7 @@ const LatestTransactionContaniner = () => {
       <LastestTransactionHeader />
       <LatestTransction />
       <AddTx />
+      <ToTx />
     </div>
   );
 };
