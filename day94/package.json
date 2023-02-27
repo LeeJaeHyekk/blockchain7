@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "prettier-plugin-solidity": "^1.1.2"
+  },
+  "dependencies": {
+    "solc": "^0.8.19"
+  }
+}
