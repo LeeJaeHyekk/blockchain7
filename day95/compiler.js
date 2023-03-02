@@ -61,6 +61,7 @@ class Compiler {
    */
   static compile(_fileName) {
     const contractPath = path.join(__dirname, "contracts", _fileName);
+    // console.log("path", contractPath);
     const data = JSON.stringify({
       language: "Solidity",
       sources: {
@@ -77,6 +78,7 @@ class Compiler {
       },
     });
     const compiled = solc.compile(data);
+
     return Compiler.writeOutput(JSON.parse(compiled));
   }
   /**
@@ -86,12 +88,15 @@ class Compiler {
   static writeOutput(_compiled) {
     const result = {};
     for (const contractFileName in _compiled.contracts) {
-      console.log(contractFileName);
       const [contractName] = contractFileName.split(".");
-      console.log(contractName);
+      // console.log(contractName);
       const contract = _compiled.contracts[contractFileName][contractName];
+      console.log("contract");
+      fs.writeFileSync("cont.json", JSON.stringify(contract));
+      // 새로운 파일을 만든다.(json: 형식의 문자열로)
       //   객체에서 키에 대한 값을 가져오는데 키를 변수로 입력할 경우 대괄호를([]) 사용한다.
       const abi = contract.abi;
+      console.log(abi);
       const bytecode = contract.evm.bytecode.object;
       const tempObj = { abi, bytecode };
       const bulidPath = path.join(__dirname, "build", `${contractName}.json`);
@@ -102,3 +107,25 @@ class Compiler {
   }
 }
 module.exports = Compiler;
+
+// ---------------------------------------------------------------
+// {
+//   'Test.sol': {
+//     Test: {
+//       abi: [Array],
+//       devdoc: [Object],
+//       evm: [Object],
+//       ewasm: [Object],
+//       storageLayout: [Object],
+//       userdoc: [Object]
+//     }
+//   }
+// }
+// ---------------------------------------------------------------
+
+// for (const contractFileName in _compiled.contracts)
+
+// ==> const contractFileName = "Test.sol";
+
+// console.log(contractFilename);
+// Test.sol
