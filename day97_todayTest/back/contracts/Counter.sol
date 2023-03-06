@@ -3,7 +3,6 @@ pragma solidity ^0.8.18;
 
 contract Counter {
   int256 private count;
-  event Count(int256 count);
 
   constructor() {
     count = 0;
@@ -15,11 +14,9 @@ contract Counter {
 
   function increment() public {
     count += 1;
-    emit Count(count);
   }
 
   function decrement() public {
     count -= 1;
-    emit Count(count);
   }
 }

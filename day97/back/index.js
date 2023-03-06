@@ -21,10 +21,12 @@ app.post("/api/increment", async (req, res) => {
   const CA = CounterContract.networks[networkId].address;
   const abi = CounterContract.abi;
   const deployed = new web3.eth.Contract(abi, CA);
+
   console.log(CA);
   const data = await deployed.methods.increment().encodeABI();
   // 트랜잭션을 바로 보내는(send)것이 아닌 bytecode 형식으로 변환하여 data에 포함
   const txObj = { nonce, from, to: CA, data };
+
   res.json(txObj);
 });
 
