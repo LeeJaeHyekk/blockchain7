@@ -4,6 +4,7 @@ pragma solidity ^0.8.18;
 contract Vote {
   string[] public candidateList;
   mapping(string => uint) public voteReceived;
+
   event Voted(string candidate, uint vots);
 
   //투표 목록
