@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Web3 from "web3";
 
-const useWeb3 = () => {
+export const useWeb3 = () => {
   const [web3, setWeb3] = useState();
   const [account, setAccount] = useState();
   useEffect(() => {
@@ -17,4 +17,3 @@ const useWeb3 = () => {
   }, []);
   return [web3, account];
 };
-export default useWeb3;
