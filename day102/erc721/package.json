@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "yy",
+  "main": "index.js",
+  "scripts": {
+    "test": "y"
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "keywords": [
+    "y"
+  ],
+  "author": "y",
+  "license": "ISC",
+  "dependencies": {
+    "truffle": "^5.7.9"
+  },
+  "devDependencies": {
+    "prettier-plugin-solidity": "^1.1.3"
+  }
+}
