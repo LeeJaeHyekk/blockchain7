@@ -9,8 +9,8 @@ contract ERC721 is IERC721, IERC721Metadata {
   string public override symbol;
   mapping(address => uint) private _balances;
   mapping(uint => address) private _owners;
-  mapping(uint => address) private _tokenApprovlas;
-  mapping(address => mapping(address => bool)) private _operatorApprovlas;
+  mapping(uint => address) private _tokenApprovals;
+  mapping(address => mapping(address => bool)) private _operatorApprovals;
 
   constructor(string memory _name, string memory _symbol) {
     name = _name;
@@ -18,9 +18,11 @@ contract ERC721 is IERC721, IERC721Metadata {
   }
 
   function balanceOf(address _owner) public view override returns (uint) {
+    // balanceOf는 파마미터로 넘어온 주소가 보유하고 있는 토큰을 조회하게 해주는 함수
     require(_owner != address(0), "ERC721: address zero is not a valid owner");
     // require(확인할 조건, false 시 로그)
     return _balances[_owner];
+    //
   }
 
   //   소유자의 토큰 총 개수
@@ -53,7 +55,7 @@ contract ERC721 is IERC721, IERC721Metadata {
       msg.sender == owner || isApprovedForAll(owner, msg.sender),
       "ERC721: approve caller is not owner or approved for all"
     );
-    _tokenApprovlas[_tokenId] = _to;
+    _tokenApprovals[_tokenId] = _to;
     emit Approval(owner, _to, _tokenId);
   }
 
@@ -68,7 +70,7 @@ contract ERC721 is IERC721, IERC721Metadata {
 
   function getApproved(uint _tokenId) public view override returns (address) {
     require(_owners[_tokenId] != address(0), "ERC721: invalid tokenId");
-    return _tokenApprovals[tokenId];
+    return _tokenApprovals[_tokenId];
   }
 
   function isApprovedForAll(
@@ -98,7 +100,7 @@ contract ERC721 is IERC721, IERC721Metadata {
     require(owner == address(0));
     _beforeTokenTransfer(address(0), _to, _tokenId);
     _balances[_to] += 1;
-    _owners[_tokenId] _to;
+    _owners[_tokenId] = _to;
     emit Transfer(address(0), _to, _tokenId);
   }
 

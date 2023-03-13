@@ -1,0 +1,15 @@
+{
+  "name": "DOG NFT",
+  "description": "DOG NFT with Pinata",
+  "image": "https://gateway.pinata.cloud/ipfs/QmXHpop5S8iDsJ9KDLgQd112CjbqP1TKTZCT4tQwELvCRG",
+  "attributes": [
+    {
+      "trait_type": "Rank",
+      "value": 1
+    },
+    {
+      "trait_type": "Type",
+      "value": 1
+    }
+  ]
+}

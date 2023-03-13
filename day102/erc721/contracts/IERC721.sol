@@ -10,7 +10,7 @@ interface IERC721 {
   event Approval(
     address indexed _from,
     address indexed _approved,
-    address indexed _tokenId
+    uint indexed _tokenId
   );
   event ApprovalForAll(
     address indexed _owner,
