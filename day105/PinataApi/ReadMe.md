@@ -1,3 +1,7 @@
+```bash
+npm i axios form-data
+```
+
 # pinata Api를 사용해 보자
 
 ```js
@@ -6,3 +10,7 @@ API Key: 0d333de50cc1aa3dc833
 API Secret: 6db01606657750a3cb819c9e4e3447ed0a9ef633d1d124298d032be436718c30
 JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiIxYjc4ZmNmOC1mNmZiLTQ3ZWItYThmMC03MzQxNjIzMjdkN2MiLCJlbWFpbCI6InNzeTAyMTM0QG5hdmVyLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImlkIjoiRlJBMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfSx7ImlkIjoiTllDMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiIwZDMzM2RlNTBjYzFhYTNkYzgzMyIsInNjb3BlZEtleVNlY3JldCI6IjZkYjAxNjA2NjU3NzUwYTNjYjgxOWM5ZTRlMzQ0N2VkMGE5ZWY2MzNkMWQxMjQyOThkMDMyYmU0MzY3MThjMzAiLCJpYXQiOjE2Nzg4NDQyODF9.gVTj5U0tKVC2VM6bEv6GDSa1bgZ_SHZ_rrxFffRHRFo
 ```
+
+- Pinata에서 제공하는 API(Application Programming Interface)를 사용하여 Pinata 서비스를 사용
+- 위 코드는 Pinata에서 받은 API Key
+  - 보통 API 사용 시 인증 키를 발급받아야한다.

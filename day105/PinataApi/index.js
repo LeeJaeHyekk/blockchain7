@@ -5,16 +5,20 @@ const fs = require("fs");
 const pinFileToIpfs = async () => {
   const formData = new FormData();
   const src = "imgs/why_always_me.jpg";
+
   const file = fs.createReadStream(src);
   formData.append("file", file);
+
   const metadata = JSON.stringify({
     name: "my character.png",
   });
   formData.append("pinataMetadata", metadata);
+
   const options = JSON.stringify({
     cidVersion: 0,
   });
   formData.append("pinataOptions", options);
+
   try {
     const res = await axios.post(
       "https://api.pinata.cloud/pinning/pinFileToIPFS",
@@ -34,6 +38,8 @@ const pinFileToIpfs = async () => {
     console.log(error);
   }
 };
+// pinFileToIpfs()
+
 const pinJson = async () => {
   const formData = {
     pinatametadata: {
@@ -44,8 +50,8 @@ const pinJson = async () => {
     },
     pinataContent: {
       name: "315 NFT",
-
-      description:
+      description: "피나타 써보는 중",
+      image:
         "https://gateway.pinata,cloud/ipfs/QmWwFZZAXfWTcYyUorGjM4q7ixo6piMG8PcTM8NH4xDKsJ",
       attributes: [],
     },
@@ -69,4 +75,4 @@ const pinJson = async () => {
     console.log(error);
   }
 };
-pinFileToIpfs();
+// pinFileToIpfs();
