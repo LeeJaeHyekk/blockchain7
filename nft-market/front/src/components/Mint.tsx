@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useCallback, useState } from "react";
 import axios from "axios";
 import Web3 from "web3";
 
-export const Mint = ({ web3, account }: { account: string; web3: Web3 }) => {
+export const Mint = ({ web3, account }: { web3: Web3; account: string }) => {
   const [NftName, setName] = useState<string>("");
   const [NftDescription, setDescription] = useState<string>("");
   const [file, setFile] = useState<File | undefined>();
@@ -15,12 +15,14 @@ export const Mint = ({ web3, account }: { account: string; web3: Web3 }) => {
     setDescription(e.currentTarget.value);
   }, []);
   const fileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    console.log("파일", e.currentTarget.files);
     if (e.currentTarget.files && e.currentTarget.files.length > 0) {
       setFile(e.currentTarget.files[0]);
       const reader = new FileReader();
       reader.readAsDataURL(e.currentTarget.files[0]);
       reader.onload = () => {
         if (reader.result) {
+          console.log(reader.result);
           setImg(reader.result);
         }
       };
@@ -47,7 +49,8 @@ export const Mint = ({ web3, account }: { account: string; web3: Web3 }) => {
         onInput={descriptionInput}
         placeholder={"Nft Description"}
       />
-      <input type="file" onChange={fileChange} />
+      <input type="file" onChange={fileChange} multiple />
+      {/* 미리보기 작업 */}
       {img && (
         <div>
           <img src={img.toString()} />

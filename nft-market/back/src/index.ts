@@ -44,7 +44,10 @@ app.post("/api/list", async (req: Request, res: Response) => {
         try {
           const { name, description, image } = (
             await axios.get(
-              tempArr[i].tokenURI.replace("gateway.pinata.cloud", "ipfs.io")
+              tempArr[i].tokenURI.replace(
+                "gateway.pinata.cloud",
+                "block7.mypinata.cloud"
+              )
             )
           ).data;
           data.push({
@@ -52,7 +55,10 @@ app.post("/api/list", async (req: Request, res: Response) => {
             price: tempArr[i].price,
             name,
             description,
-            image,
+            image: image.replace(
+              "gateway.pinata.cloud",
+              "block7.mypinata.cloud"
+            ),
           });
         } catch (error) {}
       }
@@ -64,7 +70,10 @@ app.post("/api/list", async (req: Request, res: Response) => {
         try {
           const { name, description, image } = (
             await axios.get(
-              tempArr[i].tokenURI.replace("gateway.pinata.cloud", "ipfs.io")
+              tempArr[i].tokenURI.replace(
+                "gateway.pinata.cloud",
+                "block7.mypinata.cloud"
+              )
             )
           ).data;
           data.push({
@@ -72,7 +81,10 @@ app.post("/api/list", async (req: Request, res: Response) => {
             price: tempArr[i].price,
             name,
             description,
-            image,
+            image: image.replace(
+              "gateway.pinata.cloud",
+              "block7.mypinata.cloud"
+            ),
           });
         } catch (error) {}
       }
