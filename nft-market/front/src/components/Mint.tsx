@@ -12,6 +12,7 @@ export const Mint = ({ web3, account }: { web3: Web3; account: string }) => {
     setName(e.currentTarget.value);
   }, []);
   const descriptionInput = useCallback((e: FormEvent<HTMLInputElement>) => {
+    // e를 모르면 e.target.Value 를 알기 위해서
     setDescription(e.currentTarget.value);
   }, []);
   const fileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +29,8 @@ export const Mint = ({ web3, account }: { web3: Web3; account: string }) => {
       };
     }
   }, []);
-  const mint = async () => {
+
+  const mint = useCallback(async () => {
     if (!NftName || !NftDescription || !file) return;
     const formData = new FormData();
     formData.append("file", file);
@@ -40,7 +42,8 @@ export const Mint = ({ web3, account }: { web3: Web3; account: string }) => {
     ).data;
     console.log(result);
     web3.eth.sendTransaction(result);
-  };
+  }, []);
+
   return (
     <div>
       <input type="text" onInput={nameInput} placeholder={"Nft Name"} />

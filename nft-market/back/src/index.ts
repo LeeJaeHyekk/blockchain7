@@ -97,6 +97,8 @@ app.post("/api/list", async (req: Request, res: Response) => {
 app.post(
   "/api/mint",
   upload.single("file"),
+  // 따로 저장하지 않아.
+  // 그 파일을 그대로 피나타에 넣어
   async (req: Request, res: Response) => {
     const { name, description }: { name: string; description: string } =
       req.body;
@@ -106,6 +108,7 @@ app.post(
       PinSize: number;
       Timestamp: string;
       isDuplicate?: boolean;
+      //  == undifined
     } = await pinata.pinFileToIPFS(Readable.from(req.file.buffer), {
       pinataMetadata: {
         name: Date.now().toString(),
