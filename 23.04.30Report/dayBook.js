@@ -9,14 +9,23 @@ const diaryEntries = [
 ];
 
 app.get("/", (req, res) => {
-  let diaryText = "";
+  let diaryText = `<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일기</title>
+    </head>
+    <body>`;
 
   // 각 일기 항목을 텍스트로 변환
   for (const entry of diaryEntries) {
-    diaryText += `${entry.title}\n${entry.content}\n\n`;
+    diaryText += `<div><h1>${entry.title}</h1>\n<p>${entry.content}</p></div>\n\n`;
   }
 
-  res.set("Content-Type", "text/plain");
+  diaryText += "</body></html>";
+
+  res.set("Content-Type", "text/html");
   res.send(diaryText);
 });
 
